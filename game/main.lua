@@ -323,14 +323,6 @@ function love.touchmoved(id, x, y, dx, dy, pressure)
 end
 
 function love.gamepadpressed(joy, button)
-    if button == "plus" then
-        love.event.quit()
-    elseif button == "a" then
-        components[1] = progressCards.bundling
-        drawNeedsCallback = true
-        drawCallbackReady = false
-        drawCallback = GenerateZip
-    end
 end
 
 function DownloadPressed()
