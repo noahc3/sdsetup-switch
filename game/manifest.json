@@ -1,0 +1,4528 @@
+{
+  "Version": "2018.12.23.01",
+  "Copyright": "© 2018 noahc3$The Nintendo Switch and Nintendo 3DS names and logos are © Nintendo. This site is in no way affiliated with Nintendo or any of its partners.",
+  "Message": {
+    "Color": "green",
+    "InnerHTML": ""
+  },
+  "Platforms": {
+    "switch": {
+      "Name": "Nintendo Switch",
+      "MenuName": "Switch",
+      "HomeIcon": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Nintendo_Switch_logo%2C_square.png/480px-Nintendo_Switch_logo%2C_square.png",
+      "ID": "switch",
+      "Color": "red",
+      "Visible": true,
+      "PackageSections": {
+        "cfws": {
+          "ID": "cfws",
+          "Name": "Custom Firmwares",
+          "DisplayName": "Select your Custom Firmwares",
+          "ListingMode": 1,
+          "Visible": true,
+          "When": [],
+          "WhenMode": 0,
+          "Footer": null,
+          "Categories": {
+            "cfws": {
+              "ID": "cfws",
+              "Name": "Custom Firmwares",
+              "DisplayName": "Select your Custom Firmwares",
+              "Visible": true,
+              "When": [],
+              "WhenMode": 0,
+              "Subcategories": {
+                "cfws": {
+                  "ID": "cfws",
+                  "Name": "Custom Firmwares",
+                  "DisplayName": "Select your Custom Firmwares",
+                  "Visible": true,
+                  "When": [],
+                  "WhenMode": 0,
+                  "Packages": {
+                    "atmosphere": {
+                      "ID": "atmosphere",
+                      "Name": "Atmosphere",
+                      "DisplayName": "Atmosphere (Kosmos)",
+                      "Platform": "switch",
+                      "Section": "cfws",
+                      "Category": "cfws",
+                      "Subcategory": "cfws",
+                      "Authors": "SciresM, tomGER, WerWolv, StevenMaterra, TuxSH, hexkyz",
+                      "Versions": {
+                        "latest": "v11.7/v0.8.2"
+                      },
+                      "Source": "https://github.com/Atmosphere-NX/Atmosphere",
+                      "DLSource": "https://github.com/Atmosphere-NX/Atmosphere",
+                      "Size": 0,
+                      "Priority": 0,
+                      "EnabledByDefault": false,
+                      "Visible": true,
+                      "ShowsInCredits": true,
+                      "Description": "CFW for the Nintendo Switch. Configured with extras provided by Team AtlasNX's Kosmos, including Kosmos Toolbox, Kosmos Updater, and other optional features such as sigpatches and sysmodules.<br><br>Supports loading through Hekate or fusee-primary.",
+                      "When": [],
+                      "WhenMode": 0,
+                      "Warning": null,
+                      "Dependencies": [
+                        "atmos_musthave",
+                        "atmos_bootlogo",
+                        "atmos_fusee"
+                      ],
+                      "DeleteOnUpdate": []
+                    },
+                    "reinx": {
+                      "ID": "reinx",
+                      "Name": "ReiNX",
+                      "DisplayName": "ReiNX",
+                      "Platform": "switch",
+                      "Section": "cfws",
+                      "Category": "cfws",
+                      "Subcategory": "cfws",
+                      "Authors": "Reisyukaku",
+                      "Versions": {
+                        "latest": "v2.0"
+                      },
+                      "Source": "https://github.com/Reisyukaku/ReiNX",
+                      "DLSource": "https://github.com/Reisyukaku/ReiNX",
+                      "Size": 0,
+                      "Priority": 0,
+                      "EnabledByDefault": false,
+                      "Visible": true,
+                      "ShowsInCredits": true,
+                      "Description": "A modular custom firmware for the Nintendo Switch. Includes sigpatches, homebrew via album, and more.",
+                      "When": [],
+                      "WhenMode": 0,
+                      "Warning": {
+                        "Title": "Warning",
+                        "Content": "ReiNX is missing vital anti-telemetry measures that are included in Atmosphere. This means you may be banned if you ever go online while or after using ReiNX without 90DNS.",
+                        "PackageID": null
+                      },
+                      "Dependencies": [],
+                      "DeleteOnUpdate": []
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "cfwoptions": {
+          "ID": "cfwoptions",
+          "Name": "CFW Options",
+          "DisplayName": "Customize your CFWs",
+          "ListingMode": 0,
+          "Visible": true,
+          "When": [
+            "atmosphere",
+            "reinx"
+          ],
+          "WhenMode": 1,
+          "Footer": "These modules are powered by <a href='https://github.com/AtlasNX/Kosmos'>Team AtlasNX's Kosmos v11.7</a>",
+          "Categories": {
+            "atmosphere_options": {
+              "ID": "atmosphere_options",
+              "Name": "Atmosphere Options",
+              "DisplayName": "Atmosphere",
+              "Visible": true,
+              "When": [
+                "atmosphere"
+              ],
+              "WhenMode": 0,
+              "Subcategories": {
+                "general": {
+                  "ID": "general",
+                  "Name": "General",
+                  "DisplayName": "General",
+                  "Visible": true,
+                  "When": [
+                    "atmosphere"
+                  ],
+                  "WhenMode": 0,
+                  "Packages": {
+                    "kosmos_updater": {
+                      "ID": "kosmos_updater",
+                      "Name": "Kosmos Updater",
+                      "DisplayName": "Kosmos Updater",
+                      "Platform": "switch",
+                      "Section": "cfwoptions",
+                      "Category": "atmosphere_options",
+                      "Subcategory": "general",
+                      "Authors": "StevenMattera",
+                      "Versions": {
+                        "latest": "v11.0.1"
+                      },
+                      "Source": "https://github.com/AtlasNX/Kosmos-Updater",
+                      "DLSource": "https://github.com/AtlasNX/Kosmos-Updater",
+                      "Size": 0,
+                      "Priority": 0,
+                      "EnabledByDefault": false,
+                      "Visible": true,
+                      "ShowsInCredits": true,
+                      "Description": "Updater tool for Kosmos-based CFW packages, with customizable channels and bundles, all from within Horizon!<br><br>Note: This does not offer the level of customization that SDSetup does.",
+                      "When": [],
+                      "WhenMode": 0,
+                      "Warning": null,
+                      "Dependencies": [],
+                      "DeleteOnUpdate": []
+                    },
+                    "kosmos_toolkit": {
+                      "ID": "kosmos_toolkit",
+                      "Name": "Kosmos Toolbox",
+                      "DisplayName": "Kosmos Toolbox",
+                      "Platform": "switch",
+                      "Section": "cfwoptions",
+                      "Category": "atmosphere_options",
+                      "Subcategory": "general",
+                      "Authors": "WerWolv",
+                      "Versions": {
+                        "latest": "v11.0.1"
+                      },
+                      "Source": "https://github.com/AtlasNX/CFW-Settings",
+                      "DLSource": "https://github.com/AtlasNX/CFW-Settings",
+                      "Size": 0,
+                      "Priority": 0,
+                      "EnabledByDefault": false,
+                      "Visible": true,
+                      "ShowsInCredits": true,
+                      "Description": "CFW customization designed for Kosmos based CFW packages. Includes homebrew menu button customization and hekate autoboot customization, all from within Horizon!",
+                      "When": [],
+                      "WhenMode": 0,
+                      "Warning": null,
+                      "Dependencies": [],
+                      "DeleteOnUpdate": []
+                    },
+                    "atmos_sigpatch": {
+                      "ID": "atmos_sigpatch",
+                      "Name": "Enable Signature Patches",
+                      "DisplayName": "Enable Signature Patches",
+                      "Platform": "switch",
+                      "Section": "cfwoptions",
+                      "Category": "atmosphere_options",
+                      "Subcategory": "general",
+                      "Authors": "Rajkosto",
+                      "Versions": {
+                        "latest": "v11.5"
+                      },
+                      "Source": "https://www.github.com/AtlasNX/Kosmos",
+                      "DLSource": "",
+                      "Size": 0,
+                      "Priority": 0,
+                      "EnabledByDefault": false,
+                      "Visible": true,
+                      "ShowsInCredits": true,
+                      "Description": "Allows launching of sideloaded NSP files.",
+                      "When": [],
+                      "WhenMode": 0,
+                      "Warning": null,
+                      "Dependencies": [],
+                      "DeleteOnUpdate": []
+                    }
+                  }
+                },
+                "atmosphere_sysmodules": {
+                  "ID": "atmosphere_sysmodules",
+                  "Name": "Sys Modules",
+                  "DisplayName": "Sys Modules",
+                  "Visible": true,
+                  "When": [
+                    "atmosphere"
+                  ],
+                  "WhenMode": 0,
+                  "Packages": {
+                    "ldn_mitm": {
+                      "ID": "ldn_mitm",
+                      "Name": "ldn_mitm",
+                      "DisplayName": "ldn_mitm",
+                      "Platform": "switch",
+                      "Section": "cfwoptions",
+                      "Category": "atmosphere_options",
+                      "Subcategory": "atmosphere_sysmodules",
+                      "Authors": "spacemeowx2",
+                      "Versions": {
+                        "latest": "v0.1.3"
+                      },
+                      "Source": "https://github.com/spacemeowx2/ldn_mitm",
+                      "DLSource": "https://github.com/spacemeowx2/ldn_mitm",
+                      "Size": 0,
+                      "Priority": 0,
+                      "EnabledByDefault": false,
+                      "Visible": true,
+                      "ShowsInCredits": true,
+                      "Description": "MITM kip to allow using ad-hoc local multiplayer titles with switch-lan-play",
+                      "When": [
+                        "atmosphere"
+                      ],
+                      "WhenMode": 0,
+                      "Warning": null,
+                      "Dependencies": [],
+                      "DeleteOnUpdate": []
+                    },
+                    "atmos_bootlogo": {
+                      "ID": "atmos_bootlogo",
+                      "Name": "Kosmos Bootlogo",
+                      "DisplayName": "Kosmos Bootlogo",
+                      "Platform": "switch",
+                      "Section": "cfwoptions",
+                      "Category": "atmosphere_options",
+                      "Subcategory": "atmosphere_sysmodules",
+                      "Authors": "Team AtlasNX",
+                      "Versions": {
+                        "latest": "v11.5"
+                      },
+                      "Source": "https://github.com/tumGER/SDFilesSwitch ",
+                      "DLSource": "https://github.com/tumGER/SDFilesSwitch",
+                      "Size": 0,
+                      "Priority": 0,
+                      "EnabledByDefault": false,
+                      "Visible": false,
+                      "ShowsInCredits": true,
+                      "Description": "Hekate bootlogo featuring SDFilesSwitch.",
+                      "When": [
+                        "atmosphere"
+                      ],
+                      "WhenMode": 0,
+                      "Warning": null,
+                      "Dependencies": [],
+                      "DeleteOnUpdate": []
+                    },
+                    "atmos_sysftpd": {
+                      "ID": "atmos_sysftpd",
+                      "Name": "Sys-FTPD",
+                      "DisplayName": "Sys-FTPD",
+                      "Platform": "switch",
+                      "Section": "cfwoptions",
+                      "Category": "atmosphere_options",
+                      "Subcategory": "atmosphere_sysmodules",
+                      "Authors": "jakibaki",
+                      "Versions": {
+                        "latest": "c.0b47b47r2"
+                      },
+                      "Source": "https://github.com/jakibaki/sys-ftpd",
+                      "DLSource": "https://github.com/jakibaki/sys-ftpd",
+                      "Size": 0,
+                      "Priority": 0,
+                      "EnabledByDefault": false,
+                      "Visible": true,
+                      "ShowsInCredits": true,
+                      "Description": "Have an FTP server running in the background on your Switch for managing files on your SD card remotely.",
+                      "When": [
+                        "atmosphere"
+                      ],
+                      "WhenMode": 0,
+                      "Warning": null,
+                      "Dependencies": [],
+                      "DeleteOnUpdate": []
+                    },
+                    "atmos_sunpresence": {
+                      "ID": "atmos_sunpresence",
+                      "Name": "sunpresence",
+                      "DisplayName": "sunpresence",
+                      "Platform": "switch",
+                      "Section": "cfwoptions",
+                      "Category": "atmosphere_options",
+                      "Subcategory": "atmosphere_sysmodules",
+                      "Authors": "pirate hacker sun chips",
+                      "Versions": {
+                        "latest": "v1"
+                      },
+                      "Source": "https://github.com/tumGER/SDFilesSwitch/",
+                      "DLSource": "https://github.com/tumGER/SDFilesSwitch/",
+                      "Size": 0,
+                      "Priority": 0,
+                      "EnabledByDefault": true,
+                      "Visible": false,
+                      "ShowsInCredits": true,
+                      "Description": "Compat module for FTP + SwitchPresence",
+                      "When": [
+                        "atmos_switchpresence",
+                        "atmos_sysftpd"
+                      ],
+                      "WhenMode": 0,
+                      "Warning": null,
+                      "Dependencies": [],
+                      "DeleteOnUpdate": []
+                    },
+                    "noexs": {
+                      "ID": "noexs",
+                      "Name": "Noexs",
+                      "DisplayName": "Noexs",
+                      "Platform": "switch",
+                      "Section": "cfwoptions",
+                      "Category": "atmosphere_options",
+                      "Subcategory": "atmosphere_sysmodules",
+                      "Authors": "mdbell",
+                      "Versions": {
+                        "latest": "v1.1.2r1"
+                      },
+                      "Source": "https://github.com/mdbell/Noexes",
+                      "DLSource": "https://github.com/mdbell/Noexes",
+                      "Size": 0,
+                      "Priority": 0,
+                      "EnabledByDefault": false,
+                      "Visible": true,
+                      "ShowsInCredits": true,
+                      "Description": "A multiplatform graphica remotel debugger for the Nintendo Switch. Useful for viewing and editing memory values at runtime.<br>Requires the desktop client from the Github.",
+                      "When": [
+                        "atmosphere"
+                      ],
+                      "WhenMode": 0,
+                      "Warning": null,
+                      "Dependencies": [],
+                      "DeleteOnUpdate": []
+                    },
+                    "atmos_xorplay": {
+                      "ID": "atmos_xorplay",
+                      "Name": "XorPlay",
+                      "DisplayName": "XorPlay",
+                      "Platform": "switch",
+                      "Section": "cfwoptions",
+                      "Category": "atmosphere_options",
+                      "Subcategory": "atmosphere_sysmodules",
+                      "Authors": "XorTroll",
+                      "Versions": {
+                        "latest": "v0.1rev2"
+                      },
+                      "Source": "https://github.com/XorTroll/ModuleMania/",
+                      "DLSource": "https://github.com/XorTroll/ModuleMania/",
+                      "Size": 0,
+                      "Priority": 0,
+                      "EnabledByDefault": false,
+                      "Visible": true,
+                      "ShowsInCredits": true,
+                      "Description": "Play audio in the background on your Nintendo Switch.",
+                      "When": [
+                        "atmosphere"
+                      ],
+                      "WhenMode": 0,
+                      "Warning": null,
+                      "Dependencies": [],
+                      "DeleteOnUpdate": []
+                    },
+                    "atmos_fusee": {
+                      "ID": "atmos_fusee",
+                      "Name": "Atmosphere Official",
+                      "DisplayName": "Atmosphere Official",
+                      "Platform": "switch",
+                      "Section": "cfwoptions",
+                      "Category": "atmosphere_options",
+                      "Subcategory": "atmosphere_sysmodules",
+                      "Authors": "SciresM, ReSwitched Team",
+                      "Versions": {
+                        "latest": "v0.8.1"
+                      },
+                      "Source": "https://github.com/Atmosphere-NX/Atmosphere",
+                      "DLSource": "https://github.com/Atmosphere-NX/Atmosphere",
+                      "Size": 0,
+                      "Priority": 0,
+                      "EnabledByDefault": false,
+                      "Visible": false,
+                      "ShowsInCredits": true,
+                      "Description": "Official Atmosphere releases using fusee.",
+                      "When": [
+                        "atmosphere"
+                      ],
+                      "WhenMode": 0,
+                      "Warning": null,
+                      "Dependencies": [],
+                      "DeleteOnUpdate": []
+                    },
+                    "atmos_switchpresence": {
+                      "ID": "atmos_switchpresence",
+                      "Name": "SwitchPresence",
+                      "DisplayName": "SwitchPresence",
+                      "Platform": "switch",
+                      "Section": "cfwoptions",
+                      "Category": "atmosphere_options",
+                      "Subcategory": "atmosphere_sysmodules",
+                      "Authors": "Random0666, SunTheCourier",
+                      "Versions": {
+                        "latest": "v2.1r1"
+                      },
+                      "Source": "https://github.com/SunTheCourier/SwitchPresence",
+                      "DLSource": "https://github.com/SunTheCourier/SwitchPresence",
+                      "Size": 0,
+                      "Priority": 0,
+                      "EnabledByDefault": false,
+                      "Visible": true,
+                      "ShowsInCredits": true,
+                      "Description": "Add automatic Discord rich presence support for Nintendo Switch titles (tell people what you are playing on Discord).",
+                      "When": [
+                        "atmosphere"
+                      ],
+                      "WhenMode": 0,
+                      "Warning": null,
+                      "Dependencies": [],
+                      "DeleteOnUpdate": []
+                    },
+                    "atmos_musthave": {
+                      "ID": "atmos_musthave",
+                      "Name": "Must Have",
+                      "DisplayName": "Must Have",
+                      "Platform": "switch",
+                      "Section": "cfwoptions",
+                      "Category": "atmosphere_options",
+                      "Subcategory": "atmosphere_sysmodules",
+                      "Authors": "Team AtlasNX",
+                      "Versions": {
+                        "latest": "v11.7"
+                      },
+                      "Source": "https://github.com/AtlasNX/Kosmos",
+                      "DLSource": "https://github.com/AtlasNX/Kosmos",
+                      "Size": 0,
+                      "Priority": 0,
+                      "EnabledByDefault": false,
+                      "Visible": false,
+                      "ShowsInCredits": true,
+                      "Description": "Required files for Atmosphere.",
+                      "When": [
+                        "atmosphere"
+                      ],
+                      "WhenMode": 0,
+                      "Warning": null,
+                      "Dependencies": [],
+                      "DeleteOnUpdate": []
+                    },
+                    "atmos_sysnetcheat": {
+                      "ID": "atmos_sysnetcheat",
+                      "Name": "Sys-Netcheat",
+                      "DisplayName": "Sys-Netcheat",
+                      "Platform": "switch",
+                      "Section": "cfwoptions",
+                      "Category": "atmosphere_options",
+                      "Subcategory": "atmosphere_sysmodules",
+                      "Authors": "jakibaki",
+                      "Versions": {
+                        "latest": "v1.3.3r2"
+                      },
+                      "Source": "https://github.com/jakibaki/sys-netcheat",
+                      "DLSource": "https://github.com/jakibaki/sys-netcheat",
+                      "Size": 0,
+                      "Priority": 0,
+                      "EnabledByDefault": false,
+                      "Visible": true,
+                      "ShowsInCredits": true,
+                      "Description": "Remote cheat engine for Switch using Netcat.",
+                      "When": [
+                        "atmosphere"
+                      ],
+                      "WhenMode": 0,
+                      "Warning": null,
+                      "Dependencies": [],
+                      "DeleteOnUpdate": []
+                    }
+                  }
+                }
+              }
+            },
+            "reinx_options": {
+              "ID": "reinx_options",
+              "Name": "ReiNX Options",
+              "DisplayName": "ReiNX",
+              "Visible": true,
+              "When": [
+                "reinx"
+              ],
+              "WhenMode": 0,
+              "Subcategories": {
+                "general": {
+                  "ID": "general",
+                  "Name": "General",
+                  "DisplayName": "General",
+                  "Visible": true,
+                  "When": [],
+                  "WhenMode": 0,
+                  "Packages": {
+                    "reinx_toolkit": {
+                      "ID": "reinx_toolkit",
+                      "Name": "ReiNX Toolkit",
+                      "DisplayName": "ReiNX Toolkit",
+                      "Platform": "switch",
+                      "Section": "cfwoptions",
+                      "Category": "reinx_options",
+                      "Subcategory": "general",
+                      "Authors": "Reisyukaku, Calypso",
+                      "Versions": {
+                        "latest": "c.d1ccf3c"
+                      },
+                      "Source": "https://gbatemp.net/threads/reinx-toolkit.517457/",
+                      "DLSource": "http://builds.reinx.guide/toolkit/ReiNXToolkit-d1ccf3c.nro",
+                      "Size": 0,
+                      "Priority": 0,
+                      "EnabledByDefault": false,
+                      "Visible": true,
+                      "ShowsInCredits": true,
+                      "Description": "Toolkit for ReiNX allowing the installation of AutoRCM, performing NAND backups, and more, all from within Horizon.<br><br><b>This toolkit is only compatible with ReiNX and will not work with other CFWs</b>",
+                      "When": [
+                        "reinx"
+                      ],
+                      "WhenMode": 0,
+                      "Warning": null,
+                      "Dependencies": [],
+                      "DeleteOnUpdate": []
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "homebrew": {
+          "ID": "homebrew",
+          "Name": "Homebrew",
+          "DisplayName": "Select your Homebrew",
+          "ListingMode": 0,
+          "Visible": true,
+          "When": [],
+          "WhenMode": 0,
+          "Footer": "",
+          "Categories": {
+            "general": {
+              "ID": "general",
+              "Name": "General",
+              "DisplayName": "General",
+              "Visible": true,
+              "When": [],
+              "WhenMode": 0,
+              "Subcategories": {
+                "loaders": {
+                  "ID": "loaders",
+                  "Name": "Loaders",
+                  "DisplayName": "Loaders",
+                  "Visible": true,
+                  "When": [],
+                  "WhenMode": 0,
+                  "Packages": {
+                    "appstorenx": {
+                      "ID": "appstorenx",
+                      "Name": "Homebrew App Store",
+                      "DisplayName": "Homebrew App Store",
+                      "Platform": "switch",
+                      "Section": "homebrew",
+                      "Category": "general",
+                      "Subcategory": "loaders",
+                      "Authors": "VGMoose",
+                      "Versions": {
+                        "latest": "v2.0"
+                      },
+                      "Source": "https://www.switchbru.com/appstore/#/app/appstore",
+                      "DLSource": "https://www.switchbru.com/appstore/zips/appstore.zip",
+                      "Size": 0,
+                      "Priority": 0,
+                      "EnabledByDefault": false,
+                      "Visible": true,
+                      "ShowsInCredits": true,
+                      "Description": "Switch app to access view and download homebrew from the SwitchBru Appstore.",
+                      "When": [],
+                      "WhenMode": 0,
+                      "Warning": null,
+                      "Dependencies": [],
+                      "DeleteOnUpdate": []
+                    },
+                    "hbmenu": {
+                      "ID": "hbmenu",
+                      "Name": "Homebrew Menu",
+                      "DisplayName": "Homebrew Menu",
+                      "Platform": "switch",
+                      "Section": "homebrew",
+                      "Category": "general",
+                      "Subcategory": "loaders",
+                      "Authors": "yellows8, SwitchBrew",
+                      "Versions": {
+                        "latest": "v3.0.1"
+                      },
+                      "Source": "https://github.com/switchbrew/nx-hbmenu",
+                      "DLSource": "https://github.com/switchbrew/nx-hbmenu",
+                      "Size": 0,
+                      "Priority": 0,
+                      "EnabledByDefault": false,
+                      "Visible": true,
+                      "ShowsInCredits": true,
+                      "Description": "Menu to launch all of your Switch NRO homebrew.",
+                      "When": [],
+                      "WhenMode": 0,
+                      "Warning": null,
+                      "Dependencies": [],
+                      "DeleteOnUpdate": []
+                    }
+                  }
+                },
+                "media": {
+                  "ID": "media",
+                  "Name": "Media",
+                  "DisplayName": "Media",
+                  "Visible": true,
+                  "When": [],
+                  "WhenMode": 0,
+                  "Packages": {
+                    "pplay": {
+                      "ID": "pplay",
+                      "Name": "pPlay",
+                      "DisplayName": "pPlay",
+                      "Platform": "switch",
+                      "Section": "homebrew",
+                      "Category": "general",
+                      "Subcategory": "media",
+                      "Authors": "Cpasjuste",
+                      "Versions": {
+                        "latest": "v1.1"
+                      },
+                      "Source": "https://github.com/Cpasjuste/pplay",
+                      "DLSource": "https://github.com/Cpasjuste/pplay",
+                      "Size": 0,
+                      "Priority": 0,
+                      "EnabledByDefault": true,
+                      "Visible": true,
+                      "ShowsInCredits": true,
+                      "Description": "Video player for Switch with support for many popular video formats, subtitles and http streaming.",
+                      "When": [],
+                      "WhenMode": 0,
+                      "Warning": null,
+                      "Dependencies": [],
+                      "DeleteOnUpdate": []
+                    }
+                  }
+                }
+              }
+            },
+            "utilities": {
+              "ID": "utilities",
+              "Name": "Utilities",
+              "DisplayName": "Utilities",
+              "Visible": true,
+              "When": [],
+              "WhenMode": 0,
+              "Subcategories": {
+                "savemanagement": {
+                  "ID": "savemanagement",
+                  "Name": "Save Management",
+                  "DisplayName": "Save Management",
+                  "Visible": true,
+                  "When": [],
+                  "WhenMode": 0,
+                  "Packages": {
+                    "jksv": {
+                      "ID": "jksv",
+                      "Name": "JK's Save Manager",
+                      "DisplayName": "JK's Save Manager",
+                      "Platform": "switch",
+                      "Section": "homebrew",
+                      "Category": "utilities",
+                      "Subcategory": "savemanagement",
+                      "Authors": "J-D-K",
+                      "Versions": {
+                        "latest": "09.15.2018"
+                      },
+                      "Source": "https://github.com/J-D-K/JKSV/",
+                      "DLSource": "https://github.com/J-D-K/JKSV/",
+                      "Size": 0,
+                      "Priority": 0,
+                      "EnabledByDefault": true,
+                      "Visible": true,
+                      "ShowsInCredits": true,
+                      "Description": "WIP save manager for Switch.",
+                      "When": [],
+                      "WhenMode": 0,
+                      "Warning": null,
+                      "Dependencies": [],
+                      "DeleteOnUpdate": []
+                    },
+                    "edizon": {
+                      "ID": "edizon",
+                      "Name": "EdiZon",
+                      "DisplayName": "EdiZon",
+                      "Platform": "switch",
+                      "Section": "homebrew",
+                      "Category": "utilities",
+                      "Subcategory": "savemanagement",
+                      "Authors": "WerWolv98, thomasnet-mc",
+                      "Versions": {
+                        "latest": "v1.5.1"
+                      },
+                      "Source": "https://github.com/thomasnet-mc/EdiZon/",
+                      "DLSource": "https://github.com/thomasnet-mc/EdiZon/",
+                      "Size": 0,
+                      "Priority": 0,
+                      "EnabledByDefault": false,
+                      "Visible": true,
+                      "ShowsInCredits": true,
+                      "Description": "A save file dumper, injector and on-console editor for Horizon, the OS of the Nintendo Switch. Features a scripting framework for easy extension of the tool.",
+                      "When": [],
+                      "WhenMode": 0,
+                      "Warning": null,
+                      "Dependencies": [],
+                      "DeleteOnUpdate": []
+                    },
+                    "checkpoint": {
+                      "ID": "checkpoint",
+                      "Name": "Checkpoint",
+                      "DisplayName": "Checkpoint",
+                      "Platform": "switch",
+                      "Section": "homebrew",
+                      "Category": "utilities",
+                      "Subcategory": "savemanagement",
+                      "Authors": "BernardoGiordano",
+                      "Versions": {
+                        "latest": "v3.5.0"
+                      },
+                      "Source": "https://github.com/BernardoGiordano/Checkpoint/",
+                      "DLSource": "https://github.com/BernardoGiordano/Checkpoint/",
+                      "Size": 0,
+                      "Priority": 0,
+                      "EnabledByDefault": false,
+                      "Visible": true,
+                      "ShowsInCredits": true,
+                      "Description": "A fast and simple homebrew save manager for 3DS and Switch written in C++.",
+                      "When": [],
+                      "WhenMode": 0,
+                      "Warning": null,
+                      "Dependencies": [],
+                      "DeleteOnUpdate": []
+                    }
+                  }
+                },
+                "storagemanagement": {
+                  "ID": "storagemanagement",
+                  "Name": "Storage Management",
+                  "DisplayName": "Storage Management",
+                  "Visible": true,
+                  "When": [],
+                  "WhenMode": 0,
+                  "Packages": {
+                    "tinfoil": {
+                      "ID": "tinfoil",
+                      "Name": "Tinfoil",
+                      "DisplayName": "Tinfoil",
+                      "Platform": "switch",
+                      "Section": "homebrew",
+                      "Category": "utilities",
+                      "Subcategory": "storagemanagement",
+                      "Authors": "XorTroll, Adubbz",
+                      "Versions": {
+                        "latest": "c.883e3bd"
+                      },
+                      "Source": "https://github.com/XorTroll/Tinfoil",
+                      "DLSource": "https://github.com/XorTroll/Tinfoil",
+                      "Size": 0,
+                      "Priority": 0,
+                      "EnabledByDefault": false,
+                      "Visible": true,
+                      "ShowsInCredits": true,
+                      "Description": "A homebrew application for the Nintendo Switch used to manage and install titles.",
+                      "When": [],
+                      "WhenMode": 0,
+                      "Warning": null,
+                      "Dependencies": [],
+                      "DeleteOnUpdate": []
+                    },
+                    "zerotwoxci": {
+                      "ID": "zerotwoxci",
+                      "Name": "ZeroTwoXCI",
+                      "DisplayName": "ZeroTwoXCI",
+                      "Platform": "switch",
+                      "Section": "homebrew",
+                      "Category": "utilities",
+                      "Subcategory": "storagemanagement",
+                      "Authors": "2168-0002, Elise, Adubbz",
+                      "Versions": {
+                        "latest": "v0.1.1"
+                      },
+                      "Source": "https://gitlab.com/2168/zerotwoxci/",
+                      "DLSource": "https://gitlab.com/2168/zerotwoxci/uploads/62116978137c98b05d3a06dd39686675/ZeroTwoXCI.nro",
+                      "Size": 0,
+                      "Priority": 0,
+                      "EnabledByDefault": false,
+                      "Visible": true,
+                      "ShowsInCredits": true,
+                      "Description": "A homebrew to install XCI files to NAND/SD as if they were NSP files.",
+                      "When": [],
+                      "WhenMode": 0,
+                      "Warning": null,
+                      "Dependencies": [],
+                      "DeleteOnUpdate": []
+                    },
+                    "ftpd": {
+                      "ID": "ftpd",
+                      "Name": "FTPD",
+                      "DisplayName": "FTPD",
+                      "Platform": "switch",
+                      "Section": "homebrew",
+                      "Category": "utilities",
+                      "Subcategory": "storagemanagement",
+                      "Authors": "WinterMute",
+                      "Versions": {
+                        "latest": "c.947dc137"
+                      },
+                      "Source": "https://github.com/WinterMute/ftpd/",
+                      "DLSource": "https://github.com/WinterMute/ftpd/",
+                      "Size": 0,
+                      "Priority": 0,
+                      "EnabledByDefault": false,
+                      "Visible": true,
+                      "ShowsInCredits": true,
+                      "Description": "FTP server to allow you to access your Switch's files remotely.",
+                      "When": [],
+                      "WhenMode": 0,
+                      "Warning": null,
+                      "Dependencies": [],
+                      "DeleteOnUpdate": []
+                    },
+                    "nxshell": {
+                      "ID": "nxshell",
+                      "Name": "NX Shell",
+                      "DisplayName": "NX Shell",
+                      "Platform": "switch",
+                      "Section": "homebrew",
+                      "Category": "utilities",
+                      "Subcategory": "storagemanagement",
+                      "Authors": "joel16",
+                      "Versions": {
+                        "latest": "beta 5"
+                      },
+                      "Source": "https://github.com/joel16/NX-Shell/",
+                      "DLSource": "https://github.com/joel16/NX-Shell/",
+                      "Size": 0,
+                      "Priority": 0,
+                      "EnabledByDefault": false,
+                      "Visible": true,
+                      "ShowsInCredits": true,
+                      "Description": "Work in progress file manager for the Nintendo Switch. Port of 3DShell.",
+                      "When": [],
+                      "WhenMode": 0,
+                      "Warning": null,
+                      "Dependencies": [],
+                      "DeleteOnUpdate": []
+                    }
+                  }
+                },
+                "misc": {
+                  "ID": "misc",
+                  "Name": "Miscellaneous",
+                  "DisplayName": "Miscellaneous",
+                  "Visible": true,
+                  "When": [],
+                  "WhenMode": 0,
+                  "Packages": {
+                    "nxthemesinstaller": {
+                      "ID": "nxthemesinstaller",
+                      "Name": "NxThemes Installer",
+                      "DisplayName": "NxThemes Installer",
+                      "Platform": "switch",
+                      "Section": "homebrew",
+                      "Category": "utilities",
+                      "Subcategory": "misc",
+                      "Authors": "exelix11",
+                      "Versions": {
+                        "latest": "v1.0"
+                      },
+                      "Source": "https://github.com/exelix11/SwitchThemeInjector",
+                      "DLSource": "https://github.com/exelix11/SwitchThemeInjector",
+                      "Size": 0,
+                      "Priority": 0,
+                      "EnabledByDefault": false,
+                      "Visible": true,
+                      "ShowsInCredits": true,
+                      "Description": "Tool to install nxtheme files, a theme format which can be legally distributed.",
+                      "When": [],
+                      "WhenMode": 0,
+                      "Warning": null,
+                      "Dependencies": [],
+                      "DeleteOnUpdate": []
+                    },
+                    "gagorder": {
+                      "ID": "gagorder",
+                      "Name": "Gag Order",
+                      "DisplayName": "Gag Order",
+                      "Platform": "switch",
+                      "Section": "homebrew",
+                      "Category": "utilities",
+                      "Subcategory": "misc",
+                      "Authors": "Adubbz",
+                      "Versions": {
+                        "latest": "v0.1.0"
+                      },
+                      "Source": "https://github.com/Adubbz/Gag-Order/",
+                      "DLSource": "https://github.com/Adubbz/Gag-Order/",
+                      "Size": 0,
+                      "Priority": 0,
+                      "EnabledByDefault": false,
+                      "Visible": true,
+                      "ShowsInCredits": true,
+                      "Description": "A homebrew application which patches the \"Supernag\" on the Nintendo Switch.",
+                      "When": [],
+                      "WhenMode": 0,
+                      "Warning": null,
+                      "Dependencies": [],
+                      "DeleteOnUpdate": []
+                    },
+                    "lockpick": {
+                      "ID": "lockpick",
+                      "Name": "Lockpick",
+                      "DisplayName": "Lockpick",
+                      "Platform": "switch",
+                      "Section": "homebrew",
+                      "Category": "utilities",
+                      "Subcategory": "misc",
+                      "Authors": "shchmue",
+                      "Versions": {
+                        "latest": "v1.0"
+                      },
+                      "Source": "https://github.com/shchmue/Lockpick",
+                      "DLSource": "https://github.com/shchmue/Lockpick",
+                      "Size": 0,
+                      "Priority": 0,
+                      "EnabledByDefault": false,
+                      "Visible": true,
+                      "ShowsInCredits": true,
+                      "Description": "Dump keys.txt and titlekeys from your Switch.",
+                      "When": [],
+                      "WhenMode": 0,
+                      "Warning": null,
+                      "Dependencies": [],
+                      "DeleteOnUpdate": []
+                    }
+                  }
+                }
+              }
+            },
+            "games": {
+              "ID": "games",
+              "Name": "Games",
+              "DisplayName": "Games",
+              "Visible": true,
+              "When": [],
+              "WhenMode": 0,
+              "Subcategories": {
+                "actionadventure": {
+                  "ID": "actionadventure",
+                  "Name": "Action Adventure",
+                  "DisplayName": "Action Adventure",
+                  "Visible": true,
+                  "When": [],
+                  "WhenMode": 0,
+                  "Packages": {
+                    "sdlpop": {
+                      "ID": "sdlpop",
+                      "Name": "Prince of Persia",
+                      "DisplayName": "Prince of Persia",
+                      "Platform": "switch",
+                      "Section": "homebrew",
+                      "Category": "games",
+                      "Subcategory": "actionadventure",
+                      "Authors": "usineur",
+                      "Versions": {
+                        "latest": "v1.0"
+                      },
+                      "Source": "https://github.com/usineur/SDLPoP/",
+                      "DLSource": "https://github.com/usineur/SDLPoP/",
+                      "Size": 0,
+                      "Priority": 0,
+                      "EnabledByDefault": false,
+                      "Visible": true,
+                      "ShowsInCredits": true,
+                      "Description": "Prince of Persia port using SDL2.",
+                      "When": [],
+                      "WhenMode": 0,
+                      "Warning": null,
+                      "Dependencies": [],
+                      "DeleteOnUpdate": []
+                    },
+                    "msolarusdx": {
+                      "ID": "msolarusdx",
+                      "Name": "Mystery of Solarus DX",
+                      "DisplayName": "Mystery of Solarus DX",
+                      "Platform": "switch",
+                      "Section": "homebrew",
+                      "Category": "games",
+                      "Subcategory": "actionadventure",
+                      "Authors": "ChristophoZS, carstene1ns",
+                      "Versions": {
+                        "latest": "beta2"
+                      },
+                      "Source": "https://f4ke.de/dev/switch/",
+                      "DLSource": "https://storage.googleapis.com/noahc3_hacktools/switch/sdsetup/MysteryOfSolarusDX-rebuild.zip",
+                      "Size": 0,
+                      "Priority": 0,
+                      "EnabledByDefault": false,
+                      "Visible": true,
+                      "ShowsInCredits": true,
+                      "Description": "A Zelda fan-game in the style of A Link to the Past ported to the Switch. Features a fully fleshed out experience with hours of gameplay.",
+                      "When": [],
+                      "WhenMode": 0,
+                      "Warning": null,
+                      "Dependencies": [],
+                      "DeleteOnUpdate": []
+                    }
+                  }
+                },
+                "shooter": {
+                  "ID": "shooter",
+                  "Name": "Shooter",
+                  "DisplayName": "Shooter",
+                  "Visible": true,
+                  "When": [],
+                  "WhenMode": 0,
+                  "Packages": {
+                    "postalnx": {
+                      "ID": "postalnx",
+                      "Name": "Postal NX",
+                      "DisplayName": "Postal NX",
+                      "Platform": "switch",
+                      "Section": "homebrew",
+                      "Category": "games",
+                      "Subcategory": "shooter",
+                      "Authors": "lantus, Running With Scissors",
+                      "Versions": {
+                        "latest": "v1.00"
+                      },
+                      "Source": "https://github.com/lantus/postal-nx/",
+                      "DLSource": "https://github.com/lantus/postal-nx/",
+                      "Size": 0,
+                      "Priority": 0,
+                      "EnabledByDefault": false,
+                      "Visible": true,
+                      "ShowsInCredits": true,
+                      "Description": "Postal port for the Nintendo Switch",
+                      "When": [],
+                      "WhenMode": 0,
+                      "Warning": null,
+                      "Dependencies": [],
+                      "DeleteOnUpdate": []
+                    }
+                  }
+                },
+                "casual": {
+                  "ID": "casual",
+                  "Name": "Casual",
+                  "DisplayName": "Casual",
+                  "Visible": true,
+                  "When": [],
+                  "WhenMode": 0,
+                  "Packages": {
+                    "pixelpainter": {
+                      "ID": "pixelpainter",
+                      "Name": "Pixel Painter",
+                      "DisplayName": "Pixel Painter",
+                      "Platform": "switch",
+                      "Section": "homebrew",
+                      "Category": "games",
+                      "Subcategory": "casual",
+                      "Authors": "16BitWonder",
+                      "Versions": {
+                        "latest": "v1.7.0"
+                      },
+                      "Source": "https://github.com/16BitWonder/Pixel-Painter-Switch",
+                      "DLSource": "https://github.com/16BitWonder/Pixel-Painter-Switch",
+                      "Size": 0,
+                      "Priority": 0,
+                      "EnabledByDefault": false,
+                      "Visible": true,
+                      "ShowsInCredits": true,
+                      "Description": "A simple drawing game using LibNX.",
+                      "When": [],
+                      "WhenMode": 0,
+                      "Warning": null,
+                      "Dependencies": [],
+                      "DeleteOnUpdate": []
+                    },
+                    "pickr": {
+                      "ID": "pickr",
+                      "Name": "Pickr",
+                      "DisplayName": "Pickr",
+                      "Platform": "switch",
+                      "Section": "homebrew",
+                      "Category": "games",
+                      "Subcategory": "casual",
+                      "Authors": "BernardoGiordano",
+                      "Versions": {
+                        "latest": "v1.1.1"
+                      },
+                      "Source": "https://github.com/BernardoGiordano/Pickr/",
+                      "DLSource": "https://github.com/BernardoGiordano/Pickr/",
+                      "Size": 0,
+                      "Priority": 0,
+                      "EnabledByDefault": false,
+                      "Visible": true,
+                      "ShowsInCredits": true,
+                      "Description": "Pickr port for the Nintendo Switch.",
+                      "When": [],
+                      "WhenMode": 0,
+                      "Warning": null,
+                      "Dependencies": [],
+                      "DeleteOnUpdate": []
+                    },
+                    "2048": {
+                      "ID": "2048",
+                      "Name": "2048",
+                      "DisplayName": "2048",
+                      "Platform": "switch",
+                      "Section": "homebrew",
+                      "Category": "games",
+                      "Subcategory": "casual",
+                      "Authors": "BernardoGiordano",
+                      "Versions": {
+                        "latest": "v1.0.0"
+                      },
+                      "Source": "https://github.com/BernardoGiordano/2048/",
+                      "DLSource": "https://github.com/BernardoGiordano/2048/",
+                      "Size": 0,
+                      "Priority": 0,
+                      "EnabledByDefault": false,
+                      "Visible": true,
+                      "ShowsInCredits": true,
+                      "Description": "2048 port for the Nintendo Switch.",
+                      "When": [],
+                      "WhenMode": 0,
+                      "Warning": null,
+                      "Dependencies": [],
+                      "DeleteOnUpdate": []
+                    },
+                    "spacegamenx": {
+                      "ID": "spacegamenx",
+                      "Name": "SpaceGameNX",
+                      "DisplayName": "SpaceGameNX",
+                      "Platform": "switch",
+                      "Section": "homebrew",
+                      "Category": "games",
+                      "Subcategory": "casual",
+                      "Authors": "VGMoose",
+                      "Versions": {
+                        "latest": "v1.1"
+                      },
+                      "Source": "https://github.com/vgmoose/spacenx/",
+                      "DLSource": "https://github.com/vgmoose/spacenx/",
+                      "Size": 0,
+                      "Priority": 0,
+                      "EnabledByDefault": false,
+                      "Visible": true,
+                      "ShowsInCredits": true,
+                      "Description": "Simple graphical space shooter ported from the WiiU.",
+                      "When": [],
+                      "WhenMode": 0,
+                      "Warning": null,
+                      "Dependencies": [],
+                      "DeleteOnUpdate": []
+                    }
+                  }
+                }
+              }
+            },
+            "emulators": {
+              "ID": "emulators",
+              "Name": "Emulators",
+              "DisplayName": "Emulators",
+              "Visible": true,
+              "When": [],
+              "WhenMode": 0,
+              "Subcategories": {
+                "bundles": {
+                  "ID": "bundles",
+                  "Name": "Bundles",
+                  "DisplayName": "Bundles",
+                  "Visible": true,
+                  "When": [],
+                  "WhenMode": 0,
+                  "Packages": {
+                    "retroarch": {
+                      "ID": "retroarch",
+                      "Name": "RetroArch",
+                      "DisplayName": "RetroArch",
+                      "Platform": "switch",
+                      "Section": "homebrew",
+                      "Category": "emulators",
+                      "Subcategory": "bundles",
+                      "Authors": "libretro, m4xw, natinusala",
+                      "Versions": {
+                        "latest": "v1.7.5"
+                      },
+                      "Source": "https://www.retroarch.com",
+                      "DLSource": "",
+                      "Size": 0,
+                      "Priority": 0,
+                      "EnabledByDefault": false,
+                      "Visible": true,
+                      "ShowsInCredits": true,
+                      "Description": "Multiplatform emulator with many cores for emulating many different systems. You can individually select each core after enabling this option.<br><br>This package comes as an installer that must be run from the Homebrew Launcher before use.",
+                      "When": [],
+                      "WhenMode": 0,
+                      "Warning": null,
+                      "Dependencies": [],
+                      "DeleteOnUpdate": []
+                    }
+                  }
+                },
+                "gb": {
+                  "ID": "gb",
+                  "Name": "GB/GBC/GBA",
+                  "DisplayName": "GB/GBC/GBA",
+                  "Visible": true,
+                  "When": [],
+                  "WhenMode": 0,
+                  "Packages": {
+                    "khedgb": {
+                      "ID": "khedgb",
+                      "Name": "khedGB",
+                      "DisplayName": "khedGB",
+                      "Platform": "switch",
+                      "Section": "homebrew",
+                      "Category": "emulators",
+                      "Subcategory": "gb",
+                      "Authors": "khedoros, jakibaki",
+                      "Versions": {
+                        "latest": "v1.0"
+                      },
+                      "Source": "https://www.switchbru.com/appstore/#/app/khedgb",
+                      "DLSource": "https://www.switchbru.com/appstore/zips/khedgb.zip",
+                      "Size": 0,
+                      "Priority": 0,
+                      "EnabledByDefault": false,
+                      "Visible": true,
+                      "ShowsInCredits": true,
+                      "Description": "Experimental Gameboy Color emulator for the Switch.",
+                      "When": [],
+                      "WhenMode": 0,
+                      "Warning": null,
+                      "Dependencies": [],
+                      "DeleteOnUpdate": []
+                    },
+                    "vbanextswitch": {
+                      "ID": "vbanextswitch",
+                      "Name": "VBA Next",
+                      "DisplayName": "VBA Next",
+                      "Platform": "switch",
+                      "Section": "homebrew",
+                      "Category": "emulators",
+                      "Subcategory": "gb",
+                      "Authors": "RSDuck",
+                      "Versions": {
+                        "latest": "v0.7"
+                      },
+                      "Source": "https://github.com/RSDuck/vba-next-switch/",
+                      "DLSource": "https://github.com/RSDuck/vba-next-switch/",
+                      "Size": 0,
+                      "Priority": 0,
+                      "EnabledByDefault": false,
+                      "Visible": true,
+                      "ShowsInCredits": true,
+                      "Description": "Gameboy Advanced emulator for the Switch based on libretro and 3DSGBA.",
+                      "When": [],
+                      "WhenMode": 0,
+                      "Warning": null,
+                      "Dependencies": [],
+                      "DeleteOnUpdate": []
+                    }
+                  }
+                },
+                "snes": {
+                  "ID": "snes",
+                  "Name": "SNES",
+                  "DisplayName": "SNES",
+                  "Visible": true,
+                  "When": [],
+                  "WhenMode": 0,
+                  "Packages": {
+                    "psnes": {
+                      "ID": "psnes",
+                      "Name": "pSNES",
+                      "DisplayName": "pSNES",
+                      "Platform": "switch",
+                      "Section": "homebrew",
+                      "Category": "emulators",
+                      "Subcategory": "snes",
+                      "Authors": "Cpasjuste",
+                      "Versions": {
+                        "latest": "v2.1"
+                      },
+                      "Source": "https://github.com/Cpasjuste/psnes/",
+                      "DLSource": "https://github.com/Cpasjuste/psnes/",
+                      "Size": 0,
+                      "Priority": 0,
+                      "EnabledByDefault": false,
+                      "Visible": true,
+                      "ShowsInCredits": true,
+                      "Description": "SNES emulator with a simple, userfriendly interface using the SNES9X core.",
+                      "When": [],
+                      "WhenMode": 0,
+                      "Warning": null,
+                      "Dependencies": [],
+                      "DeleteOnUpdate": []
+                    }
+                  }
+                },
+                "arcade": {
+                  "ID": "arcade",
+                  "Name": "Arcade",
+                  "DisplayName": "Arcade",
+                  "Visible": true,
+                  "When": [],
+                  "WhenMode": 0,
+                  "Packages": {
+                    "pfba": {
+                      "ID": "pfba",
+                      "Name": "pFBA",
+                      "DisplayName": "pFBA",
+                      "Platform": "switch",
+                      "Section": "homebrew",
+                      "Category": "emulators",
+                      "Subcategory": "arcade",
+                      "Authors": "Cpasjuste",
+                      "Versions": {
+                        "latest": "v2.0"
+                      },
+                      "Source": "https://github.com/Cpasjuste/pfba/",
+                      "DLSource": "https://github.com/Cpasjuste/pfba/",
+                      "Size": 0,
+                      "Priority": 0,
+                      "EnabledByDefault": false,
+                      "Visible": true,
+                      "ShowsInCredits": true,
+                      "Description": "An emulator for multiple arcade systems including Neo-Geo, Capcom, Konami and Cave games. Also supports some consoles such as megadrive, master system and more.",
+                      "When": [],
+                      "WhenMode": 0,
+                      "Warning": null,
+                      "Dependencies": [],
+                      "DeleteOnUpdate": []
+                    }
+                  }
+                },
+                "other": {
+                  "ID": "other",
+                  "Name": "Other",
+                  "DisplayName": "Other",
+                  "Visible": true,
+                  "When": [],
+                  "WhenMode": 0,
+                  "Packages": {
+                    "scummvm": {
+                      "ID": "scummvm",
+                      "Name": "ScummVM",
+                      "DisplayName": "ScummVM",
+                      "Platform": "switch",
+                      "Section": "homebrew",
+                      "Category": "emulators",
+                      "Subcategory": "other",
+                      "Authors": "Cpasjuste",
+                      "Versions": {
+                        "latest": "v2.12"
+                      },
+                      "Source": "https://github.com/Cpasjuste/scummvm",
+                      "DLSource": "https://github.com/Cpasjuste/scummvm",
+                      "Size": 0,
+                      "Priority": 0,
+                      "EnabledByDefault": false,
+                      "Visible": true,
+                      "ShowsInCredits": true,
+                      "Description": "An emulator for various classic point-and-click adventure games.",
+                      "When": [],
+                      "WhenMode": 0,
+                      "Warning": null,
+                      "Dependencies": [],
+                      "DeleteOnUpdate": []
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "retroarch": {
+          "ID": "retroarch",
+          "Name": "RetroArch",
+          "DisplayName": "Customize RetroArch",
+          "ListingMode": 0,
+          "Visible": true,
+          "When": [
+            "retroarch"
+          ],
+          "WhenMode": 0,
+          "Footer": "",
+          "Categories": {
+            "homeconsoles": {
+              "ID": "homeconsoles",
+              "Name": "Home Consoles",
+              "DisplayName": "Home Consoles",
+              "Visible": true,
+              "When": [
+                "retroarch"
+              ],
+              "WhenMode": 0,
+              "Subcategories": {
+                "nintendo": {
+                  "ID": "nintendo",
+                  "Name": "Nintendo",
+                  "DisplayName": "Nintendo",
+                  "Visible": true,
+                  "When": [
+                    "retroarch"
+                  ],
+                  "WhenMode": 0,
+                  "Packages": {
+                    "retroarch_beetlevb": {
+                      "ID": "retroarch_beetlevb",
+                      "Name": "Mednafen VB",
+                      "DisplayName": "Mednafen VB",
+                      "Platform": "switch",
+                      "Section": "retroarch",
+                      "Category": "homeconsoles",
+                      "Subcategory": "nintendo",
+                      "Authors": "libretro, m4xw, natinusala\n",
+                      "Versions": {
+                        "latest": "v1.7.5"
+                      },
+                      "Source": "http://retroarch.com/?page=platforms\n",
+                      "DLSource": "",
+                      "Size": 0,
+                      "Priority": 0,
+                      "EnabledByDefault": false,
+                      "Visible": true,
+                      "ShowsInCredits": true,
+                      "Description": "Retroarch core for the Virtual Boy.",
+                      "When": [
+                        "retroarch"
+                      ],
+                      "WhenMode": 0,
+                      "Warning": null,
+                      "Dependencies": [],
+                      "DeleteOnUpdate": []
+                    },
+                    "retroarch_fceumm": {
+                      "ID": "retroarch_fceumm",
+                      "Name": "FCEUmm",
+                      "DisplayName": "FCEUmm",
+                      "Platform": "switch",
+                      "Section": "retroarch",
+                      "Category": "homeconsoles",
+                      "Subcategory": "nintendo",
+                      "Authors": "libretro, m4xw, natinusala",
+                      "Versions": {
+                        "latest": "v1.7.5"
+                      },
+                      "Source": "http://retroarch.com/?page=platforms",
+                      "DLSource": "",
+                      "Size": 0,
+                      "Priority": 0,
+                      "EnabledByDefault": false,
+                      "Visible": true,
+                      "ShowsInCredits": true,
+                      "Description": "Retroarch core for the NES.",
+                      "When": [
+                        "retroarch"
+                      ],
+                      "WhenMode": 0,
+                      "Warning": null,
+                      "Dependencies": [],
+                      "DeleteOnUpdate": []
+                    },
+                    "retroarch_quicknes": {
+                      "ID": "retroarch_quicknes",
+                      "Name": "QuickNES",
+                      "DisplayName": "QuickNES",
+                      "Platform": "switch",
+                      "Section": "retroarch",
+                      "Category": "homeconsoles",
+                      "Subcategory": "nintendo",
+                      "Authors": "libretro, m4xw, natinusala",
+                      "Versions": {
+                        "latest": "v1.7.5"
+                      },
+                      "Source": "http://retroarch.com/?page=platforms",
+                      "DLSource": "",
+                      "Size": 0,
+                      "Priority": 0,
+                      "EnabledByDefault": false,
+                      "Visible": true,
+                      "ShowsInCredits": true,
+                      "Description": "Retroarch core for the NES.",
+                      "When": [
+                        "retroarch"
+                      ],
+                      "WhenMode": 0,
+                      "Warning": null,
+                      "Dependencies": [],
+                      "DeleteOnUpdate": []
+                    },
+                    "retroarch_nestopia": {
+                      "ID": "retroarch_nestopia",
+                      "Name": "Nestopia",
+                      "DisplayName": "Nestopia",
+                      "Platform": "switch",
+                      "Section": "retroarch",
+                      "Category": "homeconsoles",
+                      "Subcategory": "nintendo",
+                      "Authors": "libretro, m4xw, natinusala",
+                      "Versions": {
+                        "latest": "v1.7.5"
+                      },
+                      "Source": "http://retroarch.com/?page=platforms",
+                      "DLSource": "",
+                      "Size": 0,
+                      "Priority": 0,
+                      "EnabledByDefault": false,
+                      "Visible": true,
+                      "ShowsInCredits": true,
+                      "Description": "Retroarch core for the NES.",
+                      "When": [
+                        "retroarch"
+                      ],
+                      "WhenMode": 0,
+                      "Warning": null,
+                      "Dependencies": [],
+                      "DeleteOnUpdate": []
+                    },
+                    "retroarch_snes9x": {
+                      "ID": "retroarch_snes9x",
+                      "Name": "SNES9x",
+                      "DisplayName": "SNEX9x",
+                      "Platform": "switch",
+                      "Section": "retroarch",
+                      "Category": "homeconsoles",
+                      "Subcategory": "nintendo",
+                      "Authors": "libretro, m4xw, natinusala\n",
+                      "Versions": {
+                        "latest": "v1.7.5"
+                      },
+                      "Source": "http://retroarch.com/?page=platforms\n",
+                      "DLSource": "",
+                      "Size": 0,
+                      "Priority": 0,
+                      "EnabledByDefault": false,
+                      "Visible": true,
+                      "ShowsInCredits": true,
+                      "Description": "Retroarch core for the SNES. Higher accuracy than the 2010 variant, sacrificing performance.",
+                      "When": [
+                        "retroarch"
+                      ],
+                      "WhenMode": 0,
+                      "Warning": null,
+                      "Dependencies": [],
+                      "DeleteOnUpdate": []
+                    },
+                    "retroarch_snes9x2010": {
+                      "ID": "retroarch_snes9x2010",
+                      "Name": "SNES9x2010",
+                      "DisplayName": "SNEX9x2010",
+                      "Platform": "switch",
+                      "Section": "retroarch",
+                      "Category": "homeconsoles",
+                      "Subcategory": "nintendo",
+                      "Authors": "libretro, m4xw, natinusala\n",
+                      "Versions": {
+                        "latest": "v1.7.5"
+                      },
+                      "Source": "http://retroarch.com/?page=platforms\n",
+                      "DLSource": "",
+                      "Size": 0,
+                      "Priority": 0,
+                      "EnabledByDefault": false,
+                      "Visible": true,
+                      "ShowsInCredits": true,
+                      "Description": "Retroarch core for the SNES. Based on SNES9X 1.52 from 2010, trading accuracy for better performance.",
+                      "When": [
+                        "retroarch"
+                      ],
+                      "WhenMode": 0,
+                      "Warning": null,
+                      "Dependencies": [],
+                      "DeleteOnUpdate": []
+                    }
+                  }
+                },
+                "playstation": {
+                  "ID": "playstation",
+                  "Name": "PlayStation",
+                  "DisplayName": "PlayStation",
+                  "Visible": true,
+                  "When": [
+                    "retroarch"
+                  ],
+                  "WhenMode": 0,
+                  "Packages": {
+                    "retroarch_pcsxra": {
+                      "ID": "retroarch_pcsxra",
+                      "Name": "PCSX ReArmed",
+                      "DisplayName": "PCSX ReArmed",
+                      "Platform": "switch",
+                      "Section": "retroarch",
+                      "Category": "homeconsoles",
+                      "Subcategory": "playstation",
+                      "Authors": "libretro, m4xw, natinusala\n",
+                      "Versions": {
+                        "latest": "v1.7.5"
+                      },
+                      "Source": "http://retroarch.com/?page=platforms\n",
+                      "DLSource": "",
+                      "Size": 0,
+                      "Priority": 0,
+                      "EnabledByDefault": false,
+                      "Visible": true,
+                      "ShowsInCredits": true,
+                      "Description": "Retroarch core for the PlayStation.",
+                      "When": [
+                        "retroarch"
+                      ],
+                      "WhenMode": 0,
+                      "Warning": null,
+                      "Dependencies": [],
+                      "DeleteOnUpdate": []
+                    }
+                  }
+                },
+                "sega": {
+                  "ID": "sega",
+                  "Name": "Sega",
+                  "DisplayName": "Sega",
+                  "Visible": true,
+                  "When": [
+                    "retroarch"
+                  ],
+                  "WhenMode": 0,
+                  "Packages": {
+                    "retroarch_picod": {
+                      "ID": "retroarch_picod",
+                      "Name": "PicoDrive",
+                      "DisplayName": "PicoDrive",
+                      "Platform": "switch",
+                      "Section": "retroarch",
+                      "Category": "homeconsoles",
+                      "Subcategory": "sega",
+                      "Authors": "libretro, m4xw, natinusala",
+                      "Versions": {
+                        "latest": "v1.7.5"
+                      },
+                      "Source": "http://retroarch.com/?page=platforms",
+                      "DLSource": "",
+                      "Size": 0,
+                      "Priority": 0,
+                      "EnabledByDefault": false,
+                      "Visible": true,
+                      "ShowsInCredits": true,
+                      "Description": "Retroarch core for the Master System, SegaCD, Genesis, PICO and 32X.",
+                      "When": [
+                        "retroarch"
+                      ],
+                      "WhenMode": 0,
+                      "Warning": null,
+                      "Dependencies": [],
+                      "DeleteOnUpdate": []
+                    },
+                    "retroarch_gengxp": {
+                      "ID": "retroarch_gengxp",
+                      "Name": "Genesis GX Plus",
+                      "DisplayName": "Genesis GX Plus",
+                      "Platform": "switch",
+                      "Section": "retroarch",
+                      "Category": "homeconsoles",
+                      "Subcategory": "sega",
+                      "Authors": "libretro, m4xw, natinusala",
+                      "Versions": {
+                        "latest": "v1.7.5"
+                      },
+                      "Source": "http://retroarch.com/?page=platforms",
+                      "DLSource": "",
+                      "Size": 0,
+                      "Priority": 0,
+                      "EnabledByDefault": false,
+                      "Visible": true,
+                      "ShowsInCredits": true,
+                      "Description": "Retroarch core for the Genesis, Megadrive and Master System.",
+                      "When": [
+                        "retroarch"
+                      ],
+                      "WhenMode": 0,
+                      "Warning": null,
+                      "Dependencies": [],
+                      "DeleteOnUpdate": []
+                    },
+                    "retroarch_yabause": {
+                      "ID": "retroarch_yabause",
+                      "Name": "Yabause",
+                      "DisplayName": "Yabause",
+                      "Platform": "switch",
+                      "Section": "retroarch",
+                      "Category": "homeconsoles",
+                      "Subcategory": "sega",
+                      "Authors": "libretro, m4xw, natinusala",
+                      "Versions": {
+                        "latest": "v1.7.5"
+                      },
+                      "Source": "http://retroarch.com/?page=platforms",
+                      "DLSource": "",
+                      "Size": 0,
+                      "Priority": 0,
+                      "EnabledByDefault": false,
+                      "Visible": true,
+                      "ShowsInCredits": true,
+                      "Description": "Retroarch core for Sega Saturn",
+                      "When": [
+                        "retroarch"
+                      ],
+                      "WhenMode": 0,
+                      "Warning": null,
+                      "Dependencies": [],
+                      "DeleteOnUpdate": []
+                    },
+                    "retroarch_gearsystem": {
+                      "ID": "retroarch_gearsystem",
+                      "Name": "GearSystem",
+                      "DisplayName": "GearSystem",
+                      "Platform": "switch",
+                      "Section": "retroarch",
+                      "Category": "homeconsoles",
+                      "Subcategory": "sega",
+                      "Authors": "libretro, m4xw, natinusala",
+                      "Versions": {
+                        "latest": "v1.7.5"
+                      },
+                      "Source": "http://retroarch.com/?page=platforms",
+                      "DLSource": "",
+                      "Size": 0,
+                      "Priority": 0,
+                      "EnabledByDefault": false,
+                      "Visible": true,
+                      "ShowsInCredits": true,
+                      "Description": "Retroarch core for the Master System and Game Gear.",
+                      "When": [
+                        "retroarch"
+                      ],
+                      "WhenMode": 0,
+                      "Warning": null,
+                      "Dependencies": [],
+                      "DeleteOnUpdate": []
+                    }
+                  }
+                }
+              }
+            },
+            "homeconsoles2": {
+              "ID": "homeconsoles2",
+              "Name": "Home Consoles",
+              "DisplayName": "Home Consoles",
+              "Visible": true,
+              "When": [
+                "retroarch"
+              ],
+              "WhenMode": 0,
+              "Subcategories": {
+                "atari": {
+                  "ID": "atari",
+                  "Name": "Atari",
+                  "DisplayName": "Atari",
+                  "Visible": true,
+                  "When": [
+                    "retroarch"
+                  ],
+                  "WhenMode": 0,
+                  "Packages": {
+                    "retroarch_stella": {
+                      "ID": "retroarch_stella",
+                      "Name": "Stella",
+                      "DisplayName": "Stella",
+                      "Platform": "switch",
+                      "Section": "retroarch",
+                      "Category": "homeconsoles2",
+                      "Subcategory": "atari",
+                      "Authors": "libretro, m4xw, natinusala",
+                      "Versions": {
+                        "latest": "v1.7.5"
+                      },
+                      "Source": "http://retroarch.com/?page=platforms",
+                      "DLSource": "",
+                      "Size": 0,
+                      "Priority": 0,
+                      "EnabledByDefault": false,
+                      "Visible": true,
+                      "ShowsInCredits": true,
+                      "Description": "Retroarch core for the Atari 2600.",
+                      "When": [
+                        "retroarch"
+                      ],
+                      "WhenMode": 0,
+                      "Warning": null,
+                      "Dependencies": [],
+                      "DeleteOnUpdate": []
+                    },
+                    "retroarch_prosys": {
+                      "ID": "retroarch_prosys",
+                      "Name": "ProSystem",
+                      "DisplayName": "ProSystem",
+                      "Platform": "switch",
+                      "Section": "retroarch",
+                      "Category": "homeconsoles2",
+                      "Subcategory": "atari",
+                      "Authors": "libretro, m4xw, natinusala",
+                      "Versions": {
+                        "latest": "v1.7.5"
+                      },
+                      "Source": "http://retroarch.com/?page=platforms",
+                      "DLSource": "",
+                      "Size": 0,
+                      "Priority": 0,
+                      "EnabledByDefault": false,
+                      "Visible": true,
+                      "ShowsInCredits": true,
+                      "Description": "Retroarch core for the Atari 7800.",
+                      "When": [
+                        "retroarch"
+                      ],
+                      "WhenMode": 0,
+                      "Warning": null,
+                      "Dependencies": [],
+                      "DeleteOnUpdate": []
+                    }
+                  }
+                },
+                "other": {
+                  "ID": "other",
+                  "Name": "Other",
+                  "DisplayName": "Other",
+                  "Visible": true,
+                  "When": [
+                    "retroarch"
+                  ],
+                  "WhenMode": 0,
+                  "Packages": {
+                    "retroarch_4do": {
+                      "ID": "retroarch_4do",
+                      "Name": "4DO",
+                      "DisplayName": "4DO",
+                      "Platform": "switch",
+                      "Section": "retroarch",
+                      "Category": "homeconsoles2",
+                      "Subcategory": "other",
+                      "Authors": "libretro, m4xw, natinusala",
+                      "Versions": {
+                        "latest": "v1.7.5"
+                      },
+                      "Source": "http://retroarch.com/?page=platforms",
+                      "DLSource": "",
+                      "Size": 0,
+                      "Priority": 0,
+                      "EnabledByDefault": false,
+                      "Visible": true,
+                      "ShowsInCredits": true,
+                      "Description": "Retroarch core for the 3DO",
+                      "When": [
+                        "retroarch"
+                      ],
+                      "WhenMode": 0,
+                      "Warning": null,
+                      "Dependencies": [],
+                      "DeleteOnUpdate": []
+                    },
+                    "retroarch_o2em": {
+                      "ID": "retroarch_o2em",
+                      "Name": "O2em",
+                      "DisplayName": "O2em",
+                      "Platform": "switch",
+                      "Section": "retroarch",
+                      "Category": "homeconsoles2",
+                      "Subcategory": "other",
+                      "Authors": "libretro, m4xw, natinusala",
+                      "Versions": {
+                        "latest": "v1.7.5"
+                      },
+                      "Source": "http://retroarch.com/?page=platforms",
+                      "DLSource": "",
+                      "Size": 0,
+                      "Priority": 0,
+                      "EnabledByDefault": false,
+                      "Visible": true,
+                      "ShowsInCredits": true,
+                      "Description": "Retroarch core for the Odyssey and VideoPAC.",
+                      "When": [
+                        "retroarch"
+                      ],
+                      "WhenMode": 0,
+                      "Warning": null,
+                      "Dependencies": [],
+                      "DeleteOnUpdate": []
+                    },
+                    "retroarch_vecx": {
+                      "ID": "retroarch_vecx",
+                      "Name": "VECX",
+                      "DisplayName": "VECX",
+                      "Platform": "switch",
+                      "Section": "retroarch",
+                      "Category": "homeconsoles2",
+                      "Subcategory": "other",
+                      "Authors": "libretro, m4xw, natinusala",
+                      "Versions": {
+                        "latest": "v1.7.5"
+                      },
+                      "Source": "http://retroarch.com/?page=platforms",
+                      "DLSource": "",
+                      "Size": 0,
+                      "Priority": 0,
+                      "EnabledByDefault": false,
+                      "Visible": true,
+                      "ShowsInCredits": true,
+                      "Description": "Retroarch core for the Vectrex.",
+                      "When": [
+                        "retroarch"
+                      ],
+                      "WhenMode": 0,
+                      "Warning": null,
+                      "Dependencies": [],
+                      "DeleteOnUpdate": []
+                    },
+                    "retroarch_freeintv": {
+                      "ID": "retroarch_freeintv",
+                      "Name": "FreeIntv",
+                      "DisplayName": "FreeIntv",
+                      "Platform": "switch",
+                      "Section": "retroarch",
+                      "Category": "homeconsoles2",
+                      "Subcategory": "other",
+                      "Authors": "libretro, m4xw, natinusala",
+                      "Versions": {
+                        "latest": "v1.7.5"
+                      },
+                      "Source": "http://retroarch.com/?page=platforms",
+                      "DLSource": "",
+                      "Size": 0,
+                      "Priority": 0,
+                      "EnabledByDefault": false,
+                      "Visible": true,
+                      "ShowsInCredits": true,
+                      "Description": "Retroarch core for the Mattel Intelivision.",
+                      "When": [
+                        "retroarch"
+                      ],
+                      "WhenMode": 0,
+                      "Warning": null,
+                      "Dependencies": [],
+                      "DeleteOnUpdate": []
+                    },
+                    "retroarch_nxe": {
+                      "ID": "retroarch_nxe",
+                      "Name": "NxEngine",
+                      "DisplayName": "NxEngine",
+                      "Platform": "switch",
+                      "Section": "retroarch",
+                      "Category": "homeconsoles2",
+                      "Subcategory": "other",
+                      "Authors": "libretro, m4xw, natinusala",
+                      "Versions": {
+                        "latest": "v1.7.5"
+                      },
+                      "Source": "http://retroarch.com/?page=platforms",
+                      "DLSource": "",
+                      "Size": 0,
+                      "Priority": 0,
+                      "EnabledByDefault": false,
+                      "Visible": true,
+                      "ShowsInCredits": true,
+                      "Description": "Retroarch core for Cave Story (NxEngine).",
+                      "When": [
+                        "retroarch"
+                      ],
+                      "WhenMode": 0,
+                      "Warning": null,
+                      "Dependencies": [],
+                      "DeleteOnUpdate": []
+                    }
+                  }
+                }
+              }
+            },
+            "portableconsoles": {
+              "ID": "portableconsoles",
+              "Name": "Portable Consoles",
+              "DisplayName": "Portable Consoles",
+              "Visible": true,
+              "When": [
+                "retroarch"
+              ],
+              "WhenMode": 0,
+              "Subcategories": {
+                "nintendo": {
+                  "ID": "nintendo",
+                  "Name": "Nintendo",
+                  "DisplayName": "Nintendo",
+                  "Visible": true,
+                  "When": [
+                    "retroarch"
+                  ],
+                  "WhenMode": 0,
+                  "Packages": {
+                    "retroarch_gambatte": {
+                      "ID": "retroarch_gambatte",
+                      "Name": "Gambatte",
+                      "DisplayName": "Gambatte",
+                      "Platform": "switch",
+                      "Section": "retroarch",
+                      "Category": "portableconsoles",
+                      "Subcategory": "nintendo",
+                      "Authors": "libretro, m4xw, natinusala",
+                      "Versions": {
+                        "latest": "v1.7.5"
+                      },
+                      "Source": "http://retroarch.com/?page=platforms",
+                      "DLSource": "",
+                      "Size": 0,
+                      "Priority": 0,
+                      "EnabledByDefault": false,
+                      "Visible": true,
+                      "ShowsInCredits": true,
+                      "Description": "Retroarch core for the Gameboy and Gameboy Color.",
+                      "When": [
+                        "retroarch"
+                      ],
+                      "WhenMode": 0,
+                      "Warning": null,
+                      "Dependencies": [],
+                      "DeleteOnUpdate": []
+                    },
+                    "retroarch_mgba": {
+                      "ID": "retroarch_mgba",
+                      "Name": "mGBA",
+                      "DisplayName": "mGBA",
+                      "Platform": "switch",
+                      "Section": "retroarch",
+                      "Category": "portableconsoles",
+                      "Subcategory": "nintendo",
+                      "Authors": "libretro, m4xw, natinusala",
+                      "Versions": {
+                        "latest": "v1.7.5"
+                      },
+                      "Source": "http://retroarch.com/?page=platforms",
+                      "DLSource": "",
+                      "Size": 0,
+                      "Priority": 0,
+                      "EnabledByDefault": false,
+                      "Visible": true,
+                      "ShowsInCredits": true,
+                      "Description": "Retroarch core for the Gameboy Advance.",
+                      "When": [
+                        "retroarch"
+                      ],
+                      "WhenMode": 0,
+                      "Warning": null,
+                      "Dependencies": [],
+                      "DeleteOnUpdate": []
+                    },
+                    "retroarch_vbanext": {
+                      "ID": "retroarch_vbanext",
+                      "Name": "VBA Next",
+                      "DisplayName": "VBA Next",
+                      "Platform": "switch",
+                      "Section": "retroarch",
+                      "Category": "portableconsoles",
+                      "Subcategory": "nintendo",
+                      "Authors": "libretro, m4xw, natinusala",
+                      "Versions": {
+                        "latest": "v1.7.5"
+                      },
+                      "Source": "http://retroarch.com/?page=platforms",
+                      "DLSource": "",
+                      "Size": 0,
+                      "Priority": 0,
+                      "EnabledByDefault": false,
+                      "Visible": true,
+                      "ShowsInCredits": true,
+                      "Description": "Retroarch core for the Gameboy Advance.",
+                      "When": [
+                        "retroarch"
+                      ],
+                      "WhenMode": 0,
+                      "Warning": null,
+                      "Dependencies": [],
+                      "DeleteOnUpdate": []
+                    },
+                    "retroarch_pokemini": {
+                      "ID": "retroarch_pokemini",
+                      "Name": "PokeMini",
+                      "DisplayName": "PokeMini",
+                      "Platform": "switch",
+                      "Section": "retroarch",
+                      "Category": "portableconsoles",
+                      "Subcategory": "nintendo",
+                      "Authors": "libretro, m4xw, natinusala",
+                      "Versions": {
+                        "latest": "v1.7.5"
+                      },
+                      "Source": "http://retroarch.com/?page=platforms",
+                      "DLSource": "",
+                      "Size": 0,
+                      "Priority": 0,
+                      "EnabledByDefault": false,
+                      "Visible": true,
+                      "ShowsInCredits": true,
+                      "Description": "Retroarch core for the PokeMini.",
+                      "When": [
+                        "retroarch"
+                      ],
+                      "WhenMode": 0,
+                      "Warning": null,
+                      "Dependencies": [],
+                      "DeleteOnUpdate": []
+                    },
+                    "retroarch_tgbdual": {
+                      "ID": "retroarch_tgbdual",
+                      "Name": "TGB Dual",
+                      "DisplayName": "TGB Dual",
+                      "Platform": "switch",
+                      "Section": "retroarch",
+                      "Category": "portableconsoles",
+                      "Subcategory": "nintendo",
+                      "Authors": "libretro, m4xw, natinusala",
+                      "Versions": {
+                        "latest": "v1.7.5"
+                      },
+                      "Source": "http://retroarch.com/?page=platforms",
+                      "DLSource": "",
+                      "Size": 0,
+                      "Priority": 0,
+                      "EnabledByDefault": false,
+                      "Visible": true,
+                      "ShowsInCredits": true,
+                      "Description": "Retroarch core for the GB/GBC with link cable support",
+                      "When": [
+                        "retroarch"
+                      ],
+                      "WhenMode": 0,
+                      "Warning": null,
+                      "Dependencies": [],
+                      "DeleteOnUpdate": []
+                    },
+                    "retroarch_gearboy": {
+                      "ID": "retroarch_gearboy",
+                      "Name": "Gearboy",
+                      "DisplayName": "Gearboy",
+                      "Platform": "switch",
+                      "Section": "retroarch",
+                      "Category": "portableconsoles",
+                      "Subcategory": "nintendo",
+                      "Authors": "libretro, m4xw, natinusala",
+                      "Versions": {
+                        "latest": "v1.7.5"
+                      },
+                      "Source": "http://retroarch.com/?page=platforms",
+                      "DLSource": "",
+                      "Size": 0,
+                      "Priority": 0,
+                      "EnabledByDefault": false,
+                      "Visible": true,
+                      "ShowsInCredits": true,
+                      "Description": "Retroarch core for the Gameboy and Gameboy Color.",
+                      "When": [
+                        "retroarch"
+                      ],
+                      "WhenMode": 0,
+                      "Warning": null,
+                      "Dependencies": [],
+                      "DeleteOnUpdate": []
+                    }
+                  }
+                },
+                "atari": {
+                  "ID": "atari",
+                  "Name": "Atari",
+                  "DisplayName": "Atari",
+                  "Visible": true,
+                  "When": [
+                    "retroarch"
+                  ],
+                  "WhenMode": 0,
+                  "Packages": {
+                    "retroarch_handy": {
+                      "ID": "retroarch_handy",
+                      "Name": "Handy",
+                      "DisplayName": "Handy",
+                      "Platform": "switch",
+                      "Section": "retroarch",
+                      "Category": "portableconsoles",
+                      "Subcategory": "atari",
+                      "Authors": "libretro, m4xw, natinusala",
+                      "Versions": {
+                        "latest": "v1.7.5"
+                      },
+                      "Source": "http://retroarch.com/?page=platforms",
+                      "DLSource": "",
+                      "Size": 0,
+                      "Priority": 0,
+                      "EnabledByDefault": false,
+                      "Visible": true,
+                      "ShowsInCredits": true,
+                      "Description": "Retroarch core for the Atari Lynx.",
+                      "When": [
+                        "retroarch"
+                      ],
+                      "WhenMode": 0,
+                      "Warning": null,
+                      "Dependencies": [],
+                      "DeleteOnUpdate": []
+                    }
+                  }
+                },
+                "other": {
+                  "ID": "other",
+                  "Name": "Other",
+                  "DisplayName": "Other",
+                  "Visible": true,
+                  "When": [
+                    "retroarch"
+                  ],
+                  "WhenMode": 0,
+                  "Packages": {
+                    "retroarch_wswan": {
+                      "ID": "retroarch_wswan",
+                      "Name": "Mednafen WSwan",
+                      "DisplayName": "Mednafen WSwan",
+                      "Platform": "switch",
+                      "Section": "retroarch",
+                      "Category": "portableconsoles",
+                      "Subcategory": "other",
+                      "Authors": "libretro, m4xw, natinusala",
+                      "Versions": {
+                        "latest": "v1.7.5"
+                      },
+                      "Source": "http://retroarch.com/?page=platforms",
+                      "DLSource": "",
+                      "Size": 0,
+                      "Priority": 0,
+                      "EnabledByDefault": false,
+                      "Visible": true,
+                      "ShowsInCredits": true,
+                      "Description": "Retroarch core for the WonderSwan.",
+                      "When": [
+                        "retroarch"
+                      ],
+                      "WhenMode": 0,
+                      "Warning": null,
+                      "Dependencies": [],
+                      "DeleteOnUpdate": []
+                    },
+                    "retroarch_ngp": {
+                      "ID": "retroarch_ngp",
+                      "Name": "Mednafen NeoGeo Pocket",
+                      "DisplayName": "Mednafen NeoGeo Pocket",
+                      "Platform": "switch",
+                      "Section": "retroarch",
+                      "Category": "portableconsoles",
+                      "Subcategory": "other",
+                      "Authors": "libretro, m4xw, natinusala",
+                      "Versions": {
+                        "latest": "v1.7.5"
+                      },
+                      "Source": "http://retroarch.com/?page=platforms",
+                      "DLSource": "",
+                      "Size": 0,
+                      "Priority": 0,
+                      "EnabledByDefault": false,
+                      "Visible": true,
+                      "ShowsInCredits": true,
+                      "Description": "Retroarch core for the Neo Geo Pocket Color.",
+                      "When": [
+                        "retroarch"
+                      ],
+                      "WhenMode": 0,
+                      "Warning": null,
+                      "Dependencies": [],
+                      "DeleteOnUpdate": []
+                    }
+                  }
+                }
+              }
+            },
+            "arcade": {
+              "ID": "arcade",
+              "Name": "Arcade",
+              "DisplayName": "Arcade",
+              "Visible": true,
+              "When": [
+                "retroarch"
+              ],
+              "WhenMode": 0,
+              "Subcategories": {
+                "multi": {
+                  "ID": "multi",
+                  "Name": "Multi",
+                  "DisplayName": "Multi",
+                  "Visible": true,
+                  "When": [
+                    "retroarch"
+                  ],
+                  "WhenMode": 0,
+                  "Packages": {
+                    "retroarch_mameplus": {
+                      "ID": "retroarch_mameplus",
+                      "Name": "MAME2003 Plus",
+                      "DisplayName": "MAME2003 Plus",
+                      "Platform": "switch",
+                      "Section": "retroarch",
+                      "Category": "arcade",
+                      "Subcategory": "multi",
+                      "Authors": "libretro, m4xw, natinusala",
+                      "Versions": {
+                        "latest": "v1.7.5"
+                      },
+                      "Source": "http://retroarch.com/?page=platforms",
+                      "DLSource": "",
+                      "Size": 0,
+                      "Priority": 0,
+                      "EnabledByDefault": false,
+                      "Visible": true,
+                      "ShowsInCredits": true,
+                      "Description": "Retroarch core for emulating thousands of arcade machine titles.",
+                      "When": [
+                        "retroarch"
+                      ],
+                      "WhenMode": 0,
+                      "Warning": null,
+                      "Dependencies": [],
+                      "DeleteOnUpdate": []
+                    },
+                    "retroarch_fba": {
+                      "ID": "retroarch_fba",
+                      "Name": "Final Burn Alpha",
+                      "DisplayName": "Final Burn Alpha",
+                      "Platform": "switch",
+                      "Section": "retroarch",
+                      "Category": "arcade",
+                      "Subcategory": "multi",
+                      "Authors": "libretro, m4xw, natinusala",
+                      "Versions": {
+                        "latest": "v1.7.5"
+                      },
+                      "Source": "http://retroarch.com/?page=platforms",
+                      "DLSource": "",
+                      "Size": 0,
+                      "Priority": 0,
+                      "EnabledByDefault": false,
+                      "Visible": true,
+                      "ShowsInCredits": true,
+                      "Description": "Retroarch core for emulating thousands of arcade machine titles.",
+                      "When": [
+                        "retroarch"
+                      ],
+                      "WhenMode": 0,
+                      "Warning": null,
+                      "Dependencies": [],
+                      "DeleteOnUpdate": []
+                    },
+                    "retroarch_mame2000": {
+                      "ID": "retroarch_mame2000",
+                      "Name": "MAME2000",
+                      "DisplayName": "MAME2000",
+                      "Platform": "switch",
+                      "Section": "retroarch",
+                      "Category": "arcade",
+                      "Subcategory": "multi",
+                      "Authors": "libretro, m4xw, natinusala",
+                      "Versions": {
+                        "latest": "v1.7.5"
+                      },
+                      "Source": "http://retroarch.com/?page=platforms",
+                      "DLSource": "",
+                      "Size": 0,
+                      "Priority": 0,
+                      "EnabledByDefault": false,
+                      "Visible": true,
+                      "ShowsInCredits": true,
+                      "Description": "Retroarch core for emulating thousands of arcade machine titles.",
+                      "When": [
+                        "retroarch"
+                      ],
+                      "WhenMode": 0,
+                      "Warning": null,
+                      "Dependencies": [],
+                      "DeleteOnUpdate": []
+                    },
+                    "retroarch_mame": {
+                      "ID": "retroarch_mame",
+                      "Name": "MAME2003",
+                      "DisplayName": "MAME2003",
+                      "Platform": "switch",
+                      "Section": "retroarch",
+                      "Category": "arcade",
+                      "Subcategory": "multi",
+                      "Authors": "libretro, m4xw, natinusala",
+                      "Versions": {
+                        "latest": "v1.7.5"
+                      },
+                      "Source": "http://retroarch.com/?page=platforms",
+                      "DLSource": "",
+                      "Size": 0,
+                      "Priority": 0,
+                      "EnabledByDefault": false,
+                      "Visible": true,
+                      "ShowsInCredits": true,
+                      "Description": "Retroarch core for emulating thousands of arcade machine titles.",
+                      "When": [
+                        "retroarch"
+                      ],
+                      "WhenMode": 0,
+                      "Warning": null,
+                      "Dependencies": [],
+                      "DeleteOnUpdate": []
+                    }
+                  }
+                }
+              }
+            },
+            "pc": {
+              "ID": "pc",
+              "Name": "PC",
+              "DisplayName": "PC",
+              "Visible": true,
+              "When": [
+                "retroarch"
+              ],
+              "WhenMode": 0,
+              "Subcategories": {
+                "pcengine": {
+                  "ID": "pcengine",
+                  "Name": "PCEngine",
+                  "DisplayName": "PCEngine",
+                  "Visible": true,
+                  "When": [
+                    "retroarch"
+                  ],
+                  "WhenMode": 0,
+                  "Packages": {
+                    "retroarch_pcefast": {
+                      "ID": "retroarch_pcefast",
+                      "Name": "Mednafen PCE Fast",
+                      "DisplayName": "Mednafen PCE Fast",
+                      "Platform": "switch",
+                      "Section": "retroarch",
+                      "Category": "pc",
+                      "Subcategory": "pcengine",
+                      "Authors": "libretro, m4xw, natinusala",
+                      "Versions": {
+                        "latest": "v1.7.5"
+                      },
+                      "Source": "http://retroarch.com/?page=platforms",
+                      "DLSource": "",
+                      "Size": 0,
+                      "Priority": 0,
+                      "EnabledByDefault": false,
+                      "Visible": true,
+                      "ShowsInCredits": true,
+                      "Description": "Retroarch core for PC Engine.",
+                      "When": [
+                        "retroarch"
+                      ],
+                      "WhenMode": 0,
+                      "Warning": null,
+                      "Dependencies": [],
+                      "DeleteOnUpdate": []
+                    },
+                    "retroarch_sgrafx": {
+                      "ID": "retroarch_sgrafx",
+                      "Name": "Mednafen SuperGraFX",
+                      "DisplayName": "Mednafen SuperGraFX",
+                      "Platform": "switch",
+                      "Section": "retroarch",
+                      "Category": "pc",
+                      "Subcategory": "pcengine",
+                      "Authors": "libretro, m4xw, natinusala",
+                      "Versions": {
+                        "latest": "v1.7.5"
+                      },
+                      "Source": "http://retroarch.com/?page=platforms",
+                      "DLSource": "",
+                      "Size": 0,
+                      "Priority": 0,
+                      "EnabledByDefault": false,
+                      "Visible": true,
+                      "ShowsInCredits": true,
+                      "Description": "Retroarch core for PC Engine SuperGraFX titles.",
+                      "When": [
+                        "retroarch"
+                      ],
+                      "WhenMode": 0,
+                      "Warning": null,
+                      "Dependencies": [],
+                      "DeleteOnUpdate": []
+                    }
+                  }
+                },
+                "dos": {
+                  "ID": "dos",
+                  "Name": "DOS",
+                  "DisplayName": "DOS",
+                  "Visible": true,
+                  "When": [
+                    "retroarch"
+                  ],
+                  "WhenMode": 0,
+                  "Packages": {
+                    "retroarch_dosbox": {
+                      "ID": "retroarch_dosbox",
+                      "Name": "DOSBox",
+                      "DisplayName": "DOSBox",
+                      "Platform": "switch",
+                      "Section": "retroarch",
+                      "Category": "pc",
+                      "Subcategory": "dos",
+                      "Authors": "libretro, m4xw, natinusala",
+                      "Versions": {
+                        "latest": "v1.7.5"
+                      },
+                      "Source": "http://retroarch.com/?page=platforms",
+                      "DLSource": "",
+                      "Size": 0,
+                      "Priority": 0,
+                      "EnabledByDefault": false,
+                      "Visible": true,
+                      "ShowsInCredits": true,
+                      "Description": "Retroarch core for DOS titles.",
+                      "When": [
+                        "retroarch"
+                      ],
+                      "WhenMode": 0,
+                      "Warning": null,
+                      "Dependencies": [],
+                      "DeleteOnUpdate": []
+                    }
+                  }
+                },
+                "msx": {
+                  "ID": "msx",
+                  "Name": "MSX",
+                  "DisplayName": "MSX",
+                  "Visible": true,
+                  "When": [
+                    "retroarch"
+                  ],
+                  "WhenMode": 0,
+                  "Packages": {
+                    "retroarch_fmsx": {
+                      "ID": "retroarch_fmsx",
+                      "Name": "fMSX",
+                      "DisplayName": "fMSX",
+                      "Platform": "switch",
+                      "Section": "retroarch",
+                      "Category": "pc",
+                      "Subcategory": "msx",
+                      "Authors": "libretro, m4xw, natinusala",
+                      "Versions": {
+                        "latest": "v1.7.5"
+                      },
+                      "Source": "http://retroarch.com/?page=platforms",
+                      "DLSource": "",
+                      "Size": 0,
+                      "Priority": 0,
+                      "EnabledByDefault": false,
+                      "Visible": true,
+                      "ShowsInCredits": true,
+                      "Description": "Retroarch core for MSX titles.",
+                      "When": [
+                        "retroarch"
+                      ],
+                      "WhenMode": 0,
+                      "Warning": null,
+                      "Dependencies": [],
+                      "DeleteOnUpdate": []
+                    }
+                  }
+                },
+                "other": {
+                  "ID": "other",
+                  "Name": "Other",
+                  "DisplayName": "Other",
+                  "Visible": true,
+                  "When": [
+                    "retroarch"
+                  ],
+                  "WhenMode": 0,
+                  "Packages": {
+                    "retroarch_vice": {
+                      "ID": "retroarch_vice",
+                      "Name": "VICE",
+                      "DisplayName": "VICE",
+                      "Platform": "switch",
+                      "Section": "retroarch",
+                      "Category": "pc",
+                      "Subcategory": "other",
+                      "Authors": "libretro, m4xw, natinusala",
+                      "Versions": {
+                        "latest": "v1.7.5"
+                      },
+                      "Source": "http://retroarch.com/?page=platforms",
+                      "DLSource": "",
+                      "Size": 0,
+                      "Priority": 0,
+                      "EnabledByDefault": false,
+                      "Visible": true,
+                      "ShowsInCredits": true,
+                      "Description": "Retroarch core for the Commodore 64",
+                      "When": [
+                        "retroarch"
+                      ],
+                      "WhenMode": 0,
+                      "Warning": null,
+                      "Dependencies": [],
+                      "DeleteOnUpdate": []
+                    },
+                    "retroarch_crocods": {
+                      "ID": "retroarch_crocods",
+                      "Name": "CrocoDS",
+                      "DisplayName": "CrocoDS",
+                      "Platform": "switch",
+                      "Section": "retroarch",
+                      "Category": "pc",
+                      "Subcategory": "other",
+                      "Authors": "libretro, m4xw, natinusala",
+                      "Versions": {
+                        "latest": "v1.7.5"
+                      },
+                      "Source": "http://retroarch.com/?page=platforms",
+                      "DLSource": "",
+                      "Size": 0,
+                      "Priority": 0,
+                      "EnabledByDefault": false,
+                      "Visible": false,
+                      "ShowsInCredits": true,
+                      "Description": "Retroarch core for Amstrad CPC 6128. Originally created for the Nintendo DS.",
+                      "When": [],
+                      "WhenMode": 0,
+                      "Warning": null,
+                      "Dependencies": [],
+                      "DeleteOnUpdate": []
+                    }
+                  }
+                }
+              }
+            },
+            "gameengines": {
+              "ID": "gameengines",
+              "Name": "Game Engines",
+              "DisplayName": "Game Engines",
+              "Visible": true,
+              "When": [
+                "retroarch"
+              ],
+              "WhenMode": 0,
+              "Subcategories": {
+                "general": {
+                  "ID": "general",
+                  "Name": "General",
+                  "DisplayName": "General",
+                  "Visible": true,
+                  "When": [
+                    "retroarch"
+                  ],
+                  "WhenMode": 0,
+                  "Packages": {
+                    "retroarch_tyrquake": {
+                      "ID": "retroarch_tyrquake",
+                      "Name": "TyrQuake",
+                      "DisplayName": "TyrQuake",
+                      "Platform": "switch",
+                      "Section": "retroarch",
+                      "Category": "gameengines",
+                      "Subcategory": "general",
+                      "Authors": "libretro, m4xw, natinusala",
+                      "Versions": {
+                        "latest": "v1.7.5"
+                      },
+                      "Source": "http://retroarch.com/?page=platforms",
+                      "DLSource": "",
+                      "Size": 0,
+                      "Priority": 0,
+                      "EnabledByDefault": false,
+                      "Visible": true,
+                      "ShowsInCredits": true,
+                      "Description": "Retroarch core for the Quake game engine",
+                      "When": [
+                        "retroarch"
+                      ],
+                      "WhenMode": 0,
+                      "Warning": null,
+                      "Dependencies": [],
+                      "DeleteOnUpdate": []
+                    },
+                    "retroarch_mrboom": {
+                      "ID": "retroarch_mrboom",
+                      "Name": "mrboom",
+                      "DisplayName": "mrboom",
+                      "Platform": "switch",
+                      "Section": "retroarch",
+                      "Category": "gameengines",
+                      "Subcategory": "general",
+                      "Authors": "libretro, m4xw, natinusala",
+                      "Versions": {
+                        "latest": "v1.7.5"
+                      },
+                      "Source": "http://retroarch.com/?page=platforms",
+                      "DLSource": "",
+                      "Size": 0,
+                      "Priority": 0,
+                      "EnabledByDefault": false,
+                      "Visible": true,
+                      "ShowsInCredits": true,
+                      "Description": "Retroarch core for an 8 player Bomberman clone",
+                      "When": [
+                        "retroarch"
+                      ],
+                      "WhenMode": 0,
+                      "Warning": null,
+                      "Dependencies": [],
+                      "DeleteOnUpdate": []
+                    },
+                    "retroarch_cannonball": {
+                      "ID": "retroarch_cannonball",
+                      "Name": "Cannonball",
+                      "DisplayName": "Cannonball",
+                      "Platform": "switch",
+                      "Section": "retroarch",
+                      "Category": "gameengines",
+                      "Subcategory": "general",
+                      "Authors": "libretro, m4xw, natinusala",
+                      "Versions": {
+                        "latest": "v1.7.5"
+                      },
+                      "Source": "http://retroarch.com/?page=platforms",
+                      "DLSource": "",
+                      "Size": 0,
+                      "Priority": 0,
+                      "EnabledByDefault": false,
+                      "Visible": true,
+                      "ShowsInCredits": true,
+                      "Description": "Retroarch core for the Outrun game engine",
+                      "When": [
+                        "retroarch"
+                      ],
+                      "WhenMode": 0,
+                      "Warning": null,
+                      "Dependencies": [],
+                      "DeleteOnUpdate": []
+                    },
+                    "retroarch_prboom": {
+                      "ID": "retroarch_prboom",
+                      "Name": "prboom",
+                      "DisplayName": "prboom",
+                      "Platform": "switch",
+                      "Section": "retroarch",
+                      "Category": "gameengines",
+                      "Subcategory": "general",
+                      "Authors": "libretro, m4xw, natinusala",
+                      "Versions": {
+                        "latest": "v1.7.5"
+                      },
+                      "Source": "http://retroarch.com/?page=platforms",
+                      "DLSource": "",
+                      "Size": 0,
+                      "Priority": 0,
+                      "EnabledByDefault": false,
+                      "Visible": true,
+                      "ShowsInCredits": true,
+                      "Description": "Retroarch core for the Doom engine",
+                      "When": [
+                        "retroarch"
+                      ],
+                      "WhenMode": 0,
+                      "Warning": null,
+                      "Dependencies": [],
+                      "DeleteOnUpdate": []
+                    },
+                    "retroarch_reminiscence": {
+                      "ID": "retroarch_reminiscence",
+                      "Name": "Reminiscence",
+                      "DisplayName": "Reminiscence",
+                      "Platform": "switch",
+                      "Section": "retroarch",
+                      "Category": "gameengines",
+                      "Subcategory": "general",
+                      "Authors": "libretro, m4xw, natinusala",
+                      "Versions": {
+                        "latest": "v1.7.5"
+                      },
+                      "Source": "http://retroarch.com/?page=platforms",
+                      "DLSource": "",
+                      "Size": 0,
+                      "Priority": 0,
+                      "EnabledByDefault": false,
+                      "Visible": true,
+                      "ShowsInCredits": true,
+                      "Description": "Retroarch core for Delphine Software's Flashback Engine",
+                      "When": [
+                        "retroarch"
+                      ],
+                      "WhenMode": 0,
+                      "Warning": null,
+                      "Dependencies": [],
+                      "DeleteOnUpdate": []
+                    },
+                    "retroarch_xrick": {
+                      "ID": "retroarch_xrick",
+                      "Name": "XRick",
+                      "DisplayName": "XRick",
+                      "Platform": "switch",
+                      "Section": "retroarch",
+                      "Category": "gameengines",
+                      "Subcategory": "general",
+                      "Authors": "libretro, m4xw, natinusala",
+                      "Versions": {
+                        "latest": "v1.7.5"
+                      },
+                      "Source": "http://retroarch.com/?page=platforms",
+                      "DLSource": "",
+                      "Size": 0,
+                      "Priority": 0,
+                      "EnabledByDefault": false,
+                      "Visible": true,
+                      "ShowsInCredits": true,
+                      "Description": "Retroarch core for the game Rick Dangerous",
+                      "When": [
+                        "retroarch"
+                      ],
+                      "WhenMode": 0,
+                      "Warning": null,
+                      "Dependencies": [],
+                      "DeleteOnUpdate": []
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "extras": {
+          "ID": "extras",
+          "Name": "Extras",
+          "DisplayName": "Select your Extras",
+          "ListingMode": 0,
+          "Visible": true,
+          "When": [],
+          "WhenMode": 0,
+          "Footer": "",
+          "Categories": {
+            "payloads": {
+              "ID": "payloads",
+              "Name": "Payloads",
+              "DisplayName": "Payloads",
+              "Visible": true,
+              "When": [],
+              "WhenMode": 0,
+              "Subcategories": {
+                "loaders": {
+                  "ID": "loaders",
+                  "Name": "Loaders",
+                  "DisplayName": "Loaders",
+                  "Visible": true,
+                  "When": [],
+                  "WhenMode": 0,
+                  "Packages": {
+                    "fusee-primary": {
+                      "ID": "fusee-primary",
+                      "Name": "fusee-primary",
+                      "DisplayName": "fusee-primary",
+                      "Platform": "switch",
+                      "Section": "extras",
+                      "Category": "payloads",
+                      "Subcategory": "loaders",
+                      "Authors": "SciresM, ReSwitched Team",
+                      "Versions": {
+                        "latest": "v0.8.2"
+                      },
+                      "Source": "https://github.com/Atmosphere-NX/Atmosphere/",
+                      "DLSource": "https://github.com/Atmosphere-NX/Atmosphere/",
+                      "Size": 0,
+                      "Priority": 0,
+                      "EnabledByDefault": false,
+                      "Visible": true,
+                      "ShowsInCredits": true,
+                      "Description": "Official payload for launching Atmosphere CFW.",
+                      "When": [],
+                      "WhenMode": 0,
+                      "Warning": null,
+                      "Dependencies": [],
+                      "DeleteOnUpdate": []
+                    },
+                    "reinx_payload": {
+                      "ID": "reinx_payload",
+                      "Name": "ReiNX Loader",
+                      "DisplayName": "ReiNX Loader",
+                      "Platform": "switch",
+                      "Section": "extras",
+                      "Category": "payloads",
+                      "Subcategory": "loaders",
+                      "Authors": "Reisyukaku",
+                      "Versions": {
+                        "latest": "v2.0"
+                      },
+                      "Source": "https://github.com/Reisyukaku/ReiNX/",
+                      "DLSource": "https://github.com/Reisyukaku/ReiNX/",
+                      "Size": 0,
+                      "Priority": 0,
+                      "EnabledByDefault": false,
+                      "Visible": true,
+                      "ShowsInCredits": true,
+                      "Description": "Fusee payload to load ReiNX.",
+                      "When": [],
+                      "WhenMode": 0,
+                      "Warning": null,
+                      "Dependencies": [],
+                      "DeleteOnUpdate": []
+                    },
+                    "hekate": {
+                      "ID": "hekate",
+                      "Name": "Hekate",
+                      "DisplayName": "Hekate",
+                      "Platform": "switch",
+                      "Section": "extras",
+                      "Category": "payloads",
+                      "Subcategory": "loaders",
+                      "Authors": "CTCaer, naehrwert, st4rk",
+                      "Versions": {
+                        "latest": "v4.6"
+                      },
+                      "Source": "https://github.com/CTCaer/hekate/",
+                      "DLSource": "https://github.com/CTCaer/hekate/",
+                      "Size": 0,
+                      "Priority": 0,
+                      "EnabledByDefault": false,
+                      "Visible": true,
+                      "ShowsInCredits": true,
+                      "Description": "An alternative bootloader for the Nintendo  Switch, with firmware patching, recovery tools, and many more features.",
+                      "When": [],
+                      "WhenMode": 0,
+                      "Warning": null,
+                      "Dependencies": [],
+                      "DeleteOnUpdate": []
+                    }
+                  }
+                },
+                "utilities": {
+                  "ID": "utilities",
+                  "Name": "Utilities",
+                  "DisplayName": "Utilities",
+                  "Visible": true,
+                  "When": [],
+                  "WhenMode": 0,
+                  "Packages": {
+                    "briccmii": {
+                      "ID": "briccmii",
+                      "Name": "briccmii",
+                      "DisplayName": "briccmii",
+                      "Platform": "switch",
+                      "Section": "extras",
+                      "Category": "payloads",
+                      "Subcategory": "utilities",
+                      "Authors": "Rajkosto",
+                      "Versions": {
+                        "latest": "v2"
+                      },
+                      "Source": "https://switchtools.sshnuke.net/",
+                      "DLSource": "https://files.sshnuke.net/briccmiiv2.zip",
+                      "Size": 0,
+                      "Priority": 0,
+                      "EnabledByDefault": false,
+                      "Visible": true,
+                      "ShowsInCredits": true,
+                      "Description": "Corrupts (or fixes) the first byte of every BCT's pubkey in BOOT0 so your Nintendo Switch always enters RCM mode (or boots normally).",
+                      "When": [],
+                      "WhenMode": 0,
+                      "Warning": null,
+                      "Dependencies": [],
+                      "DeleteOnUpdate": []
+                    },
+                    "gptrestore": {
+                      "ID": "gptrestore",
+                      "Name": "GPT Restore",
+                      "DisplayName": "GPT Restore",
+                      "Platform": "switch",
+                      "Section": "extras",
+                      "Category": "payloads",
+                      "Subcategory": "utilities",
+                      "Authors": "Rajkosto",
+                      "Versions": {
+                        "latest": "v1"
+                      },
+                      "Source": "https://switchtools.sshnuke.net/",
+                      "DLSource": "https://files.sshnuke.net/gptrestorev1.zip",
+                      "Size": 0,
+                      "Priority": 0,
+                      "EnabledByDefault": false,
+                      "Visible": true,
+                      "ShowsInCredits": true,
+                      "Description": "Restores the original Nintendo Switch GPT to your eMMC if you somehow messed it up.",
+                      "When": [],
+                      "WhenMode": 0,
+                      "Warning": null,
+                      "Dependencies": [],
+                      "DeleteOnUpdate": []
+                    },
+                    "biskeydump": {
+                      "ID": "biskeydump",
+                      "Name": "biskeydump",
+                      "DisplayName": "biskeydump",
+                      "Platform": "switch",
+                      "Section": "extras",
+                      "Category": "payloads",
+                      "Subcategory": "utilities",
+                      "Authors": "Rajkosto",
+                      "Versions": {
+                        "latest": "v7"
+                      },
+                      "Source": "https://switchtools.sshnuke.net/",
+                      "DLSource": "https://files.sshnuke.net/biskeydumpv6.zip",
+                      "Size": 0,
+                      "Priority": 0,
+                      "EnabledByDefault": false,
+                      "Visible": true,
+                      "ShowsInCredits": true,
+                      "Description": "Fusee payload to dump BIS keys for eMMC content decryption.",
+                      "When": [],
+                      "WhenMode": 0,
+                      "Warning": null,
+                      "Dependencies": [],
+                      "DeleteOnUpdate": []
+                    }
+                  }
+                }
+              }
+            },
+            "pctools": {
+              "ID": "pctools",
+              "Name": "Windows Tools",
+              "DisplayName": "Windows Tools",
+              "Visible": true,
+              "When": [],
+              "WhenMode": 0,
+              "Subcategories": {
+                "general": {
+                  "ID": "general",
+                  "Name": "General",
+                  "DisplayName": "General",
+                  "Visible": true,
+                  "When": [],
+                  "WhenMode": 0,
+                  "Packages": {
+                    "tegrarcmgui": {
+                      "ID": "tegrarcmgui",
+                      "Name": "TegraRcmGUI",
+                      "DisplayName": "TegraRcmGUI",
+                      "Platform": "switch",
+                      "Section": "extras",
+                      "Category": "pctools",
+                      "Subcategory": "general",
+                      "Authors": "eliboa, rajkosto",
+                      "Versions": {
+                        "latest": "v2.4"
+                      },
+                      "Source": "https://github.com/eliboa/TegraRcmGUI",
+                      "DLSource": "https://github.com/eliboa/TegraRcmGUI",
+                      "Size": 0,
+                      "Priority": 0,
+                      "EnabledByDefault": false,
+                      "Visible": true,
+                      "ShowsInCredits": true,
+                      "Description": "User-friendly GUI frontend for TegraRCMSmash. Includes fusee payload launching, Linux booting, rajkosto's USB UMS SD Tool and an installer for the necessary driver.",
+                      "When": [],
+                      "WhenMode": 0,
+                      "Warning": null,
+                      "Dependencies": [],
+                      "DeleteOnUpdate": []
+                    }
+                  }
+                },
+                "utilities": {
+                  "ID": "utilities",
+                  "Name": "Utilities",
+                  "DisplayName": "Utilities",
+                  "Visible": true,
+                  "When": [],
+                  "WhenMode": 0,
+                  "Packages": {
+                    "launchpadnx": {
+                      "ID": "launchpadnx",
+                      "Name": "LaunchPadNX",
+                      "DisplayName": "LaunchPadNX",
+                      "Platform": "switch",
+                      "Section": "extras",
+                      "Category": "pctools",
+                      "Subcategory": "utilities",
+                      "Authors": "ThatNerdyPikachu",
+                      "Versions": {
+                        "latest": "v2.5.0"
+                      },
+                      "Source": "https://github.com/ThatNerdyPikachu/LaunchpadNX",
+                      "DLSource": "https://github.com/ThatNerdyPikachu/LaunchpadNX",
+                      "Size": 0,
+                      "Priority": 0,
+                      "EnabledByDefault": false,
+                      "Visible": true,
+                      "ShowsInCredits": true,
+                      "Description": "LaunchpadNX lets you select what you want in your CFW, and it builds, compiles, and packages it all up in a drag-and-drop package for your SD Card! <br><br>For Windows.",
+                      "When": [],
+                      "WhenMode": 0,
+                      "Warning": null,
+                      "Dependencies": [],
+                      "DeleteOnUpdate": []
+                    },
+                    "switchexplorer": {
+                      "ID": "switchexplorer",
+                      "Name": "SwitchExplorer",
+                      "DisplayName": "SwitchExplorer",
+                      "Platform": "switch",
+                      "Section": "extras",
+                      "Category": "pctools",
+                      "Subcategory": "utilities",
+                      "Authors": "simontime",
+                      "Versions": {
+                        "latest": "v1.1"
+                      },
+                      "Source": "https://github.com/switch-stuff/SwitchExplorer/",
+                      "DLSource": "https://github.com/switch-stuff/SwitchExplorer/",
+                      "Size": 0,
+                      "Priority": 0,
+                      "EnabledByDefault": false,
+                      "Visible": true,
+                      "ShowsInCredits": true,
+                      "Description": "Simple GUI-based NCA/NSP/XCI explorer.",
+                      "When": [],
+                      "WhenMode": 0,
+                      "Warning": null,
+                      "Dependencies": [],
+                      "DeleteOnUpdate": []
+                    },
+                    "hacgui": {
+                      "ID": "hacgui",
+                      "Name": "HACGUI",
+                      "DisplayName": "HACGUI",
+                      "Platform": "switch",
+                      "Section": "extras",
+                      "Category": "pctools",
+                      "Subcategory": "utilities",
+                      "Authors": "shadowninja108",
+                      "Versions": {
+                        "latest": "v0.1"
+                      },
+                      "Source": "https://github.com/shadowninja108/HACGUI/",
+                      "DLSource": "https://github.com/shadowninja108/HACGUI/",
+                      "Size": 0,
+                      "Priority": 0,
+                      "EnabledByDefault": false,
+                      "Visible": true,
+                      "ShowsInCredits": true,
+                      "Description": "Easily derive all hactool keys using Hekate NAND backups or memloader with a clean GUI.",
+                      "When": [],
+                      "WhenMode": 0,
+                      "Warning": null,
+                      "Dependencies": [],
+                      "DeleteOnUpdate": []
+                    },
+                    "nspbuild": {
+                      "ID": "nspbuild",
+                      "Name": "nspbuild",
+                      "DisplayName": "nspbuild",
+                      "Platform": "switch",
+                      "Section": "extras",
+                      "Category": "pctools",
+                      "Subcategory": "utilities",
+                      "Authors": "ThatNerdyPikachu",
+                      "Versions": {
+                        "latest": "v1.1.1"
+                      },
+                      "Source": "https://github.com/ThatNerdyPikachu/nspbuild/",
+                      "DLSource": "https://github.com/ThatNerdyPikachu/nspbuild/",
+                      "Size": 0,
+                      "Priority": 0,
+                      "EnabledByDefault": false,
+                      "Visible": true,
+                      "ShowsInCredits": true,
+                      "Description": "Build legal NSP files from libnx homebrew NSO files!",
+                      "When": [],
+                      "WhenMode": 0,
+                      "Warning": null,
+                      "Dependencies": [],
+                      "DeleteOnUpdate": []
+                    },
+                    "hactool": {
+                      "ID": "hactool",
+                      "Name": "hactool",
+                      "DisplayName": "hactool",
+                      "Platform": "switch",
+                      "Section": "extras",
+                      "Category": "pctools",
+                      "Subcategory": "utilities",
+                      "Authors": "SciresM",
+                      "Versions": {
+                        "latest": "v1.2.0"
+                      },
+                      "Source": "https://github.com/SciresM/hactool/",
+                      "DLSource": "https://github.com/SciresM/hactool/",
+                      "Size": 0,
+                      "Priority": 0,
+                      "EnabledByDefault": false,
+                      "Visible": true,
+                      "ShowsInCredits": true,
+                      "Description": "A tool to view information about, decrypt, and extract common file formats for the Nintendo Switch, especially Nintendo Content Archives.",
+                      "When": [],
+                      "WhenMode": 0,
+                      "Warning": null,
+                      "Dependencies": [],
+                      "DeleteOnUpdate": []
+                    },
+                    "4nxci": {
+                      "ID": "4nxci",
+                      "Name": "4NXCI",
+                      "DisplayName": "4NXCI",
+                      "Platform": "switch",
+                      "Section": "extras",
+                      "Category": "pctools",
+                      "Subcategory": "utilities",
+                      "Authors": "The-4n",
+                      "Versions": {
+                        "latest": "v2.00"
+                      },
+                      "Source": "https://github.com/The-4n/4NXCI",
+                      "DLSource": "https://github.com/The-4n/4NXCI",
+                      "Size": 0,
+                      "Priority": 0,
+                      "EnabledByDefault": false,
+                      "Visible": true,
+                      "ShowsInCredits": true,
+                      "Description": "A tool for converting XCI (NX Card Image) files to NSP (Nintendo Submission Package).",
+                      "When": [],
+                      "WhenMode": 0,
+                      "Warning": null,
+                      "Dependencies": [],
+                      "DeleteOnUpdate": []
+                    }
+                  }
+                },
+                "backups": {
+                  "ID": "backups",
+                  "Name": "Backups",
+                  "DisplayName": "Backups",
+                  "Visible": true,
+                  "When": [],
+                  "WhenMode": 0,
+                  "Packages": {
+                    "switchbackupmanager": {
+                      "ID": "switchbackupmanager",
+                      "Name": "Switch Backup Manager",
+                      "DisplayName": "Switch Backup Manager",
+                      "Platform": "switch",
+                      "Section": "extras",
+                      "Category": "pctools",
+                      "Subcategory": "backups",
+                      "Authors": "gibaBR",
+                      "Versions": {
+                        "latest": "v1.1.8"
+                      },
+                      "Source": "https://github.com/gibaBR/Switch-Backup-Manager/",
+                      "DLSource": "https://github.com/gibaBR/Switch-Backup-Manager/",
+                      "Size": 0,
+                      "Priority": 0,
+                      "EnabledByDefault": false,
+                      "Visible": true,
+                      "ShowsInCredits": true,
+                      "Description": "Complete Switch backup management tool for both XCI and NSP backups.",
+                      "When": [],
+                      "WhenMode": 0,
+                      "Warning": null,
+                      "Dependencies": [],
+                      "DeleteOnUpdate": []
+                    }
+                  }
+                }
+              }
+            },
+            "linuxtools": {
+              "ID": "linuxtools",
+              "Name": "Linux Tools",
+              "DisplayName": "Linux Tools",
+              "Visible": true,
+              "When": [],
+              "WhenMode": 0,
+              "Subcategories": {
+                "general": {
+                  "ID": "general",
+                  "Name": "General",
+                  "DisplayName": "General",
+                  "Visible": true,
+                  "When": [],
+                  "WhenMode": 0,
+                  "Packages": {
+                    "fusee-launcher": {
+                      "ID": "fusee-launcher",
+                      "Name": "fusee-launcher",
+                      "DisplayName": "fusee-launcher",
+                      "Platform": "switch",
+                      "Section": "extras",
+                      "Category": "linuxtools",
+                      "Subcategory": "general",
+                      "Authors": "ktemkin, Qyriad",
+                      "Versions": {
+                        "latest": "c.265e8f3"
+                      },
+                      "Source": "https://github.com/Cease-and-DeSwitch/fusee-launcher",
+                      "DLSource": "",
+                      "Size": 0,
+                      "Priority": 0,
+                      "EnabledByDefault": false,
+                      "Visible": true,
+                      "ShowsInCredits": true,
+                      "Description": "Original fusee payload launcher, compatible with Linux.",
+                      "When": [],
+                      "WhenMode": 0,
+                      "Warning": null,
+                      "Dependencies": [],
+                      "DeleteOnUpdate": []
+                    }
+                  }
+                },
+                "utilities": {
+                  "ID": "utilities",
+                  "Name": "Utilities",
+                  "DisplayName": "Utilities",
+                  "Visible": true,
+                  "When": [],
+                  "WhenMode": 0,
+                  "Packages": {
+                    "launchpadnx-linux": {
+                      "ID": "launchpadnx-linux",
+                      "Name": "LaunchpadNX",
+                      "DisplayName": "LaunchpadNX",
+                      "Platform": "switch",
+                      "Section": "extras",
+                      "Category": "linuxtools",
+                      "Subcategory": "utilities",
+                      "Authors": "ThatNerdyPikachu",
+                      "Versions": {
+                        "latest": "v2.5.0"
+                      },
+                      "Source": "https://github.com/ThatNerdyPikachu/LaunchpadNX",
+                      "DLSource": "",
+                      "Size": 0,
+                      "Priority": 0,
+                      "EnabledByDefault": false,
+                      "Visible": true,
+                      "ShowsInCredits": true,
+                      "Description": "LaunchpadNX lets you select what you want in your CFW, and it builds, compiles, and packages it all up in a drag-and-drop package for your SD Card!<br><br>For Linux.",
+                      "When": [],
+                      "WhenMode": 0,
+                      "Warning": null,
+                      "Dependencies": [],
+                      "DeleteOnUpdate": []
+                    }
+                  }
+                }
+              }
+            },
+            "androidtools": {
+              "ID": "androidtools",
+              "Name": "Android Tools",
+              "DisplayName": "Android Tools",
+              "Visible": true,
+              "When": [],
+              "WhenMode": 0,
+              "Subcategories": {
+                "general": {
+                  "ID": "general",
+                  "Name": "General",
+                  "DisplayName": "General",
+                  "Visible": true,
+                  "When": [],
+                  "WhenMode": 0,
+                  "Packages": {
+                    "rekado": {
+                      "ID": "rekado",
+                      "Name": "Rekado",
+                      "DisplayName": "Rekado",
+                      "Platform": "switch",
+                      "Section": "extras",
+                      "Category": "androidtools",
+                      "Subcategory": "general",
+                      "Authors": "MenosGrante",
+                      "Versions": {
+                        "latest": "v2.5.2"
+                      },
+                      "Source": "https://github.com/MenosGrante/Rekado/",
+                      "DLSource": "https://github.com/MenosGrante/Rekado/",
+                      "Size": 0,
+                      "Priority": 0,
+                      "EnabledByDefault": false,
+                      "Visible": true,
+                      "ShowsInCredits": true,
+                      "Description": "Fusee payload launcher for Android. Works without root.",
+                      "When": [],
+                      "WhenMode": 0,
+                      "Warning": null,
+                      "Dependencies": [],
+                      "DeleteOnUpdate": []
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "Bundles": [
+        {
+          "Name": "Kosmos Defaults",
+          "Description": "Includes the default packages found in Team AtlasNX's Kosmos bundle.",
+          "Packages": [
+            "appstorenx",
+            "atmosphere",
+            "kosmos_updater",
+            "kosmos_toolkit",
+            "edizon",
+            "atmos_sigpatch",
+            "checkpoint",
+            "hbmenu",
+            "hekate",
+            "atmos_sysftpd",
+            "atmos_sysnetcheat",
+            "tinfoil",
+            "noexs",
+            "ldn_mitm"
+          ]
+        },
+        {
+          "Name": "ReiNX Defaults",
+          "Description": "Includes all of the packages recommended by the ReiNX guide",
+          "Packages": [
+            "reinx",
+            "reinx_payload",
+            "reinx_toolkit",
+            "tinfoil",
+            "hbmenu"
+          ]
+        },
+        {
+          "Name": "Minimal",
+          "Description": "Includes just enough to get Atmosphere CFW and homebrew running, with no extras.",
+          "Packages": [
+            "atmosphere",
+            "hbmenu"
+          ]
+        }
+      ]
+    },
+    "3ds": {
+      "Name": "Nintendo 3DS",
+      "MenuName": "3DS",
+      "HomeIcon": "https://i.imgur.com/LWWQES9.png",
+      "ID": "3ds",
+      "Color": "blue",
+      "Visible": false,
+      "PackageSections": {
+        "cfws": {
+          "ID": "cfws",
+          "Name": "Custom Firmwares",
+          "DisplayName": "Select your Custom Firmwares",
+          "ListingMode": 1,
+          "Visible": true,
+          "When": [],
+          "WhenMode": 0,
+          "Footer": "",
+          "Categories": {
+            "cfws": {
+              "ID": "cfws",
+              "Name": "Custom Firmwares",
+              "DisplayName": "Select your Custom Firmwares",
+              "Visible": true,
+              "When": [],
+              "WhenMode": 0,
+              "Subcategories": {
+                "cfws": {
+                  "ID": "cfws",
+                  "Name": "Custom Firmwares",
+                  "DisplayName": "Select your Custom Firmwares",
+                  "Visible": true,
+                  "When": [],
+                  "WhenMode": 0,
+                  "Packages": {
+                    "luma": {
+                      "ID": "luma",
+                      "Name": "Luma3DS",
+                      "DisplayName": "Luma3DS",
+                      "Platform": "3ds",
+                      "Section": "cfws",
+                      "Category": "cfws",
+                      "Subcategory": "cfws",
+                      "Authors": "AuroraWright, TuxSH, Reisyukaku",
+                      "Versions": {
+                        "latest": "v9.1"
+                      },
+                      "Source": "https://github.com/AuroraWright/Luma3DS",
+                      "DLSource": "",
+                      "Size": 0,
+                      "Priority": 0,
+                      "EnabledByDefault": false,
+                      "Visible": true,
+                      "ShowsInCredits": true,
+                      "Description": "Noob-proof custom firmware, featuring signature patches, region lock bypass, a custom in-game menu and more.",
+                      "When": [],
+                      "WhenMode": 0,
+                      "Warning": null,
+                      "Dependencies": [],
+                      "DeleteOnUpdate": []
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "payloads": {
+          "ID": "payloads",
+          "Name": "Payloads",
+          "DisplayName": "Select boot9strap payloads",
+          "ListingMode": 0,
+          "Visible": true,
+          "When": [],
+          "WhenMode": 0,
+          "Footer": "Payloads are placed into /sd/luma/payloads for luma chainloading when applicable",
+          "Categories": {
+            "utilities": {
+              "ID": "utilities",
+              "Name": "Utilities",
+              "DisplayName": "Utilities",
+              "Visible": true,
+              "When": [],
+              "WhenMode": 0,
+              "Subcategories": {
+                "systemmanagement": {
+                  "ID": "systemmanagement",
+                  "Name": "System Management",
+                  "DisplayName": "System Management",
+                  "Visible": true,
+                  "When": [],
+                  "WhenMode": 0,
+                  "Packages": {
+                    "openfirminstaller": {
+                      "ID": "openfirminstaller",
+                      "Name": "OpenFirmInstaller",
+                      "DisplayName": "OpenFirmInstaller",
+                      "Platform": "3ds",
+                      "Section": "payloads",
+                      "Category": "utilities",
+                      "Subcategory": "systemmanagement",
+                      "Authors": "d0k3",
+                      "Versions": {
+                        "latest": "v0.0.8"
+                      },
+                      "Source": "https://github.com/d0k3/OpenFirmInstaller/",
+                      "DLSource": "https://github.com/d0k3/OpenFirmInstaller/",
+                      "Size": 0,
+                      "Priority": 0,
+                      "EnabledByDefault": false,
+                      "Visible": true,
+                      "ShowsInCredits": true,
+                      "Description": "Tool to install boot9strap FIRMs to NAND (currently only boot9strap and fastboot3ds).",
+                      "When": [],
+                      "WhenMode": 0,
+                      "Warning": null,
+                      "Dependencies": [],
+                      "DeleteOnUpdate": []
+                    },
+                    "godmode9": {
+                      "ID": "godmode9",
+                      "Name": "GodeMode9",
+                      "DisplayName": "GodMode9",
+                      "Platform": "3ds",
+                      "Section": "payloads",
+                      "Category": "utilities",
+                      "Subcategory": "systemmanagement",
+                      "Authors": "d0k3",
+                      "Versions": {
+                        "latest": "v1.7.1"
+                      },
+                      "Source": "https://github.com/d0k3/GodMode9/",
+                      "DLSource": "https://github.com/d0k3/GodMode9/",
+                      "Size": 0,
+                      "Priority": 0,
+                      "EnabledByDefault": false,
+                      "Visible": true,
+                      "ShowsInCredits": true,
+                      "Description": "Full access NAND and SD manager with scripting support.",
+                      "When": [],
+                      "WhenMode": 0,
+                      "Warning": null,
+                      "Dependencies": [],
+                      "DeleteOnUpdate": []
+                    }
+                  }
+                },
+                "other": {
+                  "ID": "other",
+                  "Name": "Other",
+                  "DisplayName": "Other",
+                  "Visible": true,
+                  "When": [],
+                  "WhenMode": 0,
+                  "Packages": {
+                    "fastboot3ds": {
+                      "ID": "fastboot3ds",
+                      "Name": "FastBoot3DS",
+                      "DisplayName": "FastBoot3DS",
+                      "Platform": "3ds",
+                      "Section": "payloads",
+                      "Category": "utilities",
+                      "Subcategory": "other",
+                      "Authors": "derrek, profi200, d0k3",
+                      "Versions": {
+                        "latest": "v1.1"
+                      },
+                      "Source": "https://github.com/derrekr/fastboot3DS/",
+                      "DLSource": "https://github.com/derrekr/fastboot3DS/",
+                      "Size": 0,
+                      "Priority": 0,
+                      "EnabledByDefault": false,
+                      "Visible": true,
+                      "ShowsInCredits": true,
+                      "Description": "Custom bootloader for the 3DS with chainloading, NAND backup and restoring, OTP dumping and more. Requires OpenFirmInstaller to install.",
+                      "When": [],
+                      "WhenMode": 0,
+                      "Warning": null,
+                      "Dependencies": [],
+                      "DeleteOnUpdate": []
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "homebrew": {
+          "ID": "homebrew",
+          "Name": "Homebrew",
+          "DisplayName": "Select your Homebrew",
+          "ListingMode": 0,
+          "Visible": true,
+          "When": [],
+          "WhenMode": 0,
+          "Footer": "Homebrew includes both CIA and 3DSX builds where available, and are only split if their file sizes are large.<br>CIA files are placed into /sd/cias",
+          "Categories": {
+            "general": {
+              "ID": "general",
+              "Name": "General",
+              "DisplayName": "General",
+              "Visible": true,
+              "When": [],
+              "WhenMode": 0,
+              "Subcategories": {
+                "loaders": {
+                  "ID": "loaders",
+                  "Name": "Loaders",
+                  "DisplayName": "Loaders",
+                  "Visible": true,
+                  "When": [],
+                  "WhenMode": 0,
+                  "Packages": {
+                    "hbmenu3ds": {
+                      "ID": "hbmenu3ds",
+                      "Name": "Homebrew Menu",
+                      "DisplayName": "Homebrew Menu",
+                      "Platform": "3ds",
+                      "Section": "homebrew",
+                      "Category": "general",
+                      "Subcategory": "loaders",
+                      "Authors": "fincs, smea",
+                      "Versions": {
+                        "latest": "v2.0.0"
+                      },
+                      "Source": "https://github.com/fincs/new-hbmenu",
+                      "DLSource": "https://github.com/fincs/new-hbmenu",
+                      "Size": 0,
+                      "Priority": 0,
+                      "EnabledByDefault": false,
+                      "Visible": true,
+                      "ShowsInCredits": true,
+                      "Description": "A simple, but beautiful, menu that lists 3DSX homebrew applications. Compatible with ninjhax, *hax and Rosalina.",
+                      "When": [],
+                      "WhenMode": 0,
+                      "Warning": null,
+                      "Dependencies": [],
+                      "DeleteOnUpdate": []
+                    }
+                  }
+                },
+                "plugins": {
+                  "ID": "plugins",
+                  "Name": "Plugins",
+                  "DisplayName": "Plugins",
+                  "Visible": true,
+                  "When": [],
+                  "WhenMode": 0,
+                  "Packages": {
+                    "bootntrm3": {
+                      "ID": "bootntrm3",
+                      "Name": "BootNTR Selector (MODE3)",
+                      "DisplayName": "BootNTR Selector (MODE3)",
+                      "Platform": "3ds",
+                      "Section": "homebrew",
+                      "Category": "general",
+                      "Subcategory": "plugins",
+                      "Authors": "Nanquitas",
+                      "Versions": {
+                        "latest": "v2.12"
+                      },
+                      "Source": "https://github.com/Nanquitas/BootNTR",
+                      "DLSource": "https://github.com/Nanquitas/BootNTR",
+                      "Size": 0,
+                      "Priority": 0,
+                      "EnabledByDefault": false,
+                      "Visible": true,
+                      "ShowsInCredits": true,
+                      "Description": "Application to load real-time game plugins. Allows things like in-game inventory and stat editing, game patches, and more. Mode3 allows support for extended memory titles on Old 3DS (thus not necessary for N3DS).",
+                      "When": [],
+                      "WhenMode": 0,
+                      "Warning": null,
+                      "Dependencies": [],
+                      "DeleteOnUpdate": []
+                    },
+                    "bootntr": {
+                      "ID": "bootntr",
+                      "Name": "BootNTR Selector",
+                      "DisplayName": "BootNTR Selector",
+                      "Platform": "3ds",
+                      "Section": "homebrew",
+                      "Category": "general",
+                      "Subcategory": "plugins",
+                      "Authors": "Nanquitas",
+                      "Versions": {
+                        "latest": "v2.12"
+                      },
+                      "Source": "https://github.com/Nanquitas/BootNTR",
+                      "DLSource": "https://github.com/Nanquitas/BootNTR",
+                      "Size": 0,
+                      "Priority": 0,
+                      "EnabledByDefault": false,
+                      "Visible": true,
+                      "ShowsInCredits": true,
+                      "Description": "Application to load real-time game plugins. Allows things like in-game inventory and stat editing, game patches, and more.",
+                      "When": [],
+                      "WhenMode": 0,
+                      "Warning": null,
+                      "Dependencies": [],
+                      "DeleteOnUpdate": []
+                    },
+                    "sharkive": {
+                      "ID": "sharkive",
+                      "Name": "Sharkive",
+                      "DisplayName": "Sharkive",
+                      "Platform": "3ds",
+                      "Section": "homebrew",
+                      "Category": "general",
+                      "Subcategory": "plugins",
+                      "Authors": "BernardoGiordani",
+                      "Versions": {
+                        "latest": "v1.0.0"
+                      },
+                      "Source": "https://github.com/FlagBrew/Sharkive/",
+                      "DLSource": "https://github.com/FlagBrew/Sharkive/",
+                      "Size": 0,
+                      "Priority": 0,
+                      "EnabledByDefault": false,
+                      "Visible": true,
+                      "ShowsInCredits": true,
+                      "Description": "GateShark cheatcode manager for Luma3DS v9.1+.",
+                      "When": [],
+                      "WhenMode": 0,
+                      "Warning": null,
+                      "Dependencies": [],
+                      "DeleteOnUpdate": []
+                    }
+                  }
+                }
+              }
+            },
+            "utilities": {
+              "ID": "utilities",
+              "Name": "Utilities",
+              "DisplayName": "Utilities",
+              "Visible": true,
+              "When": [],
+              "WhenMode": 0,
+              "Subcategories": {
+                "storage": {
+                  "ID": "storage",
+                  "Name": "Storage Management",
+                  "DisplayName": "Storage Management",
+                  "Visible": true,
+                  "When": [],
+                  "WhenMode": 0,
+                  "Packages": {
+                    "multiupdater": {
+                      "ID": "multiupdater",
+                      "Name": "MultiUpdater",
+                      "DisplayName": "MultiUpdater",
+                      "Platform": "3ds",
+                      "Section": "homebrew",
+                      "Category": "utilities",
+                      "Subcategory": "storage",
+                      "Authors": "LiquidFenrir",
+                      "Versions": {
+                        "latest": "v4.0.2"
+                      },
+                      "Source": "https://github.com/LiquidFenrir/MultiUpdater/",
+                      "DLSource": "https://github.com/LiquidFenrir/MultiUpdater/",
+                      "Size": 0,
+                      "Priority": 0,
+                      "EnabledByDefault": false,
+                      "Visible": true,
+                      "ShowsInCredits": true,
+                      "Description": "Updater for FIRM payloads, CIA applications and other files on the SD card.",
+                      "When": [],
+                      "WhenMode": 0,
+                      "Warning": null,
+                      "Dependencies": [],
+                      "DeleteOnUpdate": []
+                    },
+                    "fbi": {
+                      "ID": "fbi",
+                      "Name": "FBI",
+                      "DisplayName": "FBI",
+                      "Platform": "3ds",
+                      "Section": "homebrew",
+                      "Category": "utilities",
+                      "Subcategory": "storage",
+                      "Authors": "Steveice10",
+                      "Versions": {
+                        "latest": "v2.5.2"
+                      },
+                      "Source": "https://github.com/Steveice10/FBI/",
+                      "DLSource": "https://github.com/Steveice10/FBI/",
+                      "Size": 0,
+                      "Priority": 0,
+                      "EnabledByDefault": false,
+                      "Visible": true,
+                      "ShowsInCredits": true,
+                      "Description": "Open-source file browser and install for the 3DS. Browse SD card and internal NAND and install CIA files.",
+                      "When": [],
+                      "WhenMode": 0,
+                      "Warning": null,
+                      "Dependencies": [],
+                      "DeleteOnUpdate": []
+                    },
+                    "ftpdb": {
+                      "ID": "ftpdb",
+                      "Name": "FTPDB",
+                      "DisplayName": "FTPDB",
+                      "Platform": "3ds",
+                      "Section": "homebrew",
+                      "Category": "utilities",
+                      "Subcategory": "storage",
+                      "Authors": "Fanva, mtheall",
+                      "Versions": {
+                        "latest": "v1.4.1"
+                      },
+                      "Source": "https://github.com/Favna/FTPDB",
+                      "DLSource": "https://github.com/Favna/FTPDB",
+                      "Size": 0,
+                      "Priority": 0,
+                      "EnabledByDefault": false,
+                      "Visible": true,
+                      "ShowsInCredits": true,
+                      "Description": "FTP server for 3DS to allow remote management of the SD card.",
+                      "When": [],
+                      "WhenMode": 0,
+                      "Warning": null,
+                      "Dependencies": [],
+                      "DeleteOnUpdate": []
+                    }
+                  }
+                },
+                "saves": {
+                  "ID": "saves",
+                  "Name": "Save Management",
+                  "DisplayName": "Save Management",
+                  "Visible": true,
+                  "When": [],
+                  "WhenMode": 0,
+                  "Packages": {
+                    "pksm": {
+                      "ID": "pksm",
+                      "Name": "PKSM",
+                      "DisplayName": "PKSM",
+                      "Platform": "3ds",
+                      "Section": "homebrew",
+                      "Category": "utilities",
+                      "Subcategory": "saves",
+                      "Authors": "BernardoGiordano",
+                      "Versions": {
+                        "latest": "v5.1.4"
+                      },
+                      "Source": "https://github.com/FlagBrew/PKSM",
+                      "DLSource": "https://github.com/FlagBrew/PKSM",
+                      "Size": 0,
+                      "Priority": 0,
+                      "EnabledByDefault": false,
+                      "Visible": true,
+                      "ShowsInCredits": true,
+                      "Description": "On-console save editor for GenIV-GenVII Pokemon games. Features in depth stat editing for your Pokemon and an offline Pokemon Bank clone.",
+                      "When": [],
+                      "WhenMode": 0,
+                      "Warning": null,
+                      "Dependencies": [],
+                      "DeleteOnUpdate": []
+                    },
+                    "jksm": {
+                      "ID": "jksm",
+                      "Name": "JKSM",
+                      "DisplayName": "JKSM",
+                      "Platform": "3ds",
+                      "Section": "homebrew",
+                      "Category": "utilities",
+                      "Subcategory": "saves",
+                      "Authors": "J-D-K",
+                      "Versions": {
+                        "latest": "08.19.2018"
+                      },
+                      "Source": "https://github.com/J-D-K/JKSM",
+                      "DLSource": "https://github.com/J-D-K/JKSM",
+                      "Size": 0,
+                      "Priority": 0,
+                      "EnabledByDefault": false,
+                      "Visible": true,
+                      "ShowsInCredits": true,
+                      "Description": "Simplel save manager for 3DS with backup and restore functionality.",
+                      "When": [],
+                      "WhenMode": 0,
+                      "Warning": null,
+                      "Dependencies": [],
+                      "DeleteOnUpdate": []
+                    },
+                    "checkpoint3ds": {
+                      "ID": "checkpoint3ds",
+                      "Name": "Checkpoint",
+                      "DisplayName": "Checkpoint",
+                      "Platform": "3ds",
+                      "Section": "homebrew",
+                      "Category": "utilities",
+                      "Subcategory": "saves",
+                      "Authors": "BernardoGiordano",
+                      "Versions": {
+                        "latest": "v3.4.2"
+                      },
+                      "Source": "https://github.com/FlagBrew/Checkpoint",
+                      "DLSource": "https://github.com/FlagBrew/Checkpoint",
+                      "Size": 0,
+                      "Priority": 0,
+                      "EnabledByDefault": false,
+                      "Visible": true,
+                      "ShowsInCredits": true,
+                      "Description": "Graphical save manager for 3DS with backup and restore functionality.",
+                      "When": [],
+                      "WhenMode": 0,
+                      "Warning": null,
+                      "Dependencies": [],
+                      "DeleteOnUpdate": []
+                    }
+                  }
+                },
+                "info": {
+                  "ID": "info",
+                  "Name": "Info",
+                  "DisplayName": "Info",
+                  "Visible": true,
+                  "When": [],
+                  "WhenMode": 0,
+                  "Packages": {
+                    "3dsident": {
+                      "ID": "3dsident",
+                      "Name": "3DSident",
+                      "DisplayName": "3DSident",
+                      "Platform": "3ds",
+                      "Section": "homebrew",
+                      "Category": "utilities",
+                      "Subcategory": "info",
+                      "Authors": "joel16",
+                      "Versions": {
+                        "latest": "v0.8.0"
+                      },
+                      "Source": "https://github.com/joel16/3DSident/",
+                      "DLSource": "https://github.com/joel16/3DSident/",
+                      "Size": 0,
+                      "Priority": 0,
+                      "EnabledByDefault": false,
+                      "Visible": true,
+                      "ShowsInCredits": true,
+                      "Description": "3DSident is an application for displaying lots of information about your 3DS, including serial number, screen types, firmware versions, and more.",
+                      "When": [],
+                      "WhenMode": 0,
+                      "Warning": null,
+                      "Dependencies": [],
+                      "DeleteOnUpdate": []
+                    },
+                    "3dsidentgui": {
+                      "ID": "3dsidentgui",
+                      "Name": "3DSident GUI",
+                      "DisplayName": "3DSident GUI",
+                      "Platform": "3ds",
+                      "Section": "homebrew",
+                      "Category": "utilities",
+                      "Subcategory": "info",
+                      "Authors": "joel16",
+                      "Versions": {
+                        "latest": "v0.8.0"
+                      },
+                      "Source": "https://github.com/joel16/3DSident/",
+                      "DLSource": "https://github.com/joel16/3DSident/",
+                      "Size": 0,
+                      "Priority": 0,
+                      "EnabledByDefault": false,
+                      "Visible": true,
+                      "ShowsInCredits": true,
+                      "Description": "3DSident with a nicer GUI.",
+                      "When": [],
+                      "WhenMode": 0,
+                      "Warning": null,
+                      "Dependencies": [],
+                      "DeleteOnUpdate": []
+                    }
+                  }
+                },
+                "other": {
+                  "ID": "other",
+                  "Name": "Other",
+                  "DisplayName": "Other",
+                  "Visible": true,
+                  "When": [],
+                  "WhenMode": 0,
+                  "Packages": {
+                    "anemone3ds": {
+                      "ID": "anemone3ds",
+                      "Name": "Anemone3DS",
+                      "DisplayName": "Anemone3DS",
+                      "Platform": "3ds",
+                      "Section": "homebrew",
+                      "Category": "utilities",
+                      "Subcategory": "other",
+                      "Authors": "astronautlevel2",
+                      "Versions": {
+                        "latest": "v2.1.0 beta"
+                      },
+                      "Source": "https://github.com/astronautlevel2/Anemone3DS/",
+                      "DLSource": "https://github.com/astronautlevel2/Anemone3DS/",
+                      "Size": 0,
+                      "Priority": 0,
+                      "EnabledByDefault": false,
+                      "Visible": true,
+                      "ShowsInCredits": true,
+                      "Description": "Theme and splashscreen manager for 3DS with QR code scanning.",
+                      "When": [],
+                      "WhenMode": 0,
+                      "Warning": null,
+                      "Dependencies": [],
+                      "DeleteOnUpdate": []
+                    }
+                  }
+                }
+              }
+            },
+            "games": {
+              "ID": "games",
+              "Name": "Games",
+              "DisplayName": "Games",
+              "Visible": true,
+              "When": [],
+              "WhenMode": 0,
+              "Subcategories": {
+                "casual": {
+                  "ID": "casual",
+                  "Name": "Casual",
+                  "DisplayName": "Casual",
+                  "Visible": true,
+                  "When": [],
+                  "WhenMode": 0,
+                  "Packages": {
+                    "mastermind3ds": {
+                      "ID": "mastermind3ds",
+                      "Name": "Mastermind",
+                      "DisplayName": "Mastermind",
+                      "Platform": "3ds",
+                      "Section": "homebrew",
+                      "Category": "games",
+                      "Subcategory": "casual",
+                      "Authors": "MrJPGames",
+                      "Versions": {
+                        "latest": "v1.1"
+                      },
+                      "Source": "https://github.com/MrJPGames/Mastermind-3DS/",
+                      "DLSource": "https://github.com/MrJPGames/Mastermind-3DS/",
+                      "Size": 0,
+                      "Priority": 0,
+                      "EnabledByDefault": false,
+                      "Visible": true,
+                      "ShowsInCredits": true,
+                      "Description": "Mastermind clone for the 3DS with CPU and local (same system) multiplayer.",
+                      "When": [],
+                      "WhenMode": 0,
+                      "Warning": null,
+                      "Dependencies": [],
+                      "DeleteOnUpdate": []
+                    },
+                    "minesweeper2ds": {
+                      "ID": "minesweeper2ds",
+                      "Name": "Minesweeper 2DS",
+                      "DisplayName": "Minesweeper 2DS",
+                      "Platform": "3ds",
+                      "Section": "homebrew",
+                      "Category": "games",
+                      "Subcategory": "casual",
+                      "Authors": "Cid2mizard",
+                      "Versions": {
+                        "latest": "v1.2.1"
+                      },
+                      "Source": "https://gbatemp.net/threads/release-minesweeper-2ds.384185/",
+                      "DLSource": "",
+                      "Size": 0,
+                      "Priority": 0,
+                      "EnabledByDefault": false,
+                      "Visible": true,
+                      "ShowsInCredits": true,
+                      "Description": "Minesweeper clone for the 3DS.",
+                      "When": [],
+                      "WhenMode": 0,
+                      "Warning": null,
+                      "Dependencies": [],
+                      "DeleteOnUpdate": []
+                    },
+                    "breakout": {
+                      "ID": "breakout",
+                      "Name": "Breakout",
+                      "DisplayName": "Breakout",
+                      "Platform": "3ds",
+                      "Section": "homebrew",
+                      "Category": "games",
+                      "Subcategory": "casual",
+                      "Authors": "Magicrafter13",
+                      "Versions": {
+                        "latest": "v1.7.2 beta"
+                      },
+                      "Source": "https://github.com/Magicrafter13/Breakout/",
+                      "DLSource": "https://github.com/Magicrafter13/Breakout/",
+                      "Size": 0,
+                      "Priority": 0,
+                      "EnabledByDefault": false,
+                      "Visible": true,
+                      "ShowsInCredits": true,
+                      "Description": "Breakout clone for the 3DS.",
+                      "When": [],
+                      "WhenMode": 0,
+                      "Warning": null,
+                      "Dependencies": [],
+                      "DeleteOnUpdate": []
+                    }
+                  }
+                },
+                "shooter": {
+                  "ID": "shooter",
+                  "Name": "Shooter",
+                  "DisplayName": "Shooter",
+                  "Visible": true,
+                  "When": [],
+                  "WhenMode": 0,
+                  "Packages": {
+                    "eduke3d": {
+                      "ID": "eduke3d",
+                      "Name": "EDuke3D",
+                      "DisplayName": "EDuke3D",
+                      "Platform": "3ds",
+                      "Section": "homebrew",
+                      "Category": "games",
+                      "Subcategory": "shooter",
+                      "Authors": "masterfeizz",
+                      "Versions": {
+                        "latest": "v1.0"
+                      },
+                      "Source": "https://github.com/masterfeizz/EDuke3D/",
+                      "DLSource": "https://github.com/masterfeizz/EDuke3D/",
+                      "Size": 0,
+                      "Priority": 0,
+                      "EnabledByDefault": false,
+                      "Visible": true,
+                      "ShowsInCredits": true,
+                      "Description": "EDuke32 (Duke Nukem 3D)  port for the 3DS.",
+                      "When": [],
+                      "WhenMode": 0,
+                      "Warning": null,
+                      "Dependencies": [],
+                      "DeleteOnUpdate": []
+                    },
+                    "ctrquake": {
+                      "ID": "ctrquake",
+                      "Name": "ctrQuake",
+                      "DisplayName": "ctrQuake",
+                      "Platform": "3ds",
+                      "Section": "homebrew",
+                      "Category": "games",
+                      "Subcategory": "shooter",
+                      "Authors": "masterfeizz",
+                      "Versions": {
+                        "latest": "v1.0"
+                      },
+                      "Source": "https://github.com/masterfeizz/ctrQuake",
+                      "DLSource": "https://github.com/masterfeizz/ctrQuake",
+                      "Size": 0,
+                      "Priority": 0,
+                      "EnabledByDefault": false,
+                      "Visible": true,
+                      "ShowsInCredits": true,
+                      "Description": "Quake port for the 3DS with support for online multiplayer. Only includes the shareware episode, unlock full game by placing pak1.pak from the full game into the id1 folder.",
+                      "When": [],
+                      "WhenMode": 0,
+                      "Warning": null,
+                      "Dependencies": [],
+                      "DeleteOnUpdate": []
+                    }
+                  }
+                },
+                "actionadventure": {
+                  "ID": "actionadventure",
+                  "Name": "Action Adventure",
+                  "DisplayName": "Action Adventure",
+                  "Visible": true,
+                  "When": [],
+                  "WhenMode": 0,
+                  "Packages": {
+                    "zeldaroth": {
+                      "ID": "zeldaroth",
+                      "Name": "Zelda: Return of the Hylian (CIA)",
+                      "DisplayName": "Zelda: Return of the Hylian (CIA)",
+                      "Platform": "3ds",
+                      "Section": "homebrew",
+                      "Category": "games",
+                      "Subcategory": "actionadventure",
+                      "Authors": "nop90",
+                      "Versions": {
+                        "latest": "v1.0.2"
+                      },
+                      "Source": "https://github.com/nop90/ZeldaROTH",
+                      "DLSource": "https://github.com/nop90/ZeldaROTH",
+                      "Size": 0,
+                      "Priority": 0,
+                      "EnabledByDefault": false,
+                      "Visible": true,
+                      "ShowsInCredits": true,
+                      "Description": "Zelda fan-game in the style of A Link to the Past, ported to the 3DS. Features a full quest line with hours of gameplay. CIA release.",
+                      "When": [],
+                      "WhenMode": 0,
+                      "Warning": null,
+                      "Dependencies": [],
+                      "DeleteOnUpdate": []
+                    },
+                    "zeldaroth_3dsx": {
+                      "ID": "zeldaroth_3dsx",
+                      "Name": "Zelda: Return of the Hylian (3DSX)",
+                      "DisplayName": "Zelda: Return of the Hylian (3DSX)",
+                      "Platform": "3ds",
+                      "Section": "homebrew",
+                      "Category": "games",
+                      "Subcategory": "actionadventure",
+                      "Authors": "nop90",
+                      "Versions": {
+                        "latest": "v1.0.2"
+                      },
+                      "Source": "https://github.com/nop90/ZeldaROTH",
+                      "DLSource": "https://github.com/nop90/ZeldaROTH",
+                      "Size": 0,
+                      "Priority": 0,
+                      "EnabledByDefault": false,
+                      "Visible": true,
+                      "ShowsInCredits": true,
+                      "Description": "Zelda fan-game in the style of A Link to the Past, ported to the 3DS. Features a full quest line with hours of gameplay. 3DSX release.",
+                      "When": [],
+                      "WhenMode": 0,
+                      "Warning": null,
+                      "Dependencies": [],
+                      "DeleteOnUpdate": []
+                    }
+                  }
+                }
+              }
+            },
+            "emulators": {
+              "ID": "emulators",
+              "Name": "Emulators",
+              "DisplayName": "Emulators",
+              "Visible": true,
+              "When": [],
+              "WhenMode": 0,
+              "Subcategories": {
+                "nintendo": {
+                  "ID": "nintendo",
+                  "Name": "Nintendo",
+                  "DisplayName": "Nintendo",
+                  "Visible": true,
+                  "When": [],
+                  "WhenMode": 0,
+                  "Packages": {
+                    "blargsnes": {
+                      "ID": "blargsnes",
+                      "Name": "blargSNES",
+                      "DisplayName": "blargSNES",
+                      "Platform": "3ds",
+                      "Section": "homebrew",
+                      "Category": "emulators",
+                      "Subcategory": "nintendo",
+                      "Authors": "StapleButter",
+                      "Versions": {
+                        "latest": "v1.3b"
+                      },
+                      "Source": "http://blargsnes.kuribo64.net/",
+                      "DLSource": "",
+                      "Size": 0,
+                      "Priority": 0,
+                      "EnabledByDefault": false,
+                      "Visible": true,
+                      "ShowsInCredits": true,
+                      "Description": "SNES emulator for the 3DS.",
+                      "When": [],
+                      "WhenMode": 0,
+                      "Warning": null,
+                      "Dependencies": [],
+                      "DeleteOnUpdate": []
+                    },
+                    "snes9x3ds": {
+                      "ID": "snes9x3ds",
+                      "Name": "snes9x",
+                      "DisplayName": "snes9x",
+                      "Platform": "3ds",
+                      "Section": "homebrew",
+                      "Category": "emulators",
+                      "Subcategory": "nintendo",
+                      "Authors": "bubble2k16",
+                      "Versions": {
+                        "latest": "v1.30"
+                      },
+                      "Source": "https://github.com/bubble2k16/snes9x_3ds/",
+                      "DLSource": "https://github.com/bubble2k16/snes9x_3ds/",
+                      "Size": 0,
+                      "Priority": 0,
+                      "EnabledByDefault": false,
+                      "Visible": true,
+                      "ShowsInCredits": true,
+                      "Description": "SNES emulator for the 3DS.",
+                      "When": [],
+                      "WhenMode": 0,
+                      "Warning": null,
+                      "Dependencies": [],
+                      "DeleteOnUpdate": []
+                    },
+                    "mgba3ds": {
+                      "ID": "mgba3ds",
+                      "Name": "mGBA",
+                      "DisplayName": "mGBA",
+                      "Platform": "3ds",
+                      "Section": "homebrew",
+                      "Category": "emulators",
+                      "Subcategory": "nintendo",
+                      "Authors": "Jeffrey Pfau",
+                      "Versions": {
+                        "latest": "v0.6.3"
+                      },
+                      "Source": "https://github.com/mgba-emu/mgba",
+                      "DLSource": "https://github.com/mgba-emu/mgba",
+                      "Size": 0,
+                      "Priority": 0,
+                      "EnabledByDefault": false,
+                      "Visible": true,
+                      "ShowsInCredits": true,
+                      "Description": "GBA emulator for the 3DS.",
+                      "When": [],
+                      "WhenMode": 0,
+                      "Warning": null,
+                      "Dependencies": [],
+                      "DeleteOnUpdate": []
+                    },
+                    "virtuanes3ds": {
+                      "ID": "virtuanes3ds",
+                      "Name": "VirtuaNES",
+                      "DisplayName": "VirtuaNES",
+                      "Platform": "3ds",
+                      "Section": "homebrew",
+                      "Category": "emulators",
+                      "Subcategory": "nintendo",
+                      "Authors": "bubble2k16",
+                      "Versions": {
+                        "latest": "v1.02"
+                      },
+                      "Source": "https://github.com/bubble2k16/emus3ds",
+                      "DLSource": "https://github.com/bubble2k16/emus3ds",
+                      "Size": 0,
+                      "Priority": 0,
+                      "EnabledByDefault": false,
+                      "Visible": true,
+                      "ShowsInCredits": true,
+                      "Description": "NES emulator for the 3DS.",
+                      "When": [],
+                      "WhenMode": 0,
+                      "Warning": null,
+                      "Dependencies": [],
+                      "DeleteOnUpdate": []
+                    },
+                    "gameyob3ds": {
+                      "ID": "gameyob3ds",
+                      "Name": "GameYob",
+                      "DisplayName": "GameYob",
+                      "Platform": "3ds",
+                      "Section": "homebrew",
+                      "Category": "emulators",
+                      "Subcategory": "nintendo",
+                      "Authors": "Stevice10, Drenn1",
+                      "Versions": {
+                        "latest": "v1.0.8"
+                      },
+                      "Source": "https://github.com/mgba-emu/mgba",
+                      "DLSource": "https://github.com/mgba-emu/mgba",
+                      "Size": 0,
+                      "Priority": 0,
+                      "EnabledByDefault": false,
+                      "Visible": true,
+                      "ShowsInCredits": true,
+                      "Description": "GB/GBC/GBA emulator for the 3DS.",
+                      "When": [],
+                      "WhenMode": 0,
+                      "Warning": null,
+                      "Dependencies": [],
+                      "DeleteOnUpdate": []
+                    }
+                  }
+                },
+                "sega": {
+                  "ID": "sega",
+                  "Name": "Sega",
+                  "DisplayName": "Sega",
+                  "Visible": true,
+                  "When": [],
+                  "WhenMode": 0,
+                  "Packages": {
+                    "picodrive3ds": {
+                      "ID": "picodrive3ds",
+                      "Name": "PicoDrive 3DS",
+                      "DisplayName": "PicoDrive 3DS",
+                      "Platform": "3ds",
+                      "Section": "homebrew",
+                      "Category": "emulators",
+                      "Subcategory": "sega",
+                      "Authors": "bubble2k16",
+                      "Versions": {
+                        "latest": "v0.9.4"
+                      },
+                      "Source": "https://github.com/bubble2k16/picodrive_3ds",
+                      "DLSource": "https://github.com/bubble2k16/picodrive_3ds",
+                      "Size": 0,
+                      "Priority": 0,
+                      "EnabledByDefault": false,
+                      "Visible": true,
+                      "ShowsInCredits": true,
+                      "Description": "Master System/Mega Drive emulator for the 3DS.",
+                      "When": [],
+                      "WhenMode": 0,
+                      "Warning": null,
+                      "Dependencies": [],
+                      "DeleteOnUpdate": []
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "Bundles": []
+    }
+  }
+}
