@@ -29,6 +29,7 @@ show = false
 cursorX = 640
 cursorY = 360
 showCursor = false
+allowCursor = true
 axisValues = {leftx = 0, lefty = 0, rightx = 0, righty = 0 }
 
 function GenerateComponents()
@@ -277,7 +278,7 @@ function love.update(dt)
 
     
 
-    if PrimaryJoystick ~= nil and showCursor then
+    if PrimaryJoystick ~= nil and showCursor and allowCursor then
         local leftMultiplier = 7
         local rightMultiplier = 20
 
@@ -338,7 +339,7 @@ function love.draw()
 
     
 
-    if showCursor then
+    if showCursor and allowCursor then
         cursorX = cmath.clamp(cursorX, 0, 1280)
         cursorY = cmath.clamp(cursorY, 0, 720)
         love.graphics.setColor(1,1,1,1)
@@ -391,13 +392,14 @@ end
 
 function love.gamepadreleased(joy, button) 
     if button == "a" then --simulate touch input at cursor pos
-        if showCursor then
+        if showCursor and allowCursor then
             love.touchreleased(9382, cursorX, cursorY, 0, 0, 1)
         end
     end
 end
 
 function DownloadPressed()
+    allowCursor = false
     love.system.blockHomeButton();
     components[1] = progressCards.bundling
     drawNeedsCallback = true
@@ -453,6 +455,7 @@ end
 
 function unzipDone()
     love.filesystem.remove("sdmc:/sdsetup.zip")
+    allowCursor = true
     love.system.unblockHomeButton();
     components[1] = progressCards.done
     progressCards.extracting = nil
