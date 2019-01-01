@@ -10,7 +10,7 @@ ___
 
 This app allows you to access and download packages from www.sdsetup.com right on your Switch, no PC required! Many homebrews and CFWs can be updated without ever taking out your SD card.
 
-Currently this app only features touch based controls. Button support will be added in the future.
+The app features both touch controlls and controller support via a cursor.
 
 ___
 
