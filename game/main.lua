@@ -26,9 +26,14 @@ drawNeedsCallback = false
 
 show = false
 
+cursorX = 640
+cursorY = 360
+showCursor = false
+axisValues = {leftx = 0, lefty = 0, rightx = 0, righty = 0 }
+
 function GenerateComponents()
 
-    packageset, code = Http.request("http://files.sdsetup.com/api/v1/get/latestpackageset")
+    
 
     --local body = love.filesystem.read("manifest.json")
     local body, code = Http.request("http://files.sdsetup.com/api/v1/fetch/manifest/sdsetupapp/" .. packageset)
@@ -39,7 +44,7 @@ function GenerateComponents()
     local sections = {}
 
     table.insert(sections, Image("logo", "logo", "res/logo.png", 0, 0, 1, 1))
-    table.insert(sections, Label("label_version", "alpha v0.1", 0, 340, 1280, 40, 20, {0,0,0,1}, "center"))
+    table.insert(sections, Label("label_version", "alpha v0.2", 0, 340, 1280, 40, 20, {0,0,0,1}, "center"))
     table.insert(sections, Label("label_updates", "check https://www.github.com/noahc3/sdsetup-switch for updates", 0, 340, 1280, 40, 20, {0,0,0,1}, "center"))
 
     for _,secid in pairs(manifest["Platforms"]["switch"]["PackageSections"]["_keys"]) do
@@ -205,18 +210,36 @@ function love.load()
     debugtext = "LOADED"
     StateHasChanged = false
 
+
     SfxLibrary = {}
     SfxLibrary["Click"] = love.audio.newSource("res/select.wav", "stream")
 
     --love.system.initializeRecording()
     --love.system.enableRecording()
 
+    cursor = love.graphics.newImage("res/cursor.png")
+
     defaultFont = FontFromStorage(20)
     love.graphics.setFont(defaultFont)
-    
-    GenerateComponents()
 
-    renderUpdate = 0
+    packageset, code = Http.request("http://files.sdsetup.com/api/v1/get/latestpackageset")
+
+    if code == 200 then
+        GenerateComponents()
+    else
+        local no_connection = StackCard("card_no_connection", "Card No Connection", 0, 0, 1280, 720, false, {0.14509803921, 0.14509803921, 0.14509803921, 1}, {0,0,0,0}, 0, {
+            Card("spacer_01", "spacer_01", 0, 0, 1280, 320, {0,0,0,0}, {0,0,0,0}, {}),
+            Label("label_done", "Could not connect to the server", 0, 340, 1280, 40, 30, {1,1,1,1}, "center"),
+            Label("label_done", "Make sure your network connection is working and that www.sdsetup.com is online.", 0, 340, 1280, 40, 20, {1,1,1,1}, "center"),
+            Button("button_exit", "Exit App", 128, 0, 1024, 70, 30, {1,1,1,1}, {0.85882352941,0.15686274509,0.15686274509,1}, {0,0,0,0}, ExitApp),
+            Card("spacer_02", "spacer_02", 0, 0, 1280, 340, {0,0,0,0}, {0,0,0,0}, {})
+        })
+    
+
+        table.insert(components, {
+            no_connection
+        })
+    end
     
 
     for i=1,table.maxn(components) do
@@ -234,14 +257,11 @@ function love.load()
         v:Draw()
         love.graphics.setCanvas()
     end
+
+
 end
 
 function love.update(dt)
-    renderUpdate = renderUpdate + dt
-    if renderUpdate > 100 then
-        
-        renderUpdate = 0
-    end
 
     for i=1,table.maxn(components) do
         if type(components[i].Update) == "function" then
@@ -254,6 +274,30 @@ function love.update(dt)
         drawCallbackReady = false
         drawCallback()
     end
+
+    
+
+    if PrimaryJoystick ~= nil and showCursor then
+        local leftMultiplier = 7
+        local rightMultiplier = 20
+
+        if PrimaryJoystick:isGamepadDown("zl") then 
+            leftMultiplier = leftMultiplier * 0.5
+            rightMultiplier = rightMultiplier * 0.5
+        elseif PrimaryJoystick:isGamepadDown("zr") then
+            leftMultiplier = leftMultiplier * 2
+            rightMultiplier = rightMultiplier * 2
+        end
+
+        cursorX = cursorX + (axisValues["leftx"] * leftMultiplier)
+        cursorY = cursorY + (axisValues["lefty"] * leftMultiplier)
+        if axisValues["righty"] > 0.2 or axisValues["righty"] < 0.2 then
+            love.touchmoved(9381, cursorX, cursorY, 0, -axisValues["righty"] * rightMultiplier, 1)
+        end
+    end
+
+    
+
 end
 
 function love.draw()
@@ -291,6 +335,19 @@ function love.draw()
     --love.graphics.printf(tostring(out1) .. "\n" .. tostring(out2) .. "\n" .. tostring(out3) .. "\n" .. tostring(code) .. "\n" .. tostring(filelen).. "\n" .. tostring(drawNeedsCallback).. "\n" .. tostring(drawCallbackReady), 50, 50, 1280)
 
     drawCallbackReady = true
+
+    
+
+    if showCursor then
+        cursorX = cmath.clamp(cursorX, 0, 1280)
+        cursorY = cmath.clamp(cursorY, 0, 720)
+        love.graphics.setColor(1,1,1,1)
+        love.graphics.draw(cursor, cursorX, cursorY, 0, 1, 1)
+    end
+end
+
+function love.touchpressed(id, x, y, dx, dy, pressure)
+    showCursor = false
 end
 
 function love.touchreleased(id, x, y, dx, dy, pressure)
@@ -321,7 +378,23 @@ function love.touchmoved(id, x, y, dx, dy, pressure)
     end
 end
 
-function love.gamepadpressed(joy, button)
+function love.gamepadaxis(joystick, axis, value)
+
+    axisValues[axis] = value
+    showCursor = true
+
+end
+
+function love.gamepadpressed(joystick, button) 
+    PrimaryJoystick = joystick
+end
+
+function love.gamepadreleased(joy, button) 
+    if button == "a" then --simulate touch input at cursor pos
+        if showCursor then
+            love.touchreleased(9382, cursorX, cursorY, 0, 0, 1)
+        end
+    end
 end
 
 function DownloadPressed()
@@ -330,6 +403,8 @@ function DownloadPressed()
     drawNeedsCallback = true
     drawCallbackReady = false
     drawCallback = GenerateZip
+    
+    
 end
 
 function GenerateZip()
@@ -337,10 +412,12 @@ function GenerateZip()
     for k,v in pairs(GetTrueSelectedPackages()) do
         chosenPackages = chosenPackages .. k .. ";"
     end
+    packageCheckboxes = nil
     uuid = "ABCDEFGH"
     out1, out2, out3 = Http.sdsetupZipRequest("http://files.sdsetup.com/api/v1/fetch/zip", uuid, packageset, "latest", chosenPackages)
 
     components[1] = progressCards.downloading
+    progressCards.bundling = nil
     drawNeedsCallback = true
     drawCallbackReady = false
     drawCallback = DownloadZip
@@ -354,6 +431,7 @@ function DownloadZip()
     end
 
     components[1] = progressCards.extracting
+    progressCards.downloading = nil
     drawNeedsCallback = true
     drawCallbackReady = false
     drawCallback = ExtractZip
@@ -374,10 +452,11 @@ function unzipUpdate(currentValue, maxValue)
 end
 
 function unzipDone()
-    love.filesystem.remove("sdmc:sdsetup.zip")
+    love.filesystem.remove("sdmc:/sdsetup.zip")
     love.system.unblockHomeButton();
     components[1] = progressCards.done
-    StateHasChanged = true
+    progressCards.extracting = nil
+    --StateHasChanged = true
 end
 
 function GetSelectedPackages()
