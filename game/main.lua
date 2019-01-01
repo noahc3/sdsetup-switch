@@ -227,6 +227,14 @@ function love.load()
 
     if code == 200 then
         GenerateComponents()
+
+        for _,v in pairs(progressCards) do
+            love.graphics.setCanvas(v.canvas)
+            love.graphics.clear()
+            love.graphics.setColor(1, 1, 1, 1)
+            v:Draw()
+            love.graphics.setCanvas()
+        end
     else
         local no_connection = StackCard("card_no_connection", "Card No Connection", 0, 0, 1280, 720, false, {0.14509803921, 0.14509803921, 0.14509803921, 1}, {0,0,0,0}, 0, {
             Card("spacer_01", "spacer_01", 0, 0, 1280, 320, {0,0,0,0}, {0,0,0,0}, {}),
@@ -237,9 +245,7 @@ function love.load()
         })
     
 
-        table.insert(components, {
-            no_connection
-        })
+        table.insert(components, no_connection)
     end
     
 
@@ -251,13 +257,7 @@ function love.load()
         love.graphics.setCanvas()
     end
 
-    for _,v in pairs(progressCards) do
-        love.graphics.setCanvas(v.canvas)
-        love.graphics.clear()
-        love.graphics.setColor(1, 1, 1, 1)
-        v:Draw()
-        love.graphics.setCanvas()
-    end
+    
 
 
 end
