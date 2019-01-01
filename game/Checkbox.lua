@@ -23,7 +23,7 @@ Checkbox = class(
         obj.StateHasChanged = true
         obj.tag = tag
 
-        love.graphics.setFont(love.graphics.newFont(obj.fontSize))
+        love.graphics.setFont(FontFromStorage(obj.fontSize))
 
         obj.dx = love.graphics.getFont():getWidth(obj.text) + checkboxSize + checkboxPadding
 
@@ -52,7 +52,7 @@ function Checkbox:Draw()
     end
 
     love.graphics.setColor(unpack(self.fontColor))
-    love.graphics.setFont(love.graphics.newFont(self.fontSize))
+    love.graphics.setFont(FontFromStorage(self.fontSize))
     love.graphics.printf( self.text, self.checkboxSize + self.checkboxPadding, 0, self.dx, "left" )
     
     self.StateHasChanged = false

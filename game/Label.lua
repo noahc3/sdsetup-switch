@@ -16,7 +16,7 @@ Label = class(
         obj.color = color
         obj.StateHasChanged = true
 
-        love.graphics.setFont(love.graphics.newFont(obj.fontSize))
+        love.graphics.setFont(FontFromStorage(obj.fontSize))
 
 
         if obj.positioning == "center" then
@@ -40,7 +40,7 @@ end
 
 function Label:Draw()
     love.graphics.setColor(unpack(self.color))
-    love.graphics.setFont(love.graphics.newFont(self.fontSize))
+    love.graphics.setFont(FontFromStorage(self.fontSize))
 
     love.graphics.printf( self.text, 0, 0, self.dx, "left" )
 

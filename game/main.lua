@@ -75,14 +75,14 @@ function GenerateComponents()
                                 if pack["Visible"] then
                                     --table.insert(subcategoryChildren, Label(, , 10, 0, 1280, 28, 20, {0,0,0,1}))
                                     local pcbx = Checkbox("package_checkbox_" .. pack["ID"], pack["DisplayName"], 10, 0, 1280, 28, 20, 20, 5, {0,0,0,1}, {1,1,1,1}, {0.87450980392, 0.87450980392, 0.87450980392, 0.87450980392}, pack["EnabledByDefault"], pack)
-                                    table.insert(subcategoryChildren, pcbx)
+                                    table.insert(categoryChildren, pcbx)
                                     table.insert(packageCheckboxes, pcbx)
                                 end
 
                                 
                             end
 
-                            table.insert(categoryChildren, StackCard("subcategory_" .. sec["ID"] .. "_" .. cat["ID"] .. "_" .. sub["ID"] , sub["Name"], 12, 0, 304, 720, false, {0,0,0,0}, {0,0,0,0}, 5, subcategoryChildren))
+                            --table.insert(categoryChildren, StackCard("subcategory_" .. sec["ID"] .. "_" .. cat["ID"] .. "_" .. sub["ID"] , sub["Name"], 12, 0, 304, 720, false, {0,0,0,0}, {0,0,0,0}, 5, subcategoryChildren))
                         end
                     end
                     table.insert(categories, StackCard("category_" .. sec["ID"] .. "_" .. cat["ID"], cat["Name"], 4, 0, 486, 720, false, {1,1,1,1}, {0.8, 0.8, 0.8, 1}, 5, categoryChildren))
@@ -128,7 +128,7 @@ function GenerateComponents()
                         end
                     end
                 end
-                love.graphics.setFont(love.graphics.newFont(20))
+                love.graphics.setFont(FontFromStorage(20))
                 for i=0,table.maxn(packages),2 do
                     local row = {}
                     local maxY = 0
@@ -211,7 +211,7 @@ function love.load()
     --love.system.initializeRecording()
     --love.system.enableRecording()
 
-    defaultFont = love.graphics.newFont(20)
+    defaultFont = FontFromStorage(20)
     love.graphics.setFont(defaultFont)
     
     GenerateComponents()
@@ -257,7 +257,6 @@ function love.update(dt)
 end
 
 function love.draw()
-    GetTrueSelectedPackages()
 
     for i=1,table.maxn(components) do
         love.graphics.setCanvas(components[i].canvas)
@@ -287,7 +286,7 @@ function love.draw()
         filelen = string.len(file)
     end
 
-    love.graphics.setFont(love.graphics.newFont(20))
+    love.graphics.setFont(FontFromStorage(20))
     love.graphics.setColor(1,0,0,1)
     --love.graphics.printf(tostring(out1) .. "\n" .. tostring(out2) .. "\n" .. tostring(out3) .. "\n" .. tostring(code) .. "\n" .. tostring(filelen).. "\n" .. tostring(drawNeedsCallback).. "\n" .. tostring(drawCallbackReady), 50, 50, 1280)
 
@@ -351,6 +350,7 @@ function DownloadZip()
     if out2 == "READY" then
         file, code = Http.request("http://files.sdsetup.com/api/v1/fetch/generatedzip/" .. uuid)
         love.filesystem.write("sdmc:/sdsetup.zip", file)
+        file = nil
     end
 
     components[1] = progressCards.extracting
@@ -424,6 +424,12 @@ function FindPackage(id)
     end
 
     return ""
+end
+
+function FontFromStorage(size)
+    if fontStore == nil then fontStore = {} end
+    if fontStore[size] == nil then fontStore[size] = love.graphics.newFont(size) end
+    return fontStore[size]
 end
 
 function ExitApp()

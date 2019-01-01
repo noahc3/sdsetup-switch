@@ -42,7 +42,7 @@ function Button:Draw()
     love.graphics.rectangle("line", 1, 1, self.dx - 2, self.dy - 2)
 
     love.graphics.setColor(unpack(self.fontColor))
-    love.graphics.setFont(love.graphics.newFont(self.fontSize))
+    love.graphics.setFont(FontFromStorage(self.fontSize))
 
     local xpos = (self.dx / 2) - (love.graphics.getFont():getWidth(self.text) / 2)
     local ypos = (self.dy / 2) - (self.fontSize / 2)
