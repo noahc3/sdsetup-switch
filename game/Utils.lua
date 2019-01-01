@@ -1,5 +1,9 @@
 local Utils = {}
 
+Utils.random = math.random
+
+math.randomseed(os.time())
+
 function Utils.MergeTables(t1, t2)
     for k,v in pairs(t2) do
         if type(v) == "table" then
@@ -15,20 +19,12 @@ function Utils.MergeTables(t1, t2)
     return t1
 end
 
-function Utils.RandomString(length) 
-    local chars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789'
-    local randomString = ''
-
-    math.randomseed(os.time())
-
-    charTable = {}
-    for c in chars:gmatch"." do
-        table.insert(charTable, c)
-    end
-
-    for i = 1, length do
-        randomString = randomString .. charTable[math.random(1, #charTable)]
-    end
+function Utils.UUID() 
+    local template ='xxxxxxxxxxxx4xxxyxxxxxxxxxxxxxxx'
+    return string.gsub(template, '[xy]', function (c)
+        local v = (c == 'x') and Utils.random(0, 0xf) or Utils.random(8, 0xb)
+        return string.format('%x', v)
+    end)
 end
 
 function Utils.TableContains(t, value)

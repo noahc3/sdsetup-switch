@@ -45,7 +45,7 @@ function GenerateComponents()
     local sections = {}
 
     table.insert(sections, Image("logo", "logo", "res/logo.png", 0, 0, 1, 1))
-    table.insert(sections, Label("label_version", "alpha v0.2", 0, 340, 1280, 40, 20, {0,0,0,1}, "center"))
+    table.insert(sections, Label("label_version", "alpha v0.2.1", 0, 340, 1280, 40, 20, {0,0,0,1}, "center"))
     table.insert(sections, Label("label_updates", "check https://www.github.com/noahc3/sdsetup-switch for updates", 0, 340, 1280, 40, 20, {0,0,0,1}, "center"))
 
     for _,secid in pairs(manifest["Platforms"]["switch"]["PackageSections"]["_keys"]) do
@@ -208,6 +208,8 @@ function GenerateComponents()
 end
 
 function love.load()
+    uuid = Utils.UUID()
+
     debugtext = "LOADED"
     StateHasChanged = false
 
@@ -335,6 +337,8 @@ function love.draw()
     love.graphics.setColor(1,0,0,1)
     --love.graphics.printf(tostring(out1) .. "\n" .. tostring(out2) .. "\n" .. tostring(out3) .. "\n" .. tostring(code) .. "\n" .. tostring(filelen).. "\n" .. tostring(drawNeedsCallback).. "\n" .. tostring(drawCallbackReady), 50, 50, 1280)
 
+    --love.graphics.printf(uuid, 50, 50, 1280)
+
     drawCallbackReady = true
 
     
@@ -415,7 +419,6 @@ function GenerateZip()
         chosenPackages = chosenPackages .. k .. ";"
     end
     packageCheckboxes = nil
-    uuid = "ABCDEFGH"
     out1, out2, out3 = Http.sdsetupZipRequest("http://files.sdsetup.com/api/v1/fetch/zip", uuid, packageset, "latest", chosenPackages)
 
     components[1] = progressCards.downloading
