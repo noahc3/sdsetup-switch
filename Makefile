@@ -48,7 +48,7 @@ ROMFS           := game
 APP_TITLE       := SDSetup App
 APP_AUTHOR      := www.sdsetup.com, noahc3
 APP_TITLEID     := 1043
-APP_VERSION     := alpha v0.1
+APP_VERSION     := alpha v0.2.1
 APP_DESCRIPTION := Official SDSetup Homebrew App
 
 ICON            := icon.jpg

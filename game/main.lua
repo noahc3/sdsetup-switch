@@ -1,9 +1,12 @@
---[[Program]]--
+--[[ SDSetup Homebrew App ]]--
 
+-- FUNCTION CLASSES
 local Utils = require("Utils")
 local Http = require("socket.http")
 local Json = require("json")
 
+
+-- COMPONENT CLASSES
 require 'Page'
 require 'Image'
 require 'Label'
@@ -12,6 +15,8 @@ require 'StackCard'
 require 'Checkbox'
 require 'Button'
 
+
+-- INIT GLOBAL VARS
 components = {}
 
 blacklistedIds = {
@@ -32,6 +37,8 @@ showCursor = false
 allowCursor = true
 axisValues = {leftx = 0, lefty = 0, rightx = 0, righty = 0 }
 
+
+-- MAIN
 function GenerateComponents()
 
     
@@ -192,9 +199,8 @@ function GenerateComponents()
 
     local done = StackCard("card_bundling", "Card Bundling", 0, 0, 1280, 720, false, {0.14509803921, 0.14509803921, 0.14509803921, 1}, {0,0,0,0}, 0, {
         Card("spacer_01", "spacer_01", 0, 0, 1280, 320, {0,0,0,0}, {0,0,0,0}, {}),
-        Label("label_done", "Done!", 0, 340, 1280, 40, 30, {1,1,1,1}, "center"),
+        Label("label_done", "Done! Press HOME to exit", 0, 340, 1280, 40, 30, {1,1,1,1}, "center"),
         Label("label_done", "If you downloaded custom firmware packages, you should restart your console.", 0, 340, 1280, 40, 20, {1,1,1,1}, "center"),
-        Button("button_exit", "Exit App", 128, 0, 1024, 70, 30, {1,1,1,1}, {0.85882352941,0.15686274509,0.15686274509,1}, {0,0,0,0}, ExitApp),
         Card("spacer_02", "spacer_02", 0, 0, 1280, 340, {0,0,0,0}, {0,0,0,0}, {})
     })
 
@@ -519,4 +525,5 @@ end
 
 function ExitApp()
     love.event.quit()
+    --love.system.requestHomeMenu()
 end
