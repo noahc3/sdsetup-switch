@@ -4,6 +4,7 @@
 local Utils = require("Utils")
 local Http = require("socket.http")
 local Json = require("json")
+local Factory = require("Factory")
 
 
 -- COMPONENT CLASSES
@@ -15,6 +16,10 @@ require 'StackCard'
 require 'Checkbox'
 require 'Button'
 
+-- EVENT SUBSCRIPTIONS
+
+SubscribeUpdate = {}
+SubscribeAfterUpdate = {}
 
 -- INIT GLOBAL VARS
 components = {}
@@ -198,7 +203,7 @@ function GenerateComponents()
     })
 
     local done = StackCard("card_bundling", "Card Bundling", 0, 0, 1280, 720, false, {0.14509803921, 0.14509803921, 0.14509803921, 1}, {0,0,0,0}, 0, {
-        Card("spacer_01", "spacer_01", 0, 0, 1280, 320, {0,0,0,0}, {0,0,0,0}, {}),
+        Card("spacer_01", "spacer_01", 0, 0, 1280, 120, {0,0,0,0}, {0,0,0,0}, {}),
         Label("label_done", "Done! Press HOME to exit", 0, 340, 1280, 40, 30, {1,1,1,1}, "center"),
         Label("label_done", "If you downloaded custom firmware packages, you should restart your console.", 0, 340, 1280, 40, 20, {1,1,1,1}, "center"),
         Card("spacer_02", "spacer_02", 0, 0, 1280, 340, {0,0,0,0}, {0,0,0,0}, {})
@@ -272,6 +277,10 @@ end
 
 function love.update(dt)
 
+    for i=1,table.maxn(SubscribeUpdate) do
+        if type(SubscribeUpdate[i].Update) == "function" then SubscribeUpdate[i]:Update(dt) end
+    end
+
     for i=1,table.maxn(components) do
         if type(components[i].Update) == "function" then
             components[i]:Update()
@@ -305,7 +314,9 @@ function love.update(dt)
         end
     end
 
-    
+    for i=1,table.maxn(SubscribeAfterUpdate) do
+        if type(SubscribeUpdate[i].AfterUpdate) == "function" then SubscribeUpdate[i]:AfterUpdate(dt) end
+    end
 
 end
 
@@ -343,7 +354,7 @@ function love.draw()
     love.graphics.setColor(1,0,0,1)
     --love.graphics.printf(tostring(out1) .. "\n" .. tostring(out2) .. "\n" .. tostring(out3) .. "\n" .. tostring(code) .. "\n" .. tostring(filelen).. "\n" .. tostring(drawNeedsCallback).. "\n" .. tostring(drawCallbackReady), 50, 50, 1280)
 
-    --love.graphics.printf(uuid, 50, 50, 1280)
+    --love.graphics.printf(debugtexth, 50, 50, 1280)
 
     drawCallbackReady = true
 
@@ -355,6 +366,8 @@ function love.draw()
         love.graphics.setColor(1,1,1,1)
         love.graphics.draw(cursor, cursorX, cursorY, 0, 1, 1)
     end
+
+    love.graphics.setColor(1,1,1,1)
 end
 
 function love.touchpressed(id, x, y, dx, dy, pressure)
