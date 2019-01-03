@@ -29,10 +29,18 @@ end
 
 function Utils.TableContains(t, value)
     for i=1,table.maxn(t) do
-            if t[i] == value then return true end
+        if t[i] == value then return true end
     end
 
     return false
+end
+
+function Utils.TableFind(tab,el)
+    for index, value in pairs(tab) do
+        if value == el then
+            return index
+        end
+    end
 end
 
 return Utils

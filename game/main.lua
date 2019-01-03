@@ -27,7 +27,8 @@ components = {}
 blacklistedIds = {
     "section_retroarch",
     "section_extras",
-    "subcategory_homebrew_emulators_bundles"
+    "subcategory_homebrew_emulators_bundles",
+    "package_checkbox_sdsetup-app"
 }
 
 drawCallback = nil
@@ -41,8 +42,6 @@ cursorY = 360
 showCursor = false
 allowCursor = true
 axisValues = {leftx = 0, lefty = 0, rightx = 0, righty = 0 }
-
-spinner = Animation("anim_spinner", 540, 0, 200, 200, "res/spinner/frame-", 30, 0.025)
 
 
 -- MAIN
@@ -91,14 +90,15 @@ function GenerateComponents()
 
                             for _,packid in pairs(sub["Packages"]["_keys"]) do
                                 local pack = sub["Packages"]["_values"][packid]
-                                table.insert(packageItems, pack)
-                                if pack["Visible"] then
-                                    --table.insert(subcategoryChildren, Label(, , 10, 0, 1280, 28, 20, {0,0,0,1}))
-                                    local pcbx = Checkbox("package_checkbox_" .. pack["ID"], pack["DisplayName"], 10, 0, 1280, 28, 20, 20, 5, {0,0,0,1}, {1,1,1,1}, {0.87450980392, 0.87450980392, 0.87450980392, 0.87450980392}, pack["EnabledByDefault"], pack)
-                                    table.insert(categoryChildren, pcbx)
-                                    table.insert(packageCheckboxes, pcbx)
+                                if Utils.TableContains(blacklistedIds, "package_checkbox_" .. pack["ID"]) == false then
+                                    table.insert(packageItems, pack)
+                                    if pack["Visible"] then
+                                        --table.insert(subcategoryChildren, Label(, , 10, 0, 1280, 28, 20, {0,0,0,1}))
+                                        local pcbx = Checkbox("package_checkbox_" .. pack["ID"], pack["DisplayName"], 10, 0, 1280, 28, 20, 20, 5, {0,0,0,1}, {1,1,1,1}, {0.87450980392, 0.87450980392, 0.87450980392, 0.87450980392}, pack["EnabledByDefault"], pack)
+                                        table.insert(categoryChildren, pcbx)
+                                        table.insert(packageCheckboxes, pcbx)
+                                    end
                                 end
-
                                 
                             end
 
