@@ -185,7 +185,7 @@ function GenerateComponents()
 
     local bundling = StackCard("card_bundling", "Card Bundling", 0, 0, 1280, 720, false, {0.14509803921, 0.14509803921, 0.14509803921, 1}, {0,0,0,0}, 0, {
         Card("spacer_01", "spacer_01", 0, 0, 1280, 140, {0,0,0,0}, {0,0,0,0}, {}),
-        spinner,
+        Image("downloading", "downloading", "res/packing.png", 540, 0, 1, 1),
         Label("label_bundling", "The server is creating your zip, please wait...", 0, 340, 1280, 40, 30, {1,1,1,1}, "center"),
         Label("label_done", "This might take a while.", 0, 340, 1280, 40, 20, {1,1,1,1}, "center"),
         Card("spacer_02", "spacer_02", 0, 0, 1280, 340, {0,0,0,0}, {0,0,0,0}, {})
@@ -193,7 +193,7 @@ function GenerateComponents()
 
     local downloading = StackCard("card_bundling", "Card Bundling", 0, 0, 1280, 720, false, {0.14509803921, 0.14509803921, 0.14509803921, 1}, {0,0,0,0}, 0, {
         Card("spacer_01", "spacer_01", 0, 0, 1280, 140, {0,0,0,0}, {0,0,0,0}, {}),
-        spinner,
+        Image("downloading", "downloading", "res/downloading.png", 540, 0, 1, 1),
         Label("label_downloading", "Your zip is now being downloaded, please wait...", 0, 340, 1280, 40, 30, {1,1,1,1}, "center"),
         Label("label_done", "This might take a while.", 0, 340, 1280, 40, 20, {1,1,1,1}, "center"),
         Card("spacer_02", "spacer_02", 0, 0, 1280, 340, {0,0,0,0}, {0,0,0,0}, {})
@@ -201,16 +201,17 @@ function GenerateComponents()
 
     local extracting = StackCard("card_bundling", "Card Bundling", 0, 0, 1280, 720, false, {0.14509803921, 0.14509803921, 0.14509803921, 1}, {0,0,0,0}, 0, {
         Card("spacer_01", "spacer_01", 0, 0, 1280, 140, {0,0,0,0}, {0,0,0,0}, {}),
-        spinner,
+        Image("downloading", "downloading", "res/extracting.png", 540, 0, 1, 1),
         Label("label_extracting", "Files are now being extracted to your SD card, please wait...", 0, 340, 1280, 40, 30, {1,1,1,1}, "center"),
         Label("label_done", "This might take a while.", 0, 340, 1280, 40, 20, {1,1,1,1}, "center"),
         Card("spacer_02", "spacer_02", 0, 0, 1280, 340, {0,0,0,0}, {0,0,0,0}, {})
     })
 
     local done = StackCard("card_bundling", "Card Bundling", 0, 0, 1280, 720, false, {0.14509803921, 0.14509803921, 0.14509803921, 1}, {0,0,0,0}, 0, {
-        Card("spacer_01", "spacer_01", 0, 0, 1280, 320, {0,0,0,0}, {0,0,0,0}, {}),
+        Card("spacer_01", "spacer_01", 0, 0, 1280, 280, {0,0,0,0}, {0,0,0,0}, {}),
         Label("label_done", "Done! Press HOME to exit", 0, 340, 1280, 40, 30, {1,1,1,1}, "center"),
         Label("label_done", "If you downloaded custom firmware packages, you should restart your console.", 0, 340, 1280, 40, 20, {1,1,1,1}, "center"),
+        Button("button_exit", "Exit App", 128, 0, 1024, 70, 30, {1,1,1,1}, {0.63921568627,0.2,0.78431372549,1}, {0,0,0,0}, ExitApp),
         Card("spacer_02", "spacer_02", 0, 0, 1280, 340, {0,0,0,0}, {0,0,0,0}, {})
     })
 
@@ -543,6 +544,8 @@ function FontFromStorage(size)
 end
 
 function ExitApp()
+    love.system.requestHomeMenu()
+
+    --above doesnt work with games, so exit normally (oh well)
     love.event.quit()
-    --love.system.requestHomeMenu()
 end
