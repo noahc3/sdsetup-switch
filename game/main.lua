@@ -94,7 +94,8 @@ function GenerateComponents()
                                     table.insert(packageItems, pack)
                                     if pack["Visible"] then
                                         --table.insert(subcategoryChildren, Label(, , 10, 0, 1280, 28, 20, {0,0,0,1}))
-                                        local pcbx = Checkbox("package_checkbox_" .. pack["ID"], pack["DisplayName"], 10, 0, 1280, 28, 20, 20, 5, {0,0,0,1}, {1,1,1,1}, {0.87450980392, 0.87450980392, 0.87450980392, 0.87450980392}, pack["EnabledByDefault"], pack)
+                                        local pcbxText = pack["DisplayName"] .. " (" .. pack["Versions"]["latest"] .. ")"
+                                        local pcbx = Checkbox("package_checkbox_" .. pack["ID"], pcbxText, 10, 0, 1280, 28, 20, 20, 5, {0,0,0,1}, {1,1,1,1}, {0.87450980392, 0.87450980392, 0.87450980392, 0.87450980392}, pack["EnabledByDefault"], pack)
                                         table.insert(categoryChildren, pcbx)
                                         table.insert(packageCheckboxes, pcbx)
                                     end
@@ -157,8 +158,8 @@ function GenerateComponents()
                             local pack = packages[i+n+1]
                             local x = 5 + (501 * n)
                             --table.insert(row, Label("package_label_" .. pack["ID"], pack["DisplayName"], x, 0, 501, 28, 20, {0,0,0,1}, "center"))
-                            
-                            local pcbx = Checkbox("package_checkbox_" .. pack["ID"], pack["DisplayName"], 500 - (love.graphics.getFont():getWidth(pack["DisplayName"]) / 2) - (5 / 2), 0, 501, 28, 20, 20, 5, {0,0,0,1}, {1,1,1,1}, {0.87450980392, 0.87450980392, 0.87450980392, 0.87450980392}, pack["EnabledByDefault"], pack)
+                            local pcbxText = pack["DisplayName"] .. " (" .. pack["Versions"]["latest"] .. ")"
+                            local pcbx = Checkbox("package_checkbox_" .. pack["ID"], pcbxText, 500 - (love.graphics.getFont():getWidth(pcbxText) / 2) - (5 / 2), 0, 501, 28, 20, 20, 5, {0,0,0,1}, {1,1,1,1}, {0.87450980392, 0.87450980392, 0.87450980392, 0.87450980392}, pack["EnabledByDefault"], pack)
                             table.insert(sectionChildren, pcbx)
                             --table.insert(row, pcbx)
                             table.insert(packageCheckboxes, pcbx)
