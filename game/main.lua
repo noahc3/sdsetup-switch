@@ -4,18 +4,17 @@
 local Utils = require("Utils")
 local Http = require("socket.http")
 local Json = require("json")
-local Factory = require("Factory")
 
 
 -- COMPONENT CLASSES
-require 'Page'
-require 'Image'
-require 'Label'
-require 'Card'
-require 'StackCard'
-require 'Checkbox'
-require 'Button'
-require 'Animation'
+require 'components/Page'
+require 'components/Image'
+require 'components/Label'
+require 'components/Card'
+require 'components/StackCard'
+require 'components/Checkbox'
+require 'components/Button'
+require 'components/Animation'
 
 -- EVENT SUBSCRIPTIONS
 
@@ -43,7 +42,7 @@ showCursor = false
 allowCursor = true
 axisValues = {leftx = 0, lefty = 0, rightx = 0, righty = 0 }
 
-spinner = Animation("anim_spinner", 0, 0, 200, 200, "res/spinner/frame-", 30, 1)
+spinner = Animation("anim_spinner", 540, 0, 200, 200, "res/spinner/frame-", 30, 0.025)
 
 
 -- MAIN
@@ -185,21 +184,24 @@ function GenerateComponents()
     progressCards = {}
 
     local bundling = StackCard("card_bundling", "Card Bundling", 0, 0, 1280, 720, false, {0.14509803921, 0.14509803921, 0.14509803921, 1}, {0,0,0,0}, 0, {
-        Card("spacer_01", "spacer_01", 0, 0, 1280, 340, {0,0,0,0}, {0,0,0,0}, {}),
+        Card("spacer_01", "spacer_01", 0, 0, 1280, 140, {0,0,0,0}, {0,0,0,0}, {}),
+        spinner,
         Label("label_bundling", "The server is creating your zip, please wait...", 0, 340, 1280, 40, 30, {1,1,1,1}, "center"),
         Label("label_done", "This might take a while.", 0, 340, 1280, 40, 20, {1,1,1,1}, "center"),
         Card("spacer_02", "spacer_02", 0, 0, 1280, 340, {0,0,0,0}, {0,0,0,0}, {})
     })
 
     local downloading = StackCard("card_bundling", "Card Bundling", 0, 0, 1280, 720, false, {0.14509803921, 0.14509803921, 0.14509803921, 1}, {0,0,0,0}, 0, {
-        Card("spacer_01", "spacer_01", 0, 0, 1280, 340, {0,0,0,0}, {0,0,0,0}, {}),
+        Card("spacer_01", "spacer_01", 0, 0, 1280, 140, {0,0,0,0}, {0,0,0,0}, {}),
+        spinner,
         Label("label_downloading", "Your zip is now being downloaded, please wait...", 0, 340, 1280, 40, 30, {1,1,1,1}, "center"),
         Label("label_done", "This might take a while.", 0, 340, 1280, 40, 20, {1,1,1,1}, "center"),
         Card("spacer_02", "spacer_02", 0, 0, 1280, 340, {0,0,0,0}, {0,0,0,0}, {})
     })
 
     local extracting = StackCard("card_bundling", "Card Bundling", 0, 0, 1280, 720, false, {0.14509803921, 0.14509803921, 0.14509803921, 1}, {0,0,0,0}, 0, {
-        Card("spacer_01", "spacer_01", 0, 0, 1280, 340, {0,0,0,0}, {0,0,0,0}, {}),
+        Card("spacer_01", "spacer_01", 0, 0, 1280, 140, {0,0,0,0}, {0,0,0,0}, {}),
+        spinner,
         Label("label_extracting", "Files are now being extracted to your SD card, please wait...", 0, 340, 1280, 40, 30, {1,1,1,1}, "center"),
         Label("label_done", "This might take a while.", 0, 340, 1280, 40, 20, {1,1,1,1}, "center"),
         Card("spacer_02", "spacer_02", 0, 0, 1280, 340, {0,0,0,0}, {0,0,0,0}, {})
@@ -279,8 +281,6 @@ function love.load()
 end
 
 function love.update(dt)
-
-    spinner:Update(dt)
 
     for i=1,table.maxn(SubscribeUpdate) do
         if type(SubscribeUpdate[i].Update) == "function" then SubscribeUpdate[i]:Update(dt) end
@@ -374,7 +374,6 @@ function love.draw()
 
     love.graphics.setColor(1,1,1,1)
 
-    spinner:Draw()
 end
 
 function love.touchpressed(id, x, y, dx, dy, pressure)

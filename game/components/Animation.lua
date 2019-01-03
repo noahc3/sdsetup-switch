@@ -1,6 +1,6 @@
-require 'class'
-cmath = require("cmath")
-Factory = require("Factory")
+require 'class' 
+
+require 'types/t_Animation'
 
 
 
@@ -12,11 +12,11 @@ Animation = class(
         obj.y = y -- origin y
         obj.dx = dx
         obj.dy = dy
-        obj.animation = Factory.newAnimation(animationRoot, frameCount, frameDuration)
+        obj.animation = t_Animation(animationRoot, frameCount, frameDuration)
         obj.StateHasChanged = true
         obj.canvas = love.graphics.newCanvas(obj.dx, obj.dy)
 
-        --table.insert(SubscribeUpdate, obj)
+        table.insert(SubscribeUpdate, obj)
     end
 )
 
@@ -33,14 +33,14 @@ function Animation:ReloadImage()
 end
 
 function Animation:Update(dt)
-    self.animation:cycleFrame(self.animation, dt)
+    self.animation:cycleFrame(dt)
 
     StateHasChanged = true
     self.StateHasChanged = true
 end
 
 function Animation:Draw()
-    love.graphics.draw(self.animation.getFrame(self.animation), 0, 0) 
+    love.graphics.draw(self.animation.frames[self.animation.frame], 0, 0) 
 end
 
 function Animation:__tostring()
