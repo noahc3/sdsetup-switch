@@ -15,6 +15,7 @@ require 'Card'
 require 'StackCard'
 require 'Checkbox'
 require 'Button'
+require 'Animation'
 
 -- EVENT SUBSCRIPTIONS
 
@@ -41,6 +42,8 @@ cursorY = 360
 showCursor = false
 allowCursor = true
 axisValues = {leftx = 0, lefty = 0, rightx = 0, righty = 0 }
+
+spinner = Animation("anim_spinner", 0, 0, 200, 200, "res/spinner/frame-", 30, 1)
 
 
 -- MAIN
@@ -203,7 +206,7 @@ function GenerateComponents()
     })
 
     local done = StackCard("card_bundling", "Card Bundling", 0, 0, 1280, 720, false, {0.14509803921, 0.14509803921, 0.14509803921, 1}, {0,0,0,0}, 0, {
-        Card("spacer_01", "spacer_01", 0, 0, 1280, 120, {0,0,0,0}, {0,0,0,0}, {}),
+        Card("spacer_01", "spacer_01", 0, 0, 1280, 320, {0,0,0,0}, {0,0,0,0}, {}),
         Label("label_done", "Done! Press HOME to exit", 0, 340, 1280, 40, 30, {1,1,1,1}, "center"),
         Label("label_done", "If you downloaded custom firmware packages, you should restart your console.", 0, 340, 1280, 40, 20, {1,1,1,1}, "center"),
         Card("spacer_02", "spacer_02", 0, 0, 1280, 340, {0,0,0,0}, {0,0,0,0}, {})
@@ -276,6 +279,8 @@ function love.load()
 end
 
 function love.update(dt)
+
+    spinner:Update(dt)
 
     for i=1,table.maxn(SubscribeUpdate) do
         if type(SubscribeUpdate[i].Update) == "function" then SubscribeUpdate[i]:Update(dt) end
@@ -368,6 +373,8 @@ function love.draw()
     end
 
     love.graphics.setColor(1,1,1,1)
+
+    spinner:Draw()
 end
 
 function love.touchpressed(id, x, y, dx, dy, pressure)

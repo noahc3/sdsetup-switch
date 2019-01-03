@@ -1,19 +1,34 @@
 local Factory = {}
 
-function Factory.newAnimation(image, width, height, duration)
+function Factory.newAnimation(frameRoot, frameCount, frameDuration)
 
     local animation = {}
-    animation.spriteSheet = image;
-    animation.quads = {};
- 
-    for y = 0, image:getHeight() - height, height do
-        for x = 0, image:getWidth() - width, width do
-            table.insert(animation.quads, love.graphics.newQuad(x, y, width, height, image:getWidth(), image:getHeight()))
+
+    animation.frame = 1
+    animation.frames = {}
+    animation.frameCount = frameCount
+    animation.frameDuration = frameDuration
+    animation.__frameCounter = 0
+
+    for i=1,frameCount do
+        table.insert(animation.frames, love.graphics.newImage(frameRoot .. i .. ".png"))
+    end
+    
+    function animation.cycleFrame(self, dt) 
+        self.__frameCounter = self.__frameCounter + dt
+        if self.__frameCounter > self.frameDuration then
+            self.__frameCounter = 0
+            self.frame = self.frame + 1
+        end
+
+        if self.frame > self.frameCount then
+            self.frame = 1
         end
     end
- 
-    animation.duration = duration or 1
-    animation.currentTime = 0
+
+    function animation.getFrame(self) 
+        return self.frames[self.frame]
+    end
  
     return animation
 end

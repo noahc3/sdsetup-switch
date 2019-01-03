@@ -5,20 +5,18 @@ Factory = require("Factory")
 
 
 Animation = class(
-    function(obj, id, animationPath, x, y, cellWidth, cellHeight, duration)
+    function(obj, id, x, y, dx, dy, animationRoot, frameCount, frameDuration)
         obj.id = id
         obj.name = name
         obj.x = x -- origin x
         obj.y = y -- origin y
-        obj.dx = cellWidth
-        obj.dy = cellHeight
-        obj.duration = duration
-        obj.animationPath = animationPath
-        obj.animation = Factory.newAnimation(love.graphics.newImage(obj.animationPath), obj.dx, obj.dy, obj.duration)
+        obj.dx = dx
+        obj.dy = dy
+        obj.animation = Factory.newAnimation(animationRoot, frameCount, frameDuration)
         obj.StateHasChanged = true
         obj.canvas = love.graphics.newCanvas(obj.dx, obj.dy)
 
-        table.insert(SubscribeUpdate, obj)
+        --table.insert(SubscribeUpdate, obj)
     end
 )
 
@@ -35,22 +33,14 @@ function Animation:ReloadImage()
 end
 
 function Animation:Update(dt)
-    local anim = self.animation
-
-    anim.currentTime = anim.currentTime + dt
-    if anim.currentTime >= anim.duration then
-        anim.currentTime = anim.currentTime - anim.duration
-    end
+    self.animation:cycleFrame(self.animation, dt)
 
     StateHasChanged = true
     self.StateHasChanged = true
 end
 
 function Animation:Draw()
-    local anim = self.animation
-
-    local spriteNum = math.floor(anim.currentTime / anim.duration * #anim.quads) + 1
-    love.graphics.draw(anim.spriteSheet, anim.quads[spriteNum], 0, 0) 
+    love.graphics.draw(self.animation.getFrame(self.animation), 0, 0) 
 end
 
 function Animation:__tostring()
