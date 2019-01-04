@@ -216,7 +216,7 @@ function GenerateComponents()
         Card("spacer_01", "spacer_01", 0, 0, 1280, 280, {0,0,0,0}, {0,0,0,0}, {}),
         Label("label_done", "Done!", 0, 340, 1280, 40, 30, {1,1,1,1}, "center"),
         Label("label_done", "If you downloaded custom firmware packages, you should restart your console.", 0, 340, 1280, 40, 20, {1,1,1,1}, "center"),
-        Button("button_exit", "Exit App", 128, 0, 1024, 70, 30, {1,1,1,1}, {0.63921568627,0.2,0.78431372549,1}, {0,0,0,0}, ForceExitApp),
+        Button("button_exit", "Exit App", 128, 0, 1024, 70, 30, {1,1,1,1}, {0.85882352941,0.15686274509,0.15686274509,1}, {0,0,0,0}, ForceExitApp),
         Card("spacer_02", "spacer_02", 0, 0, 1280, 340, {0,0,0,0}, {0,0,0,0}, {})
     })
 
