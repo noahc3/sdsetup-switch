@@ -22,6 +22,9 @@ SubscribeUpdate = {}
 SubscribeAfterUpdate = {}
 
 -- INIT GLOBAL VARS
+
+APP_VERSION = "alpha v0.3"
+
 components = {}
 
 blacklistedIds = {
@@ -44,6 +47,8 @@ allowCursor = true
 axisValues = {leftx = 0, lefty = 0, rightx = 0, righty = 0 }
 
 
+
+
 -- MAIN
 function GenerateComponents()
 
@@ -58,8 +63,7 @@ function GenerateComponents()
     local sections = {}
 
     table.insert(sections, Image("logo", "logo", "res/logo.png", 0, 0, 1, 1))
-    table.insert(sections, Label("label_version", "alpha v0.2.1", 0, 340, 1280, 40, 20, {0,0,0,1}, "center"))
-    table.insert(sections, Label("label_updates", "check https://www.github.com/noahc3/sdsetup-switch for updates", 0, 340, 1280, 40, 20, {0,0,0,1}, "center"))
+    table.insert(sections, Label("label_version", APP_VERSION, 0, 340, 1280, 40, 20, {0,0,0,1}, "center"))
 
     for _,secid in pairs(manifest["Platforms"]["switch"]["PackageSections"]["_keys"]) do
         local sec = manifest["Platforms"]["switch"]["PackageSections"]["_values"][secid] --workaround, ordered_table is bugged in lovepotion for some reason
@@ -210,9 +214,9 @@ function GenerateComponents()
 
     local done = StackCard("card_bundling", "Card Bundling", 0, 0, 1280, 720, false, {0.14509803921, 0.14509803921, 0.14509803921, 1}, {0,0,0,0}, 0, {
         Card("spacer_01", "spacer_01", 0, 0, 1280, 280, {0,0,0,0}, {0,0,0,0}, {}),
-        Label("label_done", "Done! Press HOME to exit", 0, 340, 1280, 40, 30, {1,1,1,1}, "center"),
+        Label("label_done", "Done!", 0, 340, 1280, 40, 30, {1,1,1,1}, "center"),
         Label("label_done", "If you downloaded custom firmware packages, you should restart your console.", 0, 340, 1280, 40, 20, {1,1,1,1}, "center"),
-        Button("button_exit", "Exit App", 128, 0, 1024, 70, 30, {1,1,1,1}, {0.63921568627,0.2,0.78431372549,1}, {0,0,0,0}, ExitApp),
+        Button("button_exit", "Exit App", 128, 0, 1024, 70, 30, {1,1,1,1}, {0.63921568627,0.2,0.78431372549,1}, {0,0,0,0}, ForceExitApp),
         Card("spacer_02", "spacer_02", 0, 0, 1280, 340, {0,0,0,0}, {0,0,0,0}, {})
     })
 
@@ -246,14 +250,33 @@ function love.load()
     packageset, code = Http.request("http://files.sdsetup.com/api/v1/get/latestpackageset")
 
     if code == 200 then
-        GenerateComponents()
 
-        for _,v in pairs(progressCards) do
-            love.graphics.setCanvas(v.canvas)
-            love.graphics.clear()
-            love.graphics.setColor(1, 1, 1, 1)
-            v:Draw()
-            love.graphics.setCanvas()
+        local latestVersion, code = Http.request("http://files.sdsetup.com/api/v1/get/latestappversion/switch")
+
+        if latestVersion ~= APP_VERSION then --app needs to update
+            local updating = StackCard("card_bundling", "Card Bundling", 0, 0, 1280, 720, false, {0.14509803921, 0.14509803921, 0.14509803921, 1}, {0,0,0,0}, 0, {
+                Card("spacer_01", "spacer_01", 0, 0, 1280, 140, {0,0,0,0}, {0,0,0,0}, {}),
+                Image("downloading", "downloading", "res/downloading.png", 540, 0, 1, 1),
+                Label("label_updating", "The app is updating, please wait...", 0, 340, 1280, 40, 30, {1,1,1,1}, "center"),
+                Label("label_sub_updating", "The app needs to be updated to ensure compatibility.", 0, 340, 1280, 40, 20, {1,1,1,1}, "center"),
+                Card("spacer_02", "spacer_02", 0, 0, 1280, 340, {0,0,0,0}, {0,0,0,0}, {})
+            })
+            
+            table.insert(components, updating)
+
+            drawNeedsCallback = true
+            drawCallbackReady = false
+            drawCallback = UpdateApp
+        else --app is up to date
+            GenerateComponents()
+
+            for _,v in pairs(progressCards) do
+                love.graphics.setCanvas(v.canvas)
+                love.graphics.clear()
+                love.graphics.setColor(1, 1, 1, 1)
+                v:Draw()
+                love.graphics.setCanvas()
+            end
         end
     else
         local no_connection = StackCard("card_no_connection", "Card No Connection", 0, 0, 1280, 720, false, {0.14509803921, 0.14509803921, 0.14509803921, 1}, {0,0,0,0}, 0, {
@@ -263,7 +286,6 @@ function love.load()
             Button("button_exit", "Exit App", 128, 0, 1024, 70, 30, {1,1,1,1}, {0.85882352941,0.15686274509,0.15686274509,1}, {0,0,0,0}, ExitApp),
             Card("spacer_02", "spacer_02", 0, 0, 1280, 340, {0,0,0,0}, {0,0,0,0}, {})
         })
-    
 
         table.insert(components, no_connection)
     end
@@ -361,7 +383,7 @@ function love.draw()
     love.graphics.setColor(1,0,0,1)
     --love.graphics.printf(tostring(out1) .. "\n" .. tostring(out2) .. "\n" .. tostring(out3) .. "\n" .. tostring(code) .. "\n" .. tostring(filelen).. "\n" .. tostring(drawNeedsCallback).. "\n" .. tostring(drawCallbackReady), 50, 50, 1280)
 
-    --love.graphics.printf(debugtexth, 50, 50, 1280)
+    --love.graphics.printf(love._nro_path, 50, 50, 1280)
 
     drawCallbackReady = true
 
@@ -457,7 +479,7 @@ end
 
 function DownloadZip()
     if out2 == "READY" then
-        file, code = Http.request("http://files.sdsetup.com/api/v1/fetch/generatedzip/" .. uuid)
+        local file, code = Http.request("http://files.sdsetup.com/api/v1/fetch/generatedzip/" .. uuid)
         love.filesystem.write("sdmc:/sdsetup.zip", file)
         file = nil
     end
@@ -545,8 +567,43 @@ function FontFromStorage(size)
 end
 
 function ExitApp()
+    love.event.quit()
+end
+
+function ForceExitApp()
     love.system.requestHomeMenu()
 
     --above doesnt work with games, so exit normally (oh well)
+    love.event.quit()
+end
+
+function UpdateApp()
+    if PrimaryJoystick ~= nil then
+        if PrimaryJoystick:isGamepadDown("r") then --skip update by holding R on boot
+            table.remove(components, 1)
+
+            GenerateComponents()
+
+            for _,v in pairs(progressCards) do
+                love.graphics.setCanvas(v.canvas)
+                love.graphics.clear()
+                love.graphics.setColor(1, 1, 1, 1)
+                v:Draw()
+                love.graphics.setCanvas()
+            end
+            return
+        end
+    end
+
+    love.filesystem.romfsExit()
+
+    love.filesystem.remove(love._nro_path)
+
+    local file, code = Http.request("http://files.sdsetup.com/api/v1/get/latestappdownload/switch/")
+    love.filesystem.write(love._nro_path, file)
+    file = nil
+
+    love.filesystem.setNextLoad(love._nro_path)
+
     love.event.quit()
 end
